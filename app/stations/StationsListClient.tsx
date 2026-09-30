@@ -3,29 +3,44 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { stations } from "@/lib/data";
 import { searchStations } from "@/lib/search";
-import { LineBadge } from "@/components/LineBadge";
+import { LineBadge, InterchangeChip } from "@/components/LineBadge";
+import { IconSearch, IconArrowRight } from "@/components/icons";
 
 export default function StationsListClient() {
   const [q, setQ] = useState("");
   const results = useMemo(() => (q.trim() ? searchStations(q, 243) : stations.slice().sort((a, b) => a.name.localeCompare(b.name))), [q]);
   return (
     <div>
-      <h1 className="text-xl font-extrabold text-slate-900">Delhi Metro Stations</h1>
-      <p className="text-sm text-slate-500">243 stations · 9 corridors. Tap a station for lines, neighbours and interchange details.</p>
-      <label className="mt-3 block text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="station-search">Search stations</label>
-      <input id="station-search" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search — try “rajiv” or “hauz”" className="mt-1 min-h-[48px] w-full rounded-xl border border-slate-300 bg-white px-3 text-base outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-200" autoComplete="off" />
-      <p className="mt-2 text-xs text-slate-500" role="status">{results.length} station{results.length === 1 ? "" : "s"} shown</p>
-      <ul className="mt-2 divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <h1 className="font-display text-[32px] leading-tight tracking-tight text-ink">Stations</h1>
+      <p className="mt-1 max-w-prose text-sm text-ink-mute">243 stations, 9 corridors. Tap a station to see its lines and neighbours.</p>
+      <div className="relative mt-4">
+        <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-mute" htmlFor="station-search">Search stations</label>
+        <div className="flex items-center gap-2.5 rounded-xl border border-line-soft bg-surface px-3">
+          <span className="shrink-0 text-ink-mute/60" aria-hidden="true"><IconSearch size={18} /></span>
+          <input
+            id="station-search"
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Try rajiv or hauz"
+            className="min-h-[52px] w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-mute/70"
+            autoComplete="off"
+          />
+        </div>
+      </div>
+      <p className="mt-3 text-[13px] tabular-nums text-ink-mute" role="status">{results.length} station{results.length === 1 ? "" : "s"} shown</p>
+      <ul className="mt-1 divide-y divide-line-soft/60 border-y border-line-soft">
         {results.map((st) => (
           <li key={st.id}>
-            <Link href={`/stations/${st.id}`} className="flex min-h-[52px] items-center justify-between gap-2 px-3 py-2 hover:bg-sky-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-sky-500">
-              <span className="font-medium text-slate-900">{st.name}{st.isInterchange ? <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-semibold text-amber-800">🔄 Interchange</span> : null}</span>
-              <span className="flex shrink-0 flex-wrap justify-end gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
+            <Link href={`/stations/${st.id}`} className="flex min-h-[56px] items-center gap-2 py-2">
+              <span className="flex items-center gap-2 font-medium text-ink">{st.name}{st.isInterchange ? <InterchangeChip /> : null}</span>
+              <span className="ml-auto flex shrink-0 gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
+              <span className="text-ink-mute/50" aria-hidden="true"><IconArrowRight size={15} /></span>
             </Link>
           </li>
         ))}
       </ul>
-      {results.length === 0 ? <p className="mt-3 text-sm text-slate-500">No station found. Try a shorter or different spelling.</p> : null}
+      {results.length === 0 ? <p className="mt-4 text-sm text-ink-mute">No station found. Try a shorter or different spelling.</p> : null}
     </div>
   );
 }

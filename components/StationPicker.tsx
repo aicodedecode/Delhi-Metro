@@ -2,7 +2,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Station } from "@/types";
 import { searchStations } from "@/lib/search";
-import { LineBadge } from "./LineBadge";
+import { LineBadge, InterchangeChip } from "./LineBadge";
+import { IconClose, IconSearch } from "@/components/icons";
 
 interface Props {
   label: string;
@@ -29,9 +30,16 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
 
   return (
     <div className="relative">
-      <label htmlFor={label} className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</label>
-      <div className="flex items-center gap-2 rounded-xl border-2 bg-white px-3 py-1 shadow-sm focus-within:ring-2 focus-within:ring-offset-1" style={{ borderColor: value ? accentColor : "#cbd5e1" }}>
-        <span aria-hidden="true" className="h-3 w-3 shrink-0 rounded-full ring-1 ring-black/20" style={{ backgroundColor: value ? accentColor : "#94a3b8" }} />
+      <label htmlFor={label} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-mute">{label}</label>
+      <div
+        className="flex items-center gap-2.5 rounded-xl border bg-surface px-3 transition-colors focus-within:border-ink"
+        style={{ borderWidth: value ? 2 : 1, borderColor: value ? accentColor : undefined }}
+      >
+        <span
+          aria-hidden="true"
+          className="h-2.5 w-2.5 shrink-0 rounded-full ring-1 ring-ink/20"
+          style={{ backgroundColor: value ? accentColor : "#b8b3a4" }}
+        />
         <input
           ref={inputRef}
           id={label}
@@ -41,7 +49,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
           aria-controls={listId}
           aria-activedescendant={results[highlight] ? `${listId}-${results[highlight].id}` : undefined}
           autoComplete="off"
-          className="min-h-[44px] w-full bg-transparent text-base font-medium text-slate-900 outline-none placeholder:font-normal placeholder:text-slate-400"
+          className="min-h-[48px] w-full bg-transparent text-base font-medium text-ink outline-none placeholder:font-normal placeholder:text-ink-mute/70"
           placeholder={value ? value.name : placeholder}
           value={query}
           onChange={(e) => { setQuery(e.target.value); setOpen(true); if (value) onChange(null); }}
@@ -55,32 +63,41 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
           }}
         />
         {value ? (
-          <button type="button" onClick={clear} aria-label={`Clear ${label}`} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg text-slate-500 hover:bg-slate-100">×</button>
-        ) : null}
+          <button type="button" onClick={clear} aria-label={`Clear ${label}`} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink-mute hover:bg-paper">
+            <IconClose size={18} />
+          </button>
+        ) : (
+          <span className="shrink-0 text-ink-mute/60" aria-hidden="true"><IconSearch size={18} /></span>
+        )}
       </div>
       {value && !query ? (
-        <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 px-1">
+        <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 px-1">
           {value.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}
-          {value.isInterchange ? <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-semibold text-amber-800">🔄 Interchange</span> : null}
+          {value.isInterchange ? <InterchangeChip /> : null}
         </p>
       ) : null}
       {open && results.length > 0 ? (
-        <ul id={listId} role="listbox" aria-label={`${label} suggestions`} className="absolute left-0 right-0 top-full z-30 mt-1 max-h-72 overflow-auto rounded-xl border border-slate-200 bg-white shadow-xl">
+        <ul id={listId} role="listbox" aria-label={`${label} suggestions`} className="absolute left-0 right-0 top-full z-30 mt-1 max-h-72 overflow-auto rounded-xl border border-line-soft bg-surface shadow-[0_8px_30px_rgb(10_42_94/0.12)]">
           {results.map((st, i) => (
-            <li key={st.id} id={`${listId}-${st.id}`} role="option" aria-selected={i === highlight}>
-              <button type="button" onClick={() => pick(st)} onMouseEnter={() => setHighlight(i)}
-                className={`flex min-h-[48px] w-full items-center justify-between gap-2 px-3 py-2 text-left ${i === highlight ? "bg-sky-50" : "bg-white"}`}>
-                <span className="font-medium text-slate-900">{st.name}
-                  {st.isInterchange ? <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-semibold text-amber-800">🔄 Interchange</span> : null}
-                </span>
-                <span className="flex shrink-0 flex-wrap justify-end gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
-              </button>
+            <li
+              key={st.id}
+              id={`${listId}-${st.id}`}
+              role="option"
+              aria-selected={i === highlight}
+              onMouseDown={(e) => { e.preventDefault(); pick(st); }}
+              onMouseEnter={() => setHighlight(i)}
+              className={`flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 px-3 py-2 text-left ${i === highlight ? "bg-paper" : "bg-surface"}`}
+            >
+              <span className="font-medium text-ink">{st.name}
+                {st.isInterchange ? <span className="ml-2"><InterchangeChip /></span> : null}
+              </span>
+              <span className="flex shrink-0 flex-wrap justify-end gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
             </li>
           ))}
         </ul>
       ) : null}
       {open && debounced.trim().length >= 2 && results.length === 0 ? (
-        <p className="absolute left-0 right-0 top-full z-30 mt-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-500 shadow-xl">No station found. Check the spelling or try a shorter name.</p>
+        <p className="absolute left-0 right-0 top-full z-30 mt-1 rounded-xl border border-line-soft bg-surface px-3 py-2 text-sm text-ink-mute shadow-[0_8px_30px_rgb(10_42_94/0.12)]">No station found. Check the spelling or try a shorter name.</p>
       ) : null}
     </div>
   );

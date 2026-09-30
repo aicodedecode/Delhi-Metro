@@ -3,7 +3,8 @@
     "asOf": "2026-10-01",
     "network": "Delhi Metro operational network",
     "lineCorridors": 9,
-    "note": "Blue counted as one corridor with Line 3 (main) + Line 4 (branch). Magenta has two disconnected operational segments."
+    "note": "Blue counted as one corridor with Line 3 (main) + Line 4 (branch). Magenta has two disconnected operational segments.",
+    "verifiedAgainst": "Official DMRC network map \"METRO NETWORK IN DELHI-NCR\" (As on August 2026), user-provided PDF; line lengths and station counts per official operational network table. Blue Line = Line 3 (Dwarka Sec 21–Noida Electronic City) + Line 4 (Yamuna Bank–Vaishali). stationCount = unique stations per corridor."
   },
   "lines": [
     {
@@ -16,7 +17,7 @@
         "Shaheed Sthal (New Bus Adda)",
         "Rithala"
       ],
-      "lengthKm": 34.55,
+      "lengthKm": 34.549,
       "stationCount": 29,
       "segments": [
         "red"
@@ -33,7 +34,7 @@
         "Samaypur Badli",
         "Millennium City Centre Gurugram"
       ],
-      "lengthKm": 49.02,
+      "lengthKm": 49.019,
       "stationCount": 37,
       "segments": [
         "yellow"
@@ -52,7 +53,7 @@
         "Vaishali",
         "Yamuna Bank"
       ],
-      "lengthKm": 64.62,
+      "lengthKm": 64.625,
       "stationCount": 58,
       "stationCountNote": "58 line-station incidences (50 main + 8 branch incl. Yamuna Bank counted twice); 57 unique stations",
       "segments": [
@@ -73,8 +74,8 @@
         "Ashok Park Main",
         "Kirti Nagar"
       ],
-      "lengthKm": 28.78,
-      "stationCount": 25,
+      "lengthKm": 28.781,
+      "stationCount": 24,
       "stationCountNote": "25 line-station incidences (22 main + 3 branch incl. Ashok Park Main counted twice); 24 unique stations",
       "segments": [
         "greenMain",
@@ -92,7 +93,7 @@
         "Kashmere Gate",
         "Raja Nahar Singh"
       ],
-      "lengthKm": 46.34,
+      "lengthKm": 46.341,
       "stationCount": 34,
       "segments": [
         "violet"
@@ -109,7 +110,7 @@
         "New Delhi",
         "Yashobhoomi Dwarka Sector-25"
       ],
-      "lengthKm": 22.7,
+      "lengthKm": 24.917,
       "stationCount": 7,
       "segments": [
         "airportExpress"
@@ -126,8 +127,8 @@
         "Maujpur-Babarpur (ring)",
         "Shiv Vihar"
       ],
-      "lengthKm": 73.49,
-      "stationCount": 46,
+      "lengthKm": 71.548,
+      "stationCount": 45,
       "stationCountNote": "46 line-station incidences (42 ring operational - Soorghat built but NOT opened, trains bypass - plus 4 branch incl. Maujpur-Babarpur counted twice); 45 unique stations",
       "segments": [
         "pinkCircular",
@@ -147,7 +148,7 @@
         "Deepali Chowk",
         "Majlis Park"
       ],
-      "lengthKm": 50.18,
+      "lengthKm": 49.195,
       "stationCount": 33,
       "segments": [
         "magentaSouth",
@@ -166,7 +167,7 @@
         "Dwarka-Kakrola",
         "Dhansa Bus Stand"
       ],
-      "lengthKm": 5.19,
+      "lengthKm": 5.491,
       "stationCount": 4,
       "segments": [
         "grey"

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Station, RouteResultData } from "@/types";
 import { getStation } from "@/lib/data";
@@ -7,18 +7,39 @@ import { findRoute } from "@/lib/router";
 import { searchStations } from "@/lib/search";
 import StationPicker from "@/components/StationPicker";
 import RouteResult from "@/components/RouteResult";
-import { LineBadge } from "@/components/LineBadge";
+import { LineBadge, InterchangeChip } from "@/components/LineBadge";
+import { IconSwap, IconAlert, IconPin, IconSearch, IconHouse, IconBriefcase, IconGraduationCap, IconHeart, IconArrowRight } from "@/components/icons";
 import { loadRecents, saveRecent, clearRecents, loadFavorites, saveFavorites, type RecentRoute, type FavoriteSlot } from "@/lib/storage";
 
 const POPULAR_IDS = ["rajiv-chowk", "kashmere-gate", "new-delhi", "hauz-khas", "botanical-garden", "dwarka-sector-21", "central-secretariat", "millennium-city-centre-gurugram", "noida-electronic-city", "igi-airport"];
 
-export default function JourneyPlanner({ initialFromId, initialToId }: { initialFromId?: string; initialToId?: string }) {
+const FAV_ICONS: Record<string, typeof IconHouse> = {
+  Home: IconHouse,
+  Work: IconBriefcase,
+  College: IconGraduationCap,
+  Favourite: IconHeart,
+};
+
+function Section({ label, children, className = "" }: { label: string; children: React.ReactNode; className?: string }) {
+  const id = useId();
+  return (
+    <section aria-labelledby={id} className={`mt-9 ${className}`}>
+      <h2 id={id} className="mb-2.5 text-[17px] font-semibold text-ink">{label}</h2>
+      {children}
+    </section>
+  );
+}
+
+export default function JourneyPlanner({ initialFromId, initialToId, headingLevel = "h1" }: { initialFromId?: string; initialToId?: string; headingLevel?: "h1" | "p" }) {
   const [from, setFrom] = useState<Station | null>(null);
   const [to, setTo] = useState<Station | null>(null);
   const [dayType, setDayType] = useState<"weekday" | "sunday">("weekday");
   const [smartCard, setSmartCard] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [route, setRoute] = useState<RouteResultData | null>(null);
+  // The station pair that produced the visible route. Day/smart-card toggles only
+  // auto-replan when the inputs still match it; any input change clears the stale result.
+  const [planned, setPlanned] = useState<{ fromId: string; toId: string } | null>(null);
   const [recents, setRecents] = useState<RecentRoute[]>([]);
   const [favorites, setFavorites] = useState<FavoriteSlot[]>([]);
   const [favPicker, setFavPicker] = useState<string | null>(null);
@@ -34,13 +55,23 @@ export default function JourneyPlanner({ initialFromId, initialToId }: { initial
   }, [initialFromId, initialToId]);
 
   useEffect(() => {
-    if (from && to && from.id !== to.id) {
+    if (planned && from?.id === planned.fromId && to?.id === planned.toId && from.id !== to.id) {
       const r = findRoute(from.id, to.id, { dayType, smartCard });
       setRoute(r);
       setError(r ? null : "No route found between these stations.");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dayType, smartCard]);
+
+  /** Drop a route whose inputs no longer match — never show a stale journey. */
+  function clearStale(nextFrom: Station | null, nextTo: Station | null) {
+    if (planned && (nextFrom?.id !== planned.fromId || nextTo?.id !== planned.toId)) {
+      setPlanned(null);
+      setRoute(null);
+      setError(null);
+      if (typeof window !== "undefined") window.history.replaceState(null, "", window.location.pathname);
+    }
+  }
 
   function plan(f: Station | null, t: Station | null, record = true) {
     if (!f || !t) { setError("Please select both a From and a To station."); setRoute(null); return; }
@@ -49,6 +80,7 @@ export default function JourneyPlanner({ initialFromId, initialToId }: { initial
     if (!r) { setError("No route found between these stations."); setRoute(null); return; }
     setError(null);
     setRoute(r);
+    setPlanned({ fromId: f.id, toId: t.id });
     if (record) {
       saveRecent({ fromId: f.id, fromName: f.name, toId: t.id, toName: t.name, ts: Date.now() });
       setRecents(loadRecents());
@@ -74,10 +106,10 @@ export default function JourneyPlanner({ initialFromId, initialToId }: { initial
 
   function onLocate() {
     if (!("geolocation" in navigator)) { setNearbyNote("Location is not supported on this device. Search by station name instead."); return; }
-    setNearbyNote("Checking your location…");
+    setNearbyNote("Checking your location.");
     navigator.geolocation.getCurrentPosition(
-      () => setNearbyNote("Nearby stations need verified station locations — station coordinates are not yet verified in this dataset, so distance sorting is unavailable. Please search by station name instead."),
-      () => setNearbyNote("Location permission denied. No problem — search by station name instead; location is never required."),
+      () => setNearbyNote("Nearby stations need verified station locations. Station coordinates are not yet verified in this dataset, so distance sorting is unavailable. Please search by station name instead."),
+      () => setNearbyNote("Location permission denied. No problem: search by station name instead. Location is never required."),
       { timeout: 8000 }
     );
   }
@@ -88,133 +120,222 @@ export default function JourneyPlanner({ initialFromId, initialToId }: { initial
 
   return (
     <div>
-      <div className="sticky top-0 z-20 -mx-4 border-b border-slate-200 bg-[#0b2a5b]/95 px-4 pb-4 pt-4 text-white shadow-md backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
-        <h1 className="text-center text-2xl font-extrabold tracking-wide">DELHI METRO</h1>
-        <p className="mt-0.5 text-center text-xs text-sky-200">Journey planner · Routes, interchanges &amp; approx. fares</p>
-        <form className="mt-3 space-y-2" onSubmit={(e) => { e.preventDefault(); plan(from, to); }} aria-label="Journey planner">
-          <div className="rounded-xl bg-white p-2 text-slate-900">
-            <StationPicker label="From station" value={from} onChange={setFrom} placeholder="From Station — e.g. Rajiv Chowk" accentColor="#009444" />
+      {/* Planner header — the whole point of the app */}
+      <div className="sticky top-0 z-20 -mx-4 bg-ink px-4 pb-5 pt-5 md:static sm:mx-0 sm:rounded-2xl">
+        {headingLevel === "h1" ? (
+          <h1 className="font-display text-[32px] leading-none tracking-tight text-white">Delhi Metro</h1>
+        ) : (
+          <p className="font-display text-[32px] leading-none tracking-tight text-white">Delhi Metro</p>
+        )}
+        <p className="mt-1.5 text-[13px] text-white/70">Plan a journey. 9 corridors, 243 stations.</p>
+
+        <form className="mt-4" onSubmit={(e) => { e.preventDefault(); plan(from, to); }} aria-label="Journey planner">
+          <div className="rounded-xl bg-surface px-3 py-2">
+            <StationPicker label="From station" value={from} onChange={(st) => { setFrom(st); clearStale(st, to); }} placeholder="From, e.g. Rajiv Chowk" accentColor="#0a2a5e" />
           </div>
-          <div className="flex justify-center">
-            <button type="button" onClick={swap} aria-label="Swap From and To stations" className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-amber-400 px-4 text-sm font-bold text-slate-900 shadow hover:bg-amber-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-              ⇅ Swap
+          <div className="relative flex justify-center">
+            <button
+              type="button"
+              onClick={swap}
+              aria-label="Swap From and To stations"
+              className="z-10 -my-2 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white shadow-[0_4px_14px_rgb(194_65_12/0.4)] transition-colors hover:bg-accent-deep"
+            >
+              <IconSwap size={20} />
             </button>
           </div>
-          <div className="rounded-xl bg-white p-2 text-slate-900">
-            <StationPicker label="To station" value={to} onChange={setTo} placeholder="To Station — e.g. Hauz Khas" accentColor="#e30613" />
+          <div className="rounded-xl bg-surface px-3 py-2">
+            <StationPicker label="To station" value={to} onChange={(st) => { setTo(st); clearStale(from, st); }} placeholder="To, e.g. Hauz Khas" accentColor="#c2410c" />
           </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-1 text-sm">
-            <fieldset className="flex items-center gap-2">
-              <legend className="sr-only">Day type for fare</legend>
-              <label className="flex min-h-[36px] cursor-pointer items-center gap-1.5"><input type="radio" name="day" checked={dayType === "weekday"} onChange={() => setDayType("weekday")} className="h-4 w-4" /> Mon–Sat</label>
-              <label className="flex min-h-[36px] cursor-pointer items-center gap-1.5"><input type="radio" name="day" checked={dayType === "sunday"} onChange={() => setDayType("sunday")} className="h-4 w-4" /> Sunday / Holiday</label>
-            </fieldset>
-            <label className="flex min-h-[36px] cursor-pointer items-center gap-1.5"><input type="checkbox" checked={smartCard} onChange={(e) => setSmartCard(e.target.checked)} className="h-4 w-4" /> Smart card (10% off est.)</label>
+
+          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-sm text-white">
+            <div role="radiogroup" aria-label="Day type for fare" className="flex rounded-full bg-white/10 p-1">
+              {(["weekday", "sunday"] as const).map((d) => (
+                <button
+                  key={d}
+                  type="button"
+                  role="radio"
+                  aria-checked={dayType === d}
+                  onClick={() => setDayType(d)}
+                  className={`min-h-[44px] rounded-full px-3.5 text-[13px] font-semibold transition-colors ${dayType === d ? "bg-white text-ink" : "text-white/75 hover:text-white"}`}
+                >
+                  {d === "weekday" ? "Weekday" : "Sunday or holiday"}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={smartCard}
+              onClick={() => setSmartCard((v) => !v)}
+              className="flex min-h-[44px] items-center gap-2.5"
+            >
+              <span className={`flex h-6 w-11 items-center rounded-full px-0.5 transition-colors ${smartCard ? "bg-accent" : "bg-white/20"}`}>
+                <span className={`h-5 w-5 rounded-full bg-white shadow transition-transform ${smartCard ? "translate-x-5" : "translate-x-0"}`} />
+              </span>
+              <span className="text-[13px] font-medium text-white/85">Smart card, 10% off</span>
+            </button>
           </div>
-          <button type="submit" className="min-h-[52px] w-full rounded-xl bg-amber-400 text-lg font-extrabold text-slate-900 shadow hover:bg-amber-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-            Find Route
+
+          <button
+            type="submit"
+            className="mt-3 min-h-[52px] w-full rounded-xl bg-accent text-lg font-bold text-white transition-colors hover:bg-accent-deep"
+          >
+            Find route
           </button>
         </form>
-        {error ? <p role="alert" className="mt-2 rounded-lg bg-rose-600 px-3 py-2 text-center text-sm font-semibold">{error}</p> : null}
+
+        {error ? (
+          <p role="alert" className="mt-3 flex items-center gap-2 rounded-xl bg-rose-soft px-3 py-2.5 text-sm font-semibold text-rose">
+            <IconAlert size={18} className="shrink-0" />
+            {error}
+          </p>
+        ) : null}
       </div>
 
       {route ? <RouteResult route={route} dayType={dayType} smartCard={smartCard} /> : null}
 
-      <section aria-label="Metro status" className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <h2 className="text-base font-bold text-slate-900">Metro Status</h2>
-        <p className="mt-1 text-sm font-medium text-slate-600">⚪ Live status unavailable.</p>
-        <p className="mt-1 text-xs text-slate-500">No verified live DMRC feed is connected yet, so no service state is shown rather than guessed. Check <a className="font-medium text-sky-700 underline" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a> for official announcements.</p>
-      </section>
+      <Section label="Metro status">
+        <p className="inline-flex items-center gap-2 rounded-full bg-paper px-3 py-1.5 text-sm font-semibold text-ink-mute ring-1 ring-line-soft">
+          <span className="h-2 w-2 rounded-full bg-ink-mute/50" aria-hidden="true" />
+          Live status unavailable.
+        </p>
+        <p className="mt-2 max-w-prose text-[13px] leading-relaxed text-ink-mute">
+          No verified live DMRC feed is connected, so no service state is shown. Check <a className="font-medium text-accent underline" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a> for official announcements.
+        </p>
+      </Section>
 
-      <section aria-label="Nearby stations" className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <h2 className="text-base font-bold text-slate-900">📍 Stations Near Me</h2>
-        <button type="button" onClick={onLocate} className="mt-2 min-h-[44px] rounded-lg bg-sky-700 px-4 text-sm font-semibold text-white hover:bg-sky-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">Use my location</button>
-        {nearbyNote ? <p className="mt-2 text-sm text-slate-600" role="status">{nearbyNote}</p> : <p className="mt-2 text-sm text-slate-500">Location is optional and never required for route planning.</p>}
-        <label className="mt-3 block text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="manual-near">…or search a place / station</label>
-        <input id="manual-near" type="text" value={manualQuery} onChange={(e) => setManualQuery(e.target.value)} placeholder="Type a station name" className="mt-1 min-h-[44px] w-full rounded-lg border border-slate-300 px-3 text-base outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-200" autoComplete="off" />
-        {manualResults.length > 0 ? (
-          <ul className="mt-2 divide-y divide-slate-100">
-            {manualResults.map((st) => (
-              <li key={st.id} className="flex min-h-[44px] items-center justify-between gap-2 py-1.5">
-                <Link href={`/stations/${st.id}`} className="font-medium text-sky-800 underline-offset-2 hover:underline">{st.name}</Link>
-                <span className="flex gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </section>
+      <Section label="Stations near me">
+        <button
+          type="button"
+          onClick={onLocate}
+          className="flex min-h-[48px] items-center gap-2 rounded-xl bg-ink px-4 text-sm font-semibold text-white transition-colors hover:bg-ink-deep"
+        >
+          <IconPin size={17} />
+          Use my location
+        </button>
+        {nearbyNote
+          ? <p className="mt-2.5 max-w-prose text-sm leading-relaxed text-ink-soft" role="status">{nearbyNote}</p>
+          : <p className="mt-2.5 max-w-prose text-sm text-ink-mute">Location is optional and never required for route planning.</p>}
+        <div className="relative mt-4">
+          <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-mute" htmlFor="manual-near">Or search a station</label>
+          <div className="flex items-center gap-2.5 rounded-xl border border-line-soft bg-surface px-3">
+            <span className="shrink-0 text-ink-mute/60" aria-hidden="true"><IconSearch size={18} /></span>
+            <input
+              id="manual-near"
+              type="text"
+              value={manualQuery}
+              onChange={(e) => setManualQuery(e.target.value)}
+              placeholder="Type a station name"
+              className="min-h-[48px] w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-mute/70"
+              autoComplete="off"
+            />
+          </div>
+          {manualResults.length > 0 ? (
+            <ul className="mt-1.5 divide-y divide-line-soft/60 rounded-xl border border-line-soft bg-surface">
+              {manualResults.map((st) => (
+                <li key={st.id} className="flex min-h-[52px] items-center justify-between gap-2 px-3 py-2">
+                  <Link href={`/stations/${st.id}`} className="font-medium text-ink underline-offset-2 hover:underline">{st.name}</Link>
+                  <span className="flex shrink-0 gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </Section>
 
-      <section aria-label="Favourite stations" className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <h2 className="text-base font-bold text-slate-900">⭐ My Places</h2>
-        <ul className="mt-2 space-y-2">
-          {favorites.map((slot) => (
-            <li key={slot.label} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-              <div className="flex min-h-[40px] flex-wrap items-center gap-2">
-                <span className="w-16 text-sm font-bold text-slate-700">{slot.label}</span>
-                {slot.stationName ? (
-                  <>
-                    <span className="text-sm font-medium text-slate-900">{slot.stationName}</span>
-                    <button type="button" className="min-h-[36px] rounded bg-sky-700 px-2.5 text-xs font-semibold text-white" onClick={() => { const st = getStation(slot.stationId!); if (st) { setFrom(st); setTo(null); } }}>Set as From</button>
-                    <button type="button" className="min-h-[36px] rounded bg-slate-700 px-2.5 text-xs font-semibold text-white" onClick={() => { const st = getStation(slot.stationId!); if (st) { setTo(st); setFrom(null); } }}>Set as To</button>
-                    {from && slot.stationId !== from.id ? <button type="button" className="min-h-[36px] rounded bg-emerald-700 px-2.5 text-xs font-semibold text-white" onClick={() => planFromFavorite(slot, from, false)}>{`From ${from.name} →`}</button> : null}
-                    {to && slot.stationId !== to.id ? <button type="button" className="min-h-[36px] rounded bg-emerald-700 px-2.5 text-xs font-semibold text-white" onClick={() => planFromFavorite(slot, to, true)}>{`→ To ${to.name}`}</button> : null}
-                    <button type="button" className="min-h-[36px] rounded bg-white px-2.5 text-xs font-semibold text-rose-700 ring-1 ring-rose-200" onClick={() => { setFavPicker(slot.label); setFavQuery(""); }}>Change</button>
-                    <button type="button" aria-label={`Clear ${slot.label}`} className="min-h-[36px] rounded bg-white px-2 text-xs font-semibold text-slate-500 ring-1 ring-slate-200" onClick={() => { const next = favorites.map((x) => x.label === slot.label ? { ...x, stationId: null, stationName: null } : x); setFavorites(next); saveFavorites(next); }}>Clear</button>
-                  </>
-                ) : (
-                  <button type="button" className="min-h-[36px] rounded bg-sky-700 px-3 text-xs font-semibold text-white" onClick={() => { setFavPicker(slot.label); setFavQuery(""); }}>+ Set station</button>
-                )}
-              </div>
-              {favPicker === slot.label ? (
-                <div className="mt-2">
-                  <input aria-label={`Search station for ${slot.label}`} type="text" value={favQuery} onChange={(e) => setFavQuery(e.target.value)} placeholder="Search station…" className="min-h-[44px] w-full rounded-lg border border-slate-300 px-3 text-base outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-200" autoComplete="off" />
-                  {favResults.length > 0 ? (
-                    <ul className="mt-1 divide-y divide-slate-100 rounded-lg border border-slate-200 bg-white">
-                      {favResults.map((st) => (
-                        <li key={st.id}><button type="button" className="flex min-h-[44px] w-full items-center justify-between px-3 text-left" onClick={() => setFavoriteStation(slot.label, st)}><span className="font-medium">{st.name}</span><span className="flex gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span></button></li>
-                      ))}
-                    </ul>
-                  ) : null}
+      <Section label="My places">
+        <ul className="divide-y divide-line-soft/60">
+          {favorites.map((slot) => {
+            const FavIcon = FAV_ICONS[slot.label] ?? IconHouse;
+            return (
+              <li key={slot.label} className="py-2.5">
+                <div className="flex min-h-[44px] flex-wrap items-center gap-x-3 gap-y-1.5">
+                  <span className="flex w-24 items-center gap-1.5 text-sm font-semibold text-ink">
+                    <FavIcon size={16} className="text-ink-mute" />
+                    {slot.label}
+                  </span>
+                  {slot.stationName ? (
+                    <>
+                      <span className="text-[15px] font-medium text-ink-soft">{slot.stationName}</span>
+                      <span className="ml-auto flex flex-wrap gap-1.5">
+                        <button type="button" className="min-h-[44px] rounded-full bg-ink px-3 text-xs font-semibold text-white" onClick={() => { const st = getStation(slot.stationId!); if (st) { setFrom(st); clearStale(st, to); } }}>Set as from</button>
+                        <button type="button" className="min-h-[44px] rounded-full bg-ink px-3 text-xs font-semibold text-white" onClick={() => { const st = getStation(slot.stationId!); if (st) { setTo(st); clearStale(from, st); } }}>Set as to</button>
+                        {from && slot.stationId !== from.id ? <button type="button" className="min-h-[44px] rounded-full bg-accent px-3 text-xs font-semibold text-white" onClick={() => planFromFavorite(slot, from, false)}>{`From ${from.name}`}</button> : null}
+                        {to && slot.stationId !== to.id ? <button type="button" className="min-h-[44px] rounded-full bg-accent px-3 text-xs font-semibold text-white" onClick={() => planFromFavorite(slot, to, true)}>{`To ${to.name}`}</button> : null}
+                        <button type="button" className="min-h-[44px] rounded-full px-2.5 text-xs font-semibold text-ink-mute hover:bg-paper" onClick={() => { setFavPicker(slot.label); setFavQuery(""); }}>Change</button>
+                        <button type="button" aria-label={`Clear ${slot.label}`} className="min-h-[44px] rounded-full px-2.5 text-xs font-semibold text-ink-mute hover:bg-paper" onClick={() => { const next = favorites.map((x) => x.label === slot.label ? { ...x, stationId: null, stationName: null } : x); setFavorites(next); saveFavorites(next); }}>Clear</button>
+                      </span>
+                    </>
+                  ) : (
+                    <button type="button" className="min-h-[44px] rounded-full bg-ink px-3.5 text-xs font-semibold text-white" onClick={() => { setFavPicker(slot.label); setFavQuery(""); }}>Set station</button>
+                  )}
                 </div>
-              ) : null}
-            </li>
-          ))}
+                {favPicker === slot.label ? (
+                  <div className="mt-2 max-w-md">
+                    <input
+                      aria-label={`Search station for ${slot.label}`}
+                      type="text"
+                      value={favQuery}
+                      onChange={(e) => setFavQuery(e.target.value)}
+                      placeholder="Search station"
+                      className="min-h-[48px] w-full rounded-xl border border-line-soft bg-surface px-3 text-base text-ink outline-none placeholder:text-ink-mute/70 focus:border-ink"
+                      autoComplete="off"
+                    />
+                    {favResults.length > 0 ? (
+                      <ul className="mt-1.5 divide-y divide-line-soft/60 rounded-xl border border-line-soft bg-surface">
+                        {favResults.map((st) => (
+                          <li key={st.id}>
+                            <button type="button" className="flex min-h-[52px] w-full items-center justify-between gap-2 px-3 text-left hover:bg-paper" onClick={() => setFavoriteStation(slot.label, st)}>
+                              <span className="font-medium text-ink">{st.name}</span>
+                              <span className="flex shrink-0 gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ) : null}
+              </li>
+            );
+          })}
         </ul>
-        <p className="mt-2 text-xs text-slate-500">Saved on this device only (local storage) — no account needed.</p>
-      </section>
+        <p className="mt-2 text-[13px] text-ink-mute">Saved on this device only. No account needed.</p>
+      </Section>
 
       {recents.length > 0 ? (
-        <section aria-label="Recent journeys" className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <Section label="Recent journeys">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-slate-900">🕘 Recent Journeys</h2>
-            <button type="button" onClick={() => { clearRecents(); setRecents([]); }} className="min-h-[36px] rounded px-2 text-xs font-semibold text-rose-700 hover:bg-rose-50">Clear history</button>
+            <span className="text-[13px] text-ink-mute">{recents.length} saved</span>
+            <button type="button" onClick={() => { clearRecents(); setRecents([]); }} className="min-h-[44px] rounded-full px-3 text-[13px] font-semibold text-rose hover:bg-rose-soft">Clear history</button>
           </div>
-          <ul className="mt-2 space-y-1">
+          <ul className="divide-y divide-line-soft/60">
             {recents.map((r, i) => (
               <li key={i}>
-                <button type="button" className="flex min-h-[44px] w-full items-center justify-between rounded-lg px-2 text-left hover:bg-sky-50" onClick={() => { const f = getStation(r.fromId), t = getStation(r.toId); if (f && t) { setFrom(f); setTo(t); plan(f, t, false); } }}>
-                  <span className="text-sm font-medium text-slate-800">{r.fromName} <span aria-hidden="true">→</span> {r.toName}</span>
-                  <span aria-hidden="true" className="text-slate-400">›</span>
+                <button
+                  type="button"
+                  className="flex min-h-[52px] w-full items-center gap-2 text-left"
+                  onClick={() => { const f = getStation(r.fromId), t = getStation(r.toId); if (f && t) { setFrom(f); setTo(t); plan(f, t, false); } }}
+                >
+                  <span className="flex items-center gap-1.5 text-[15px] font-medium text-ink">{r.fromName} <span aria-hidden="true" className="inline-flex text-ink-mute"><IconArrowRight size={14} /></span> {r.toName}</span>
                 </button>
               </li>
             ))}
           </ul>
-        </section>
+        </Section>
       ) : null}
 
-      <section aria-label="Popular stations" className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <h2 className="text-base font-bold text-slate-900">Popular Stations</h2>
-        <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
+      <Section label="Popular stations">
+        <ul className="grid grid-cols-1 gap-x-6 sm:grid-cols-2">
           {popular.map((st) => (
             <li key={st.id}>
-              <Link href={`/stations/${st.id}`} className="flex min-h-[44px] items-center justify-between gap-2 rounded-lg px-2 hover:bg-sky-50">
-                <span className="font-medium text-slate-800">{st.name}{st.isInterchange ? <span className="ml-1.5 rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-semibold text-amber-800">🔄 Interchange</span> : null}</span>
+              <Link href={`/stations/${st.id}`} className="flex min-h-[52px] items-center justify-between gap-2 border-b border-line-soft/60 py-2">
+                <span className="flex items-center gap-2 font-medium text-ink">{st.name}{st.isInterchange ? <InterchangeChip /> : null}</span>
                 <span className="flex shrink-0 gap-x-2">{st.lines.map((l) => <LineBadge key={l} lineId={l} size="sm" />)}</span>
               </Link>
             </li>
           ))}
         </ul>
-      </section>
+      </Section>
     </div>
   );
 }

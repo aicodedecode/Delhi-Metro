@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getStation, getLine, stations, segments, stationById, skywalkPartners, timingsData } from "@/lib/data";
-import { LineBadge } from "@/components/LineBadge";
+import { LineBadge, InterchangeChip } from "@/components/LineBadge";
+import { IconChevronLeft, IconChevronRight } from "@/components/icons";
 
 export function generateStaticParams() {
   return stations.map((s) => ({ station: s.id }));
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ station: 
   if (!st) return { title: "Station not found" };
   const lineNames = st.lines.map((l) => getLine(l)?.name ?? l).join(", ");
   return {
-    title: `${st.name} Metro Station — Lines, Neighbours & Route Info`,
+    title: `${st.name} Metro Station`,
     description: `${st.name} Delhi Metro station on the ${lineNames}. ${st.isInterchange ? "Interchange station. " : ""}Neighbours, connecting lines and journey planning.`,
     alternates: { canonical: `/stations/${st.id}` },
     openGraph: { title: `${st.name} Metro Station`, description: `${st.name} on the ${lineNames}. Plan routes to and from this station.`, url: `/stations/${st.id}` },
@@ -49,61 +50,69 @@ export default async function StationPage({ params }: { params: Promise<{ statio
   return (
     <article>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <nav aria-label="Breadcrumb" className="text-xs text-slate-500">
-        <Link href="/stations" className="underline">Stations</Link> <span aria-hidden="true">›</span> {st.name}
+      <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-[13px] text-ink-mute">
+        <Link href="/stations" className="underline underline-offset-2">Stations</Link>
+        <span aria-hidden="true"><IconChevronRight size={13} /></span>
+        <span aria-current="page" className="font-medium text-ink-soft">{st.name}</span>
       </nav>
-      <h1 className="mt-1 text-2xl font-extrabold text-slate-900">{st.name}</h1>
-      <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+
+      <h1 className="mt-1.5 font-display text-[30px] leading-tight tracking-tight text-ink">{st.name}</h1>
+      <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
         {st.lines.map((l) => <LineBadge key={l} lineId={l} />)}
-        {st.isInterchange ? <span className="rounded bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800">🔄 Interchange station</span> : <span className="text-xs font-medium text-slate-500">Regular station</span>}
+        {st.isInterchange ? <InterchangeChip label="Interchange station" /> : null}
       </p>
 
-      <dl className="mt-4 space-y-3">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Station code</dt>
-          <dd className="mt-0.5 text-sm text-slate-700">{st.code ?? "Station code not published — verify with DMRC"}</dd>
+      <div className="mt-6 divide-y divide-line-soft/70 border-y border-line-soft">
+        <div className="py-3.5">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Station code</h2>
+          <p className="mt-1 text-[15px] text-ink-soft">{st.code ?? "Station code not published. Verify with DMRC."}</p>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Lines &amp; neighbouring stations</dt>
-          <dd className="mt-1 space-y-2">
+        <div className="py-3.5">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Lines and neighbouring stations</h2>
+          <div className="mt-2 space-y-3">
             {st.lines.map((l) => {
               const line = getLine(l); const nb = neighbours(st.id, l);
               return (
-                <div key={l} className="text-sm text-slate-700">
-                  <LineBadge lineId={l} />{" "}
-                  <span className="text-slate-500">(towards {line?.terminals.join(" / ")})</span>
-                  <div className="mt-0.5 pl-5 text-slate-600">
-                    {nb.prev ? <>← <Link className="text-sky-700 underline" href={`/stations/${nb.prev}`}>{stationById.get(nb.prev)?.name}</Link></> : <span>Terminus this side</span>}
-                    {"  ·  "}
-                    {nb.next ? <><Link className="text-sky-700 underline" href={`/stations/${nb.next}`}>{stationById.get(nb.next)?.name}</Link> →</> : <span>Terminus this side</span>}
-                  </div>
+                <div key={l} className="text-[15px] text-ink-soft">
+                  <LineBadge lineId={l} />
+                  <p className="mt-1 flex flex-wrap items-center gap-x-2 text-ink-soft">
+                    {nb.prev
+                      ? <span className="inline-flex items-center gap-1"><span aria-hidden="true" className="inline-flex"><IconChevronLeft size={14} /></span> <Link className="text-accent underline underline-offset-2" href={`/stations/${nb.prev}`}>{stationById.get(nb.prev)?.name}</Link></span>
+                      : <span className="text-ink-mute">Terminus this side</span>}
+                    <span aria-hidden="true" className="text-ink-mute/50">·</span>
+                    {nb.next
+                      ? <span className="inline-flex items-center gap-1"><Link className="text-accent underline underline-offset-2" href={`/stations/${nb.next}`}>{stationById.get(nb.next)?.name}</Link> <span aria-hidden="true" className="inline-flex"><IconChevronRight size={14} /></span></span>
+                      : <span className="text-ink-mute">Terminus this side</span>}
+                  </p>
                 </div>
               );
             })}
             {partners.map((p) => (
-              <p key={p} className="text-sm text-slate-700">↔ Skywalk connection to <Link className="text-sky-700 underline" href={`/stations/${p}`}>{stationById.get(p)?.name}</Link> (paid-area footbridge)</p>
+              <p key={p} className="text-[15px] text-ink-soft">Skywalk connection to <Link className="text-accent underline underline-offset-2" href={`/stations/${p}`}>{stationById.get(p)?.name}</Link> (paid-area footbridge)</p>
             ))}
-          </dd>
+          </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Train timings</dt>
-          <dd className="mt-0.5 text-sm leading-relaxed text-slate-700">
-            General network hours: approx. {timingsData.generalOperatingHours.firstTrainApprox}–{timingsData.generalOperatingHours.lastTrainApprox}.<br />
-            <span className="font-medium text-amber-700">First/last train times: verify with DMRC</span> — per-station times are not published here because they could not be verified.
-          </dd>
+        <div className="py-3.5">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Train timings</h2>
+          <p className="mt-1 max-w-prose text-[15px] leading-relaxed text-ink-soft">
+            General network hours: approx. {timingsData.generalOperatingHours.firstTrainApprox} to {timingsData.generalOperatingHours.lastTrainApprox}.
+            First and last train times: verify with DMRC. Per-station times are not published here because they could not be verified.
+          </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Facilities · parking · feeder buses · accessibility</dt>
-          <dd className="mt-0.5 text-sm text-slate-700">Information not verified — please check at the station or on <a className="font-medium text-sky-700 underline" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a>. Nothing is listed here rather than guessed.</dd>
+        <div className="py-3.5">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Facilities, parking, feeder buses, accessibility</h2>
+          <p className="mt-1 max-w-prose text-[15px] leading-relaxed text-ink-soft">
+            Not verified. Check at the station or on <a className="font-medium text-accent underline underline-offset-2" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a> rather than relying on a guess.
+          </p>
         </div>
-      </dl>
+      </div>
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        <Link href={`/route?from=${st.id}`} className="flex min-h-[48px] items-center rounded-xl bg-[#0b2a5b] px-4 text-sm font-bold text-white hover:bg-[#123a7d]">Plan a journey from here →</Link>
-        <Link href={`/route?to=${st.id}`} className="flex min-h-[48px] items-center rounded-xl bg-white px-4 text-sm font-bold text-[#0b2a5b] ring-1 ring-slate-300 hover:bg-slate-50">Plan a journey to here →</Link>
+      <div className="mt-5 flex flex-wrap gap-2.5">
+        <Link href={`/route?from=${st.id}`} className="flex min-h-[48px] items-center rounded-xl bg-ink px-4 text-sm font-semibold text-white transition-colors hover:bg-ink-deep">Plan a journey from here</Link>
+        <Link href={`/route?to=${st.id}`} className="flex min-h-[48px] items-center rounded-xl border border-line-soft bg-surface px-4 text-sm font-semibold text-ink">Plan a journey to here</Link>
       </div>
     </article>
   );
