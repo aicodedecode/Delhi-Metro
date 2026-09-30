@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "asOf": "2026-10-01",
+    "interchangeCount": 26,
+    "branchForkCount": 3,
+    "note": "interchangeCount counts multi-line stations only; branch forks and the Dhaula Kuan skywalk pair are listed separately by type."
+  },
+  "interchanges": [
+    {
+      "stationId": "anand-vihar",
+      "stationName": "Anand Vihar",
+      "lines": [
+        "blue",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "ashok-park-main",
+      "stationName": "Ashok Park Main",
+      "lines": [
+        "green"
+      ],
+      "type": "branch-fork",
+      "note": "Same-line branch fork; change trains here for the branch"
+    },
+    {
+      "stationId": "azadpur",
+      "stationName": "Azadpur",
+      "lines": [
+        "yellow",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "botanical-garden",
+      "stationName": "Botanical Garden",
+      "lines": [
+        "blue",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "central-secretariat",
+      "stationName": "Central Secretariat",
+      "lines": [
+        "yellow",
+        "violet"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "dilli-haat-ina",
+      "stationName": "Dilli Haat-INA",
+      "lines": [
+        "yellow",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "dwarka-kakrola",
+      "stationName": "Dwarka-Kakrola",
+      "lines": [
+        "blue",
+        "grey"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "dwarka-sector-21",
+      "stationName": "Dwarka Sector 21",
+      "lines": [
+        "blue",
+        "airport-express"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "haiderpur-badli-mor",
+      "stationName": "Haiderpur Badli Mor",
+      "lines": [
+        "yellow",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "hauz-khas",
+      "stationName": "Hauz Khas",
+      "lines": [
+        "yellow",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "inderlok",
+      "stationName": "Inderlok",
+      "lines": [
+        "red",
+        "green"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "janakpuri-west",
+      "stationName": "Janakpuri West",
+      "lines": [
+        "blue",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "kalkaji-mandir",
+      "stationName": "Kalkaji Mandir",
+      "lines": [
+        "violet",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "karkarduma",
+      "stationName": "Karkarduma",
+      "lines": [
+        "blue",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "kashmere-gate",
+      "stationName": "Kashmere Gate",
+      "lines": [
+        "red",
+        "yellow",
+        "violet"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "kirti-nagar",
+      "stationName": "Kirti Nagar",
+      "lines": [
+        "blue",
+        "green"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "lajpat-nagar",
+      "stationName": "Lajpat Nagar",
+      "lines": [
+        "violet",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "madhuban-chowk",
+      "stationName": "Madhuban Chowk",
+      "lines": [
+        "red",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "majlis-park",
+      "stationName": "Majlis Park",
+      "lines": [
+        "pink",
+        "magenta"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "mandi-house",
+      "stationName": "Mandi House",
+      "lines": [
+        "blue",
+        "violet"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "maujpur-babarpur",
+      "stationName": "Maujpur-Babarpur",
+      "lines": [
+        "pink"
+      ],
+      "type": "branch-fork",
+      "note": "Same-line branch fork; change trains here for the branch"
+    },
+    {
+      "stationId": "mayur-vihar-i",
+      "stationName": "Mayur Vihar-I",
+      "lines": [
+        "blue",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "netaji-subhash-place",
+      "stationName": "Netaji Subhash Place",
+      "lines": [
+        "red",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "new-delhi",
+      "stationName": "New Delhi",
+      "lines": [
+        "yellow",
+        "airport-express"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "punjabi-bagh-west",
+      "stationName": "Punjabi Bagh West",
+      "lines": [
+        "green",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "rajiv-chowk",
+      "stationName": "Rajiv Chowk",
+      "lines": [
+        "yellow",
+        "blue"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "rajouri-garden",
+      "stationName": "Rajouri Garden",
+      "lines": [
+        "blue",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "welcome",
+      "stationName": "Welcome",
+      "lines": [
+        "red",
+        "pink"
+      ],
+      "type": "interchange"
+    },
+    {
+      "stationId": "yamuna-bank",
+      "stationName": "Yamuna Bank",
+      "lines": [
+        "blue"
+      ],
+      "type": "branch-fork",
+      "note": "Same-line branch fork; change trains here for the branch"
+    },
+    {
+      "stationId": "dhaula-kuan",
+      "stationName": "Dhaula Kuan <-> Durgabai Deshmukh South Campus",
+      "lines": [
+        "airport-express",
+        "pink"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "dhaula-kuan",
+        "durgabai-deshmukh-south-campus"
+      ],
+      "note": "Paid-area skywalk/foot-over-bridge connection between Airport Express (Dhaula Kuan) and Pink Line (Durgabai Deshmukh South Campus); stations keep separate ids in stations.json"
+    }
+  ]
+}

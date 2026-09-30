@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "asOf": "2026-10-01",
+    "effectiveDate": "2025-08-25",
+    "currency": "INR",
+    "verified": true,
+    "sources": [
+      "https://www.livemint.com/news/delhi-metro-fare-increases-longest-distance-tavel-will-cost-rs-64-check-new-slabs-here-11756086824235.html",
+      "https://www.business-standard.com/india-news/delhi-metro-fare-fares-revised-today-blue-red-yellow-airport-line-125082500111_1.html",
+      "https://timesofindia.indiatimes.com/city/delhi/delhi-metro-announces-first-fare-hike-since-2017-minimum-ticket-now-rs-11-maximum-rs-64-airport-express-fares-up-by-rs-5/articleshow/123492444.cms",
+      "https://economictimes.indiatimes.com/news/india/delhi-metro-fare-hike-2025-dmrc-increase-ticket-price-check-all-new-prices-list/articleshow/123492210.cms",
+      "https://www.cnbctv18.com/india/delhi-metro-fare-hike-from-august-25-ticket-prices-up-by-rs-1-4-airport-express-by-rs-5-dmrc-19658556.htm"
+    ]
+  },
+  "regularLines": {
+    "basis": "distance travelled (shortest route km)",
+    "slabs": [
+      {
+        "minKm": 0,
+        "maxKm": 2,
+        "fareWeekday": 11,
+        "fareSunday": 11
+      },
+      {
+        "minKm": 2,
+        "maxKm": 5,
+        "fareWeekday": 21,
+        "fareSunday": 11
+      },
+      {
+        "minKm": 5,
+        "maxKm": 12,
+        "fareWeekday": 32,
+        "fareSunday": 21
+      },
+      {
+        "minKm": 12,
+        "maxKm": 21,
+        "fareWeekday": 43,
+        "fareSunday": 32
+      },
+      {
+        "minKm": 21,
+        "maxKm": 32,
+        "fareWeekday": 54,
+        "fareSunday": 43
+      },
+      {
+        "minKm": 32,
+        "maxKm": null,
+        "fareWeekday": 64,
+        "fareSunday": 54
+      }
+    ]
+  },
+  "airportExpress": {
+    "note": "Airport Express has its own distance-based fare structure (hike of Re 1 to Rs 5 from 25 Aug 2025). Verified anchor fares ex-New Delhi (Business Standard quoting DMRC website): Shivaji Stadium Rs 21, Dhaula Kuan Rs 43, IGI Airport Rs 64, Yashobhoomi Dwarka Sector-25 Rs 75 (line maximum). Line fare range Rs 11-75. A complete station-to-station Airport Express fare matrix was NOT reliably available in this pass - mark per-pair Airport Express fares UNVERIFIED except the anchors listed.",
+    "rangeInr": [
+      11,
+      75
+    ],
+    "anchorsFromNewDelhi": {
+      "shivaji-stadium": 21,
+      "dhaula-kuan": 43,
+      "igi-airport": 64,
+      "yashobhoomi-dwarka-sector-25": 75
+    }
+  },
+  "smartCard": {
+    "discountPercent": 10,
+    "note": "10% discount on every journey with Delhi Metro smart card; additional 10% discount during off-peak hours (before 8 AM, 12 PM-5 PM, after 9 PM) per DMRC announcement reported by Economic Times/PTI.",
+    "offPeakWindows": [
+      "before 08:00",
+      "12:00-17:00",
+      "after 21:00"
+    ]
+  },
+  "fallbackMessage": "Fare information unavailable - please verify with DMRC."
+}

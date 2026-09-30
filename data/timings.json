@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "asOf": "2026-10-01",
+    "verifiedLevel": "PARTIAL",
+    "note": "General network operating hours are widely reported; exact per-station first/last trains were NOT verified against an official DMRC timetable in this pass."
+  },
+  "generalOperatingHours": {
+    "firstTrainApprox": "05:30",
+    "lastTrainApprox": "23:30",
+    "note": "Most lines operate approx. 05:30-23:30. Individual lines/stations vary; some first trains run earlier/later and Sunday first trains often start later."
+  },
+  "airportExpress": {
+    "firstTrainApprox": "04:45-05:00",
+    "lastTrainApprox": "23:15-23:40 (direction-dependent)",
+    "frequency": "10 min peak / 15 min off-peak",
+    "note": "Sources differ: secondary sources cite 04:45 first train; the Airport Express line page (fetched 2026-10-01) says services operate 5:00 am to 11:40 pm from New Delhi as of 2024. Treat exact times as UNVERIFIED - verify with DMRC."
+  },
+  "firstLastPerStation": "UNVERIFIED",
+  "firstLastPerStationNote": "Per-station first/last train times: verify with DMRC (delhimetrorail.com / DMRC app) before displaying to users. Do not fabricate station-level timings.",
+  "fallbackMessage": "Live metro status is currently unavailable."
+}

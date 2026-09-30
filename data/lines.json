@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "asOf": "2026-10-01",
+    "network": "Delhi Metro operational network",
+    "lineCorridors": 9,
+    "note": "Blue counted as one corridor with Line 3 (main) + Line 4 (branch). Magenta has two disconnected operational segments."
+  },
+  "lines": [
+    {
+      "id": "red",
+      "name": "Red Line",
+      "number": "1",
+      "color": "#ED1C24",
+      "colorName": "Red",
+      "terminals": [
+        "Shaheed Sthal (New Bus Adda)",
+        "Rithala"
+      ],
+      "lengthKm": 34.55,
+      "stationCount": 29,
+      "segments": [
+        "red"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow Line",
+      "number": "2",
+      "color": "#FDB913",
+      "colorName": "Yellow",
+      "terminals": [
+        "Samaypur Badli",
+        "Millennium City Centre Gurugram"
+      ],
+      "lengthKm": 49.02,
+      "stationCount": 37,
+      "segments": [
+        "yellow"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    },
+    {
+      "id": "blue",
+      "name": "Blue Line",
+      "number": "3/4",
+      "color": "#0051AD",
+      "colorName": "Blue",
+      "terminals": [
+        "Noida Electronic City",
+        "Dwarka Sector 21",
+        "Vaishali",
+        "Yamuna Bank"
+      ],
+      "lengthKm": 64.62,
+      "stationCount": 58,
+      "stationCountNote": "58 line-station incidences (50 main + 8 branch incl. Yamuna Bank counted twice); 57 unique stations",
+      "segments": [
+        "blueMain",
+        "blueBranch"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    },
+    {
+      "id": "green",
+      "name": "Green Line",
+      "number": "5",
+      "color": "#00A650",
+      "colorName": "Green",
+      "terminals": [
+        "Inderlok",
+        "Brigadier Hoshiyar Singh",
+        "Ashok Park Main",
+        "Kirti Nagar"
+      ],
+      "lengthKm": 28.78,
+      "stationCount": 25,
+      "stationCountNote": "25 line-station incidences (22 main + 3 branch incl. Ashok Park Main counted twice); 24 unique stations",
+      "segments": [
+        "greenMain",
+        "greenBranch"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    },
+    {
+      "id": "violet",
+      "name": "Violet Line",
+      "number": "6",
+      "color": "#764B9E",
+      "colorName": "Violet",
+      "terminals": [
+        "Kashmere Gate",
+        "Raja Nahar Singh"
+      ],
+      "lengthKm": 46.34,
+      "stationCount": 34,
+      "segments": [
+        "violet"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    },
+    {
+      "id": "airport-express",
+      "name": "Airport Express Line (Orange Line)",
+      "number": null,
+      "color": "#F68920",
+      "colorName": "Orange",
+      "terminals": [
+        "New Delhi",
+        "Yashobhoomi Dwarka Sector-25"
+      ],
+      "lengthKm": 22.7,
+      "stationCount": 7,
+      "segments": [
+        "airportExpress"
+      ],
+      "operatingHours": "Airport Express runs earlier/later than regular lines; sources differ (first train approx. 04:45-05:00, last up to 23:40 from New Delhi) - verify with DMRC"
+    },
+    {
+      "id": "pink",
+      "name": "Pink Line",
+      "number": "7",
+      "color": "#ED6BA7",
+      "colorName": "Pink",
+      "terminals": [
+        "Maujpur-Babarpur (ring)",
+        "Shiv Vihar"
+      ],
+      "lengthKm": 73.49,
+      "stationCount": 46,
+      "stationCountNote": "46 line-station incidences (42 ring operational - Soorghat built but NOT opened, trains bypass - plus 4 branch incl. Maujpur-Babarpur counted twice); 45 unique stations",
+      "segments": [
+        "pinkCircular",
+        "pinkBranch"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    },
+    {
+      "id": "magenta",
+      "name": "Magenta Line",
+      "number": "8",
+      "color": "#A00D71",
+      "colorName": "Magenta",
+      "terminals": [
+        "Krishna Park Extension",
+        "Botanical Garden",
+        "Deepali Chowk",
+        "Majlis Park"
+      ],
+      "lengthKm": 50.18,
+      "stationCount": 33,
+      "segments": [
+        "magentaSouth",
+        "magentaNorth"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "note": "Two DISCONNECTED operational segments as of Oct 2026: Krishna Park Extension-Botanical Garden and Deepali Chowk-Majlis Park. The connecting Krishna Park Extension-Deepali Chowk section is under construction; do NOT route through the gap."
+    },
+    {
+      "id": "grey",
+      "name": "Grey Line",
+      "number": "9",
+      "color": "#808080",
+      "colorName": "Grey",
+      "terminals": [
+        "Dwarka-Kakrola",
+        "Dhansa Bus Stand"
+      ],
+      "lengthKm": 5.19,
+      "stationCount": 4,
+      "segments": [
+        "grey"
+      ],
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+    }
+  ]
+}
