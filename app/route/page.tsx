@@ -1,12 +1,14 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import RoutePlannerClient from "./RoutePlannerClient";
+import { ogBase } from "@/lib/seo";
 import { IconSpinner } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Route Result",
-  description: "Step-by-step Delhi Metro route with interchanges, estimated time and approx. fare.",
+  title: "Route planner",
+  description: "Step-by-step metro route across the Delhi NCR network (Delhi Metro, Aqua Line, Namo Bharat, Meerut Metro, Rapid Metro) with changes, estimated time and fare where published.",
   alternates: { canonical: "/route" },
+  openGraph: { ...ogBase, title: "Route planner", description: "Step-by-step route with changes, estimated time and fare where published.", url: "/route" },
 };
 
 export default function RoutePage() {

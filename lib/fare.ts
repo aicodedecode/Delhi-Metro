@@ -1,4 +1,4 @@
-import { faresData, stationById } from "./data";
+import { faresData, lineById, stationById } from "./data";
 import type { DayType, FareResult } from "@/types";
 
 export const FARE_FALLBACK = "Fare information unavailable — please verify with DMRC.";
@@ -25,6 +25,8 @@ function applySmartCard(amount: number | null): number | null {
 export interface FareInput {
   fromId: string; toId: string; approxDistanceKm: number;
   usesAirportExpress: boolean; dayType?: DayType; smartCard?: boolean;
+  /** Line ids used by the route. DMRC slabs apply only to DMRC-only routes. */
+  lineIds?: string[];
 }
 
 /**
@@ -36,6 +38,21 @@ export interface FareInput {
 export function calculateFare(input: FareInput): FareResult {
   const dayType: DayType = input.dayType ?? "weekday";
   const smartCard = Boolean(input.smartCard);
+
+  // Operator gate: the DMRC slabs in data/fares.json cover DMRC lines only.
+  // Any route touching the Aqua Line (NMRC), the Namo Bharat or Meerut Metro
+  // (NCRTC) or Rapid Metro returns no fare: no official slab table is held for
+  // those operators, so nothing is fabricated.
+  const touchesOtherOperator = (input.lineIds ?? []).some((id) => {
+    const op = lineById.get(id)?.operator;
+    return op !== undefined && op !== "DMRC";
+  });
+  if (touchesOtherOperator) {
+    return {
+      amount: null, type: "unavailable", note: "Fare information could not be retrieved.",
+      dayType, smartCardApplied: smartCard, smartCardAmount: null,
+    };
+  }
 
   if (input.usesAirportExpress) {
     const anchors = faresData.airportExpress.anchorsFromNewDelhi;

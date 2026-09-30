@@ -3,8 +3,11 @@
     "asOf": "2026-10-01",
     "note": "Ordered station ids in travel order per segment. pinkCircular starts at Maujpur-Babarpur and loops back to it (ring). magentaSouth and magentaNorth are disconnected segments.",
     "excludedNotOperational": [
-      "soorghat (Pink Line - built, not opened, trains bypass)"
-    ]
+      "soorghat (Pink Line - built, not opened, trains bypass)",
+      "jangpura (Namo Bharat - under construction)",
+      "modipuram-depot (beyond Modipuram - depot, not a passenger station)"
+    ],
+    "scope": "DMRC 9 corridors + NMRC Aqua Line + NCRTC Namo Bharat and Meerut Metro + Rapid Metro Gurugram. Cross-operator links (Noida Sector 51-52, Sarai Kale Khan, New Ashok Nagar, Anand Vihar, Ghaziabad-Shaheed Sthal, Sikanderpur) are walk transfers in interchanges.json. Rapid Metro northern section is a single-track loop; stations are listed in service order Sector 55-56 to Phase 3."
   },
   "segments": {
     "red": {
@@ -343,6 +346,85 @@
         "nangli",
         "najafgarh",
         "dhansa-bus-stand"
+      ]
+    },
+    "aqua": {
+      "line": "aqua",
+      "stations": [
+        "noida-sector-51",
+        "noida-sector-50",
+        "noida-sector-76",
+        "noida-sector-101",
+        "noida-sector-81",
+        "nsez",
+        "noida-sector-83",
+        "noida-sector-137",
+        "noida-sector-142",
+        "noida-sector-143",
+        "noida-sector-144",
+        "noida-sector-145",
+        "noida-sector-146",
+        "noida-sector-147",
+        "noida-sector-148",
+        "knowledge-park-ii",
+        "pari-chowk",
+        "alpha-1",
+        "delta-1",
+        "gnida-office",
+        "depot"
+      ]
+    },
+    "namoBharat": {
+      "line": "namo-bharat",
+      "stations": [
+        "sarai-kale-khan-rrts",
+        "new-ashok-nagar-rrts",
+        "anand-vihar-rrts",
+        "sahibabad",
+        "ghaziabad-rrts",
+        "guldhar",
+        "duhai",
+        "duhai-depot",
+        "muradnagar",
+        "modinagar-south",
+        "modinagar-north",
+        "meerut-south",
+        "shatabdi-nagar",
+        "begumpul",
+        "modipuram"
+      ]
+    },
+    "meerutMetro": {
+      "line": "meerut-metro",
+      "stations": [
+        "meerut-south",
+        "partapur",
+        "rithani",
+        "shatabdi-nagar",
+        "brahmpuri",
+        "meerut-central",
+        "bhaisali",
+        "begumpul",
+        "mes-colony",
+        "daurli",
+        "meerut-north",
+        "modipuram"
+      ]
+    },
+    "rapidMetro": {
+      "line": "rapid-metro",
+      "stations": [
+        "sector-55-56",
+        "sector-54-chowk",
+        "sector-53-54",
+        "sector-42-43",
+        "phase-1",
+        "sikanderpur-rapid",
+        "phase-2",
+        "belvedere-towers",
+        "cyber-city",
+        "moulsari-avenue",
+        "phase-3"
       ]
     }
   }

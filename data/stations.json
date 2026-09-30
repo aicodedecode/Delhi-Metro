@@ -1,7 +1,7 @@
 {
   "meta": {
     "asOf": "2026-10-01",
-    "uniqueStationCount": 243,
+    "uniqueStationCount": 298,
     "note": "code/lat/lng are null: no reliably verified public source was available in this research pass (see sources.md). Do not fabricate."
   },
   "stations": [
@@ -3051,6 +3051,818 @@
       "aliases": [
         "Dwarka Sector 25",
         "Yashobhoomi Dwarka Sector - 25"
+      ]
+    },
+    {
+      "id": "noida-sector-51",
+      "name": "Sector 51",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 51",
+        "Noida Sector 51"
+      ]
+    },
+    {
+      "id": "noida-sector-50",
+      "name": "Sector 50",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 50",
+        "Noida Sector 50"
+      ]
+    },
+    {
+      "id": "noida-sector-76",
+      "name": "Sector 76",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 76",
+        "Noida Sector 76"
+      ]
+    },
+    {
+      "id": "noida-sector-101",
+      "name": "Sector 101",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 101",
+        "Noida Sector 101"
+      ]
+    },
+    {
+      "id": "noida-sector-81",
+      "name": "Sector 81",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 81",
+        "Noida Sector 81"
+      ]
+    },
+    {
+      "id": "nsez",
+      "name": "NSEZ",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "NSEZ",
+        "N.S.E.Z.",
+        "Noida Special Economic Zone"
+      ]
+    },
+    {
+      "id": "noida-sector-83",
+      "name": "Sector 83",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 83",
+        "Noida Sector 83"
+      ]
+    },
+    {
+      "id": "noida-sector-137",
+      "name": "Sector 137",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 137",
+        "Noida Sector 137"
+      ]
+    },
+    {
+      "id": "noida-sector-142",
+      "name": "Sector 142",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 142",
+        "Noida Sector 142"
+      ]
+    },
+    {
+      "id": "noida-sector-143",
+      "name": "Sector 143",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 143",
+        "Noida Sector 143"
+      ]
+    },
+    {
+      "id": "noida-sector-144",
+      "name": "Sector 144",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 144",
+        "Noida Sector 144"
+      ]
+    },
+    {
+      "id": "noida-sector-145",
+      "name": "Sector 145",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 145",
+        "Noida Sector 145"
+      ]
+    },
+    {
+      "id": "noida-sector-146",
+      "name": "Sector 146",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 146",
+        "Noida Sector 146"
+      ]
+    },
+    {
+      "id": "noida-sector-147",
+      "name": "Sector 147",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 147",
+        "Noida Sector 147"
+      ]
+    },
+    {
+      "id": "noida-sector-148",
+      "name": "Sector 148",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 148",
+        "Noida Sector 148"
+      ]
+    },
+    {
+      "id": "knowledge-park-ii",
+      "name": "Knowledge Park II",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Knowledge Park II",
+        "Knowledge Park 2"
+      ]
+    },
+    {
+      "id": "pari-chowk",
+      "name": "Pari Chowk",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Pari Chowk"
+      ]
+    },
+    {
+      "id": "alpha-1",
+      "name": "Alpha 1",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Alpha 1",
+        "Alpha I"
+      ]
+    },
+    {
+      "id": "delta-1",
+      "name": "Delta 1",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Delta 1",
+        "Delta I"
+      ]
+    },
+    {
+      "id": "gnida-office",
+      "name": "GNIDA Office",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "GNIDA Office",
+        "GNIDA"
+      ]
+    },
+    {
+      "id": "depot",
+      "name": "Depot",
+      "code": null,
+      "lines": [
+        "aqua"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Depot",
+        "Depot Station",
+        "Noida Depot"
+      ]
+    },
+    {
+      "id": "sarai-kale-khan-rrts",
+      "name": "Sarai Kale Khan",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sarai Kale Khan",
+        "Sarai Kale Khan RRTS"
+      ]
+    },
+    {
+      "id": "new-ashok-nagar-rrts",
+      "name": "New Ashok Nagar",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "New Ashok Nagar",
+        "New Ashok Nagar RRTS"
+      ]
+    },
+    {
+      "id": "anand-vihar-rrts",
+      "name": "Anand Vihar",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Anand Vihar",
+        "Anand Vihar RRTS"
+      ]
+    },
+    {
+      "id": "sahibabad",
+      "name": "Sahibabad",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sahibabad"
+      ]
+    },
+    {
+      "id": "ghaziabad-rrts",
+      "name": "Ghaziabad",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Ghaziabad",
+        "Ghaziabad RRTS"
+      ]
+    },
+    {
+      "id": "guldhar",
+      "name": "Guldhar",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Guldhar"
+      ]
+    },
+    {
+      "id": "duhai",
+      "name": "Duhai",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Duhai"
+      ]
+    },
+    {
+      "id": "duhai-depot",
+      "name": "Duhai Depot",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Duhai Depot"
+      ]
+    },
+    {
+      "id": "muradnagar",
+      "name": "Muradnagar",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Muradnagar",
+        "Murad Nagar"
+      ]
+    },
+    {
+      "id": "modinagar-south",
+      "name": "Modinagar South",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Modinagar South"
+      ]
+    },
+    {
+      "id": "modinagar-north",
+      "name": "Modinagar North",
+      "code": null,
+      "lines": [
+        "namo-bharat"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Modinagar North"
+      ]
+    },
+    {
+      "id": "partapur",
+      "name": "Partapur",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Partapur"
+      ]
+    },
+    {
+      "id": "rithani",
+      "name": "Rithani",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Rithani"
+      ]
+    },
+    {
+      "id": "brahmpuri",
+      "name": "Brahmpuri",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Brahmpuri",
+        "Brahampuri"
+      ]
+    },
+    {
+      "id": "meerut-central",
+      "name": "Meerut Central",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Meerut Central"
+      ]
+    },
+    {
+      "id": "bhaisali",
+      "name": "Bhaisali",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Bhaisali",
+        "Bhainsali"
+      ]
+    },
+    {
+      "id": "mes-colony",
+      "name": "MES Colony",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "MES Colony"
+      ]
+    },
+    {
+      "id": "daurli",
+      "name": "Daurli",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Daurli"
+      ]
+    },
+    {
+      "id": "meerut-north",
+      "name": "Meerut North",
+      "code": null,
+      "lines": [
+        "meerut-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Meerut North"
+      ]
+    },
+    {
+      "id": "meerut-south",
+      "name": "Meerut South",
+      "code": null,
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "isInterchange": true,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Meerut South"
+      ]
+    },
+    {
+      "id": "shatabdi-nagar",
+      "name": "Shatabdi Nagar",
+      "code": null,
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "isInterchange": true,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Shatabdi Nagar"
+      ]
+    },
+    {
+      "id": "begumpul",
+      "name": "Begumpul",
+      "code": null,
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "isInterchange": true,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Begumpul"
+      ]
+    },
+    {
+      "id": "modipuram",
+      "name": "Modipuram",
+      "code": null,
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "isInterchange": true,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Modipuram"
+      ]
+    },
+    {
+      "id": "sector-55-56",
+      "name": "Sector 55-56",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 55-56",
+        "Gurugram Sector 55-56"
+      ]
+    },
+    {
+      "id": "sector-54-chowk",
+      "name": "Sector 54 Chowk",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 54 Chowk",
+        "Gurugram Sector 54 Chowk"
+      ]
+    },
+    {
+      "id": "sector-53-54",
+      "name": "Sector 53-54",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 53-54",
+        "Gurugram Sector 53-54"
+      ]
+    },
+    {
+      "id": "sector-42-43",
+      "name": "Sector 42-43",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sector 42-43",
+        "Gurugram Sector 42-43"
+      ]
+    },
+    {
+      "id": "phase-1",
+      "name": "Phase 1",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Phase 1",
+        "DLF Phase 1"
+      ]
+    },
+    {
+      "id": "sikanderpur-rapid",
+      "name": "Sikanderpur",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Sikanderpur",
+        "Sikanderpur Rapid Metro"
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Phase 2",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Phase 2",
+        "DLF Phase 2"
+      ]
+    },
+    {
+      "id": "belvedere-towers",
+      "name": "Belvedere Towers",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Belvedere Towers"
+      ]
+    },
+    {
+      "id": "cyber-city",
+      "name": "Cyber City",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Cyber City",
+        "Cyber City Gurugram"
+      ]
+    },
+    {
+      "id": "moulsari-avenue",
+      "name": "Moulsari Avenue",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Moulsari Avenue"
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Phase 3",
+      "code": null,
+      "lines": [
+        "rapid-metro"
+      ],
+      "isInterchange": false,
+      "lat": null,
+      "lng": null,
+      "aliases": [
+        "Phase 3",
+        "DLF Phase 3"
       ]
     }
   ]

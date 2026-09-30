@@ -2,8 +2,8 @@
 import { useEffect, useId, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Station, RouteResultData } from "@/types";
-import { getStation } from "@/lib/data";
-import { findRoute } from "@/lib/router";
+import { getStation, lines, stations } from "@/lib/data";
+import { findRoute, type RoutePreference } from "@/lib/router";
 import { searchStations } from "@/lib/search";
 import StationPicker from "@/components/StationPicker";
 import RouteResult from "@/components/RouteResult";
@@ -30,13 +30,22 @@ function Section({ label, children, className = "" }: { label: string; children:
   );
 }
 
-export default function JourneyPlanner({ initialFromId, initialToId, headingLevel = "h1" }: { initialFromId?: string; initialToId?: string; headingLevel?: "h1" | "p" }) {
+/** One-line summary shown on each route-preference option. */
+function optionSummary(r: RouteResultData): string {
+  const fare = r.fare.amount !== null ? ` · ₹${r.fare.amount}` : "";
+  return `${r.estimatedMinutes} min · ${r.interchanges} change${r.interchanges === 1 ? "" : "s"} · ${r.totalStations} stations${fare}`;
+}
+
+export default function JourneyPlanner({ initialFromId, initialToId, initialPreference, headingLevel = "h1" }: { initialFromId?: string; initialToId?: string; initialPreference?: RoutePreference; headingLevel?: "h1" | "p" }) {
   const [from, setFrom] = useState<Station | null>(null);
   const [to, setTo] = useState<Station | null>(null);
   const [dayType, setDayType] = useState<"weekday" | "sunday">("weekday");
   const [smartCard, setSmartCard] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [route, setRoute] = useState<RouteResultData | null>(null);
+  // Both route options for the planned pair. When they follow the same path
+  // there is effectively one option and no toggle is shown.
+  const [options, setOptions] = useState<{ fastest: RouteResultData; fewest: RouteResultData; same: boolean } | null>(null);
+  const [preference, setPreference] = useState<RoutePreference>(initialPreference ?? "fastest");
   // The station pair that produced the visible route. Day/smart-card toggles only
   // auto-replan when the inputs still match it; any input change clears the stale result.
   const [planned, setPlanned] = useState<{ fromId: string; toId: string } | null>(null);
@@ -54,11 +63,19 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
     if (initialToId) setTo(getStation(initialToId) ?? null);
   }, [initialFromId, initialToId]);
 
+  /** Compute both route options for a pair; null when no route exists. */
+  function computeOptions(fId: string, tId: string) {
+    const fastest = findRoute(fId, tId, { dayType, smartCard, preference: "fastest" });
+    if (!fastest) return null;
+    const fewest = findRoute(fId, tId, { dayType, smartCard, preference: "fewest-changes" }) ?? fastest;
+    return { fastest, fewest, same: fastest.path.join("|") === fewest.path.join("|") };
+  }
+
   useEffect(() => {
     if (planned && from?.id === planned.fromId && to?.id === planned.toId && from.id !== to.id) {
-      const r = findRoute(from.id, to.id, { dayType, smartCard });
-      setRoute(r);
-      setError(r ? null : "No route found between these stations.");
+      const pair = computeOptions(from.id, to.id);
+      setOptions(pair);
+      setError(pair ? null : "No route found between these stations.");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dayType, smartCard]);
@@ -67,28 +84,36 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
   function clearStale(nextFrom: Station | null, nextTo: Station | null) {
     if (planned && (nextFrom?.id !== planned.fromId || nextTo?.id !== planned.toId)) {
       setPlanned(null);
-      setRoute(null);
+      setOptions(null);
       setError(null);
       if (typeof window !== "undefined") window.history.replaceState(null, "", window.location.pathname);
     }
   }
 
+  function syncUrl(fId: string, tId: string, pref: RoutePreference) {
+    if (typeof window === "undefined") return;
+    const url = `/route?from=${fId}&to=${tId}&day=${dayType}${pref === "fewest-changes" ? "&pref=fewest-changes" : ""}`;
+    window.history.replaceState(null, "", url);
+  }
+
+  function choosePreference(p: RoutePreference) {
+    setPreference(p);
+    if (planned) syncUrl(planned.fromId, planned.toId, p);
+  }
+
   function plan(f: Station | null, t: Station | null, record = true) {
-    if (!f || !t) { setError("Please select both a From and a To station."); setRoute(null); return; }
-    if (f.id === t.id) { setError("Please select two different stations."); setRoute(null); return; }
-    const r = findRoute(f.id, t.id, { dayType, smartCard });
-    if (!r) { setError("No route found between these stations."); setRoute(null); return; }
+    if (!f || !t) { setError("Please select both a From and a To station."); setOptions(null); return; }
+    if (f.id === t.id) { setError("Please select two different stations."); setOptions(null); return; }
+    const pair = computeOptions(f.id, t.id);
+    if (!pair) { setError("No route found between these stations."); setOptions(null); return; }
     setError(null);
-    setRoute(r);
+    setOptions(pair);
     setPlanned({ fromId: f.id, toId: t.id });
     if (record) {
       saveRecent({ fromId: f.id, fromName: f.name, toId: t.id, toName: t.name, ts: Date.now() });
       setRecents(loadRecents());
     }
-    if (typeof window !== "undefined") {
-      const url = `/route?from=${f.id}&to=${t.id}&day=${dayType}`;
-      window.history.replaceState(null, "", url);
-    }
+    syncUrl(f.id, t.id, preference);
   }
 
   function swap() { const f = from, t = to; setFrom(t); setTo(f); if (f && t) plan(t, f); }
@@ -117,6 +142,7 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
   const favResults = useMemo(() => (favQuery.trim() ? searchStations(favQuery, 6) : []), [favQuery]);
   const manualResults = useMemo(() => (manualQuery.trim() ? searchStations(manualQuery, 6) : []), [manualQuery]);
   const popular = POPULAR_IDS.map((id) => getStation(id)).filter(Boolean) as Station[];
+  const shown = options ? (preference === "fewest-changes" ? options.fewest : options.fastest) : null;
 
   return (
     <div>
@@ -127,7 +153,7 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
         ) : (
           <p className="font-display text-[32px] leading-none tracking-tight text-white">Delhi Metro</p>
         )}
-        <p className="mt-1.5 text-[13px] text-white/70">Plan a journey. 9 corridors, 243 stations.</p>
+        <p className="mt-1.5 text-[13px] text-white/70">Plan a journey. {lines.length} lines, {stations.length} stations, four operators.</p>
 
         <form className="mt-4" onSubmit={(e) => { e.preventDefault(); plan(from, to); }} aria-label="Journey planner">
           <div className="rounded-xl bg-surface px-3 py-2">
@@ -138,7 +164,7 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
               type="button"
               onClick={swap}
               aria-label="Swap From and To stations"
-              className="z-10 -my-2 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white shadow-[0_4px_14px_rgb(194_65_12/0.4)] transition-colors hover:bg-accent-deep"
+              className="z-10 -my-2 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white shadow-[0_4px_14px_rgb(194_65_12/0.4)] transition hover:bg-accent-deep active:scale-95"
             >
               <IconSwap size={20} />
             </button>
@@ -192,7 +218,34 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
         ) : null}
       </div>
 
-      {route ? <RouteResult route={route} dayType={dayType} smartCard={smartCard} /> : null}
+      {options && !options.same ? (
+        <div className="dm-fade mt-4">
+          <div role="radiogroup" aria-label="Route preference" className="grid grid-cols-2 gap-2">
+            {([
+              ["fastest", "Fastest", options.fastest],
+              ["fewest-changes", "Fewest changes", options.fewest],
+            ] as const).map(([key, label, r]) => {
+              const active = preference === key;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  onClick={() => choosePreference(key)}
+                  className={`min-h-[52px] rounded-xl border px-3 py-2 text-left transition-colors ${active ? "border-ink bg-ink text-white" : "border-line-soft bg-surface text-ink hover:bg-paper"}`}
+                >
+                  <span className="block text-sm font-semibold">{label}</span>
+                  <span className={`mt-0.5 block text-xs tabular-nums ${active ? "text-white/75" : "text-ink-mute"}`}>{optionSummary(r)}</span>
+                </button>
+              );
+            })}
+          </div>
+          <p className="mt-1.5 text-[13px] text-ink-mute">Two ways to make this journey. Times are estimates either way.</p>
+        </div>
+      ) : null}
+
+      {shown ? <RouteResult route={shown} dayType={dayType} smartCard={smartCard} /> : null}
 
       <Section label="Metro status">
         <p className="inline-flex items-center gap-2 rounded-full bg-paper px-3 py-1.5 text-sm font-semibold text-ink-mute ring-1 ring-line-soft">
@@ -200,7 +253,7 @@ export default function JourneyPlanner({ initialFromId, initialToId, headingLeve
           Live status unavailable.
         </p>
         <p className="mt-2 max-w-prose text-[13px] leading-relaxed text-ink-mute">
-          No verified live DMRC feed is connected, so no service state is shown. Check <a className="font-medium text-accent underline" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a> for official announcements.
+          No verified live feed is connected for any operator, so no service state is shown. Check <a className="font-medium text-accent underline" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a> for official Delhi Metro announcements.
         </p>
       </Section>
 

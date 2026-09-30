@@ -3,7 +3,9 @@
     "asOf": "2026-10-01",
     "interchangeCount": 26,
     "branchForkCount": 3,
-    "note": "interchangeCount counts multi-line stations only; branch forks and the Dhaula Kuan skywalk pair are listed separately by type."
+    "note": "interchangeCount counts multi-line stations only; branch forks and the Dhaula Kuan skywalk pair are listed separately by type.",
+    "scope": "DMRC interchanges plus cross-operator walk links to NMRC Aqua Line, NCRTC Namo Bharat, and Rapid Metro Gurugram, and the four shared Namo Bharat/Meerut Metro stations.",
+    "count": 40
   },
   "interchanges": [
     {
@@ -281,6 +283,131 @@
         "durgabai-deshmukh-south-campus"
       ],
       "note": "Paid-area skywalk/foot-over-bridge connection between Airport Express (Dhaula Kuan) and Pink Line (Durgabai Deshmukh South Campus); stations keep separate ids in stations.json"
+    },
+    {
+      "stationId": "noida-sector-51",
+      "stationName": "noida-sector-51 <-> noida-sector-52",
+      "lines": [
+        "aqua",
+        "blue"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "noida-sector-51",
+        "noida-sector-52"
+      ],
+      "note": "Walkway/footbridge link between Aqua Line (Sector 51) and Blue Line (Sector 52), Noida."
+    },
+    {
+      "stationId": "sarai-kale-khan-rrts",
+      "stationName": "sarai-kale-khan-rrts <-> sarai-kale-khan-nizamuddin",
+      "lines": [
+        "namo-bharat",
+        "pink"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "sarai-kale-khan-rrts",
+        "sarai-kale-khan-nizamuddin"
+      ],
+      "note": "Walk link between Namo Bharat (Sarai Kale Khan) and Pink Line (Sarai Kale Khan-Nizamuddin)."
+    },
+    {
+      "stationId": "new-ashok-nagar-rrts",
+      "stationName": "new-ashok-nagar-rrts <-> new-ashok-nagar",
+      "lines": [
+        "namo-bharat",
+        "blue"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "new-ashok-nagar-rrts",
+        "new-ashok-nagar"
+      ],
+      "note": "Walk link between Namo Bharat and Blue Line stations at New Ashok Nagar."
+    },
+    {
+      "stationId": "anand-vihar-rrts",
+      "stationName": "anand-vihar-rrts <-> anand-vihar",
+      "lines": [
+        "namo-bharat",
+        "blue",
+        "pink"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "anand-vihar-rrts",
+        "anand-vihar"
+      ],
+      "note": "Walk link between Namo Bharat (Anand Vihar) and Blue/Pink Line Anand Vihar."
+    },
+    {
+      "stationId": "ghaziabad-rrts",
+      "stationName": "ghaziabad-rrts <-> shaheed-sthal-new-bus-adda",
+      "lines": [
+        "namo-bharat",
+        "red"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "ghaziabad-rrts",
+        "shaheed-sthal-new-bus-adda"
+      ],
+      "note": "Foot over bridge (about 300 m, opened January 2026) linking Ghaziabad RRTS station with Red Line Shaheed Sthal (New Bus Adda)."
+    },
+    {
+      "stationId": "sikanderpur-rapid",
+      "stationName": "sikanderpur-rapid <-> sikanderpur",
+      "lines": [
+        "rapid-metro",
+        "yellow"
+      ],
+      "type": "skywalk-interchange",
+      "connectedStations": [
+        "sikanderpur-rapid",
+        "sikanderpur"
+      ],
+      "note": "90 m walkway between Rapid Metro and Yellow Line stations at Sikanderpur (Wikipedia)."
+    },
+    {
+      "stationId": "meerut-south",
+      "stationName": "Meerut South",
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "type": "interchange",
+      "note": "Shared station: Namo Bharat and Meerut Metro both stop here."
+    },
+    {
+      "stationId": "shatabdi-nagar",
+      "stationName": "Shatabdi Nagar",
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "type": "interchange",
+      "note": "Shared station: Namo Bharat and Meerut Metro both stop here."
+    },
+    {
+      "stationId": "begumpul",
+      "stationName": "Begumpul",
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "type": "interchange",
+      "note": "Shared station: Namo Bharat and Meerut Metro both stop here."
+    },
+    {
+      "stationId": "modipuram",
+      "stationName": "Modipuram",
+      "lines": [
+        "namo-bharat",
+        "meerut-metro"
+      ],
+      "type": "interchange",
+      "note": "Shared station and terminus for both services."
     }
   ]
 }

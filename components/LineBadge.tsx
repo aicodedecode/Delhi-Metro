@@ -27,12 +27,31 @@ export function InterchangeChip({ label = "Interchange", detail }: { label?: str
   );
 }
 
-/** Text colour that stays readable on a line's colour chip. */
-export function lineInk(hex: string): string {
+const NAVY = "#0a2a5e";
+const WHITE = "#ffffff";
+
+/** WCAG relative luminance of a hex colour. */
+function relLuminance(hex: string): number {
   const h = hex.replace("#", "");
-  const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.55 ? "#0a2a5e" : "#ffffff";
+  const chan = (i: number) => {
+    const v = parseInt(h.slice(i, i + 2), 16) / 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  };
+  return 0.2126 * chan(0) + 0.7152 * chan(2) + 0.0722 * chan(4);
+}
+
+function contrast(a: string, b: string): number {
+  const [hi, lo] = [relLuminance(a), relLuminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+}
+
+/**
+ * Text colour that stays readable on a line's colour chip: whichever of the
+ * brand navy or white gives the higher WCAG contrast ratio. (The old
+ * brightness heuristic put white on sky-blue and pink chips at under 3:1.)
+ */
+export function lineInk(hex: string): string {
+  return contrast(hex, NAVY) >= contrast(hex, WHITE) ? NAVY : WHITE;
 }
 
 // Backward-compatible alias (previous name).

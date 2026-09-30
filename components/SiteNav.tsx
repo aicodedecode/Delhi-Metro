@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconRoute, IconNode, IconWaypoints, IconMap } from "@/components/icons";
+import { IconRoute, IconNode, IconWaypoints, IconMap, IconTicket } from "@/components/icons";
 
 const items = [
   { href: "/", label: "Plan", Icon: IconRoute },
   { href: "/map", label: "Map", Icon: IconMap },
   { href: "/stations", label: "Stations", Icon: IconNode },
   { href: "/lines", label: "Lines", Icon: IconWaypoints },
+  { href: "/fares", label: "Fares", Icon: IconTicket },
 ];
 
 export function DesktopNav() {
@@ -49,7 +50,7 @@ export function MobileNav() {
   const pathname = usePathname();
   return (
     <nav aria-label="Mobile navigation" className="fixed inset-x-0 bottom-0 z-40 border-t border-line-soft bg-surface md:hidden">
-      <ul className="grid grid-cols-4">
+      <ul className="grid grid-cols-5">
         {items.map(({ href, label, Icon }) => {
           const active = pathname === href || (href !== "/" && pathname.startsWith(href));
           return (

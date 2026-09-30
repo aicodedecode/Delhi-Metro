@@ -63,7 +63,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
           }}
         />
         {value ? (
-          <button type="button" onClick={clear} aria-label={`Clear ${label}`} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink-mute hover:bg-paper">
+          <button type="button" onClick={clear} aria-label={`Clear ${label}`} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink-mute transition-colors hover:bg-paper">
             <IconClose size={18} />
           </button>
         ) : (
@@ -86,7 +86,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
               aria-selected={i === highlight}
               onMouseDown={(e) => { e.preventDefault(); pick(st); }}
               onMouseEnter={() => setHighlight(i)}
-              className={`flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 px-3 py-2 text-left ${i === highlight ? "bg-paper" : "bg-surface"}`}
+              className={`flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 px-3 py-2 text-left transition-colors ${i === highlight ? "bg-paper" : "bg-surface"}`}
             >
               <span className="font-medium text-ink">{st.name}
                 {st.isInterchange ? <span className="ml-2"><InterchangeChip /></span> : null}

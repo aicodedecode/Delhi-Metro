@@ -12,15 +12,25 @@ import type { RouteResultData, RouteLeg, DayType } from "@/types";
  * station — absent from the data — can never appear).
  *
  * Cost model (all displayed values are ESTIMATES, labelled as such in the UI):
- *   travel edge    = 2.2 min per hop (4.7 min on the Airport Express, whose
- *                    hops are much longer — New Delhi to IGI Airport is ~19 min)
+ *   travel edge    = 2.2 min per hop on metro lines; 4.7 min on the Airport
+ *                    Express, 3.9 min on the Namo Bharat (82 km in about
+ *                    55 min end to end) and 2.7 min on the Meerut Metro
+ *                    (about 30 min end to end). Those hops are much longer
  *   line change    = 5 min interchange penalty (same-station line transfer)
- *   skywalk link   = 5 min (Dhaula Kuan <-> Durgabai Deshmukh South Campus)
+ *   walk link      = 5 min (paired stations in interchanges.json: Dhaula Kuan
+ *                    <-> Durgabai Deshmukh South Campus, Noida Sector 51 <->
+ *                    Sector 52, the Namo Bharat walk links, Sikanderpur)
  * Displayed estimated minutes = sum(per-hop times) + interchanges*5, rounded.
  * The Dijkstra optimisation adds a further 15 min aversion per change, so a
  * change is only recommended when it buys real time — a direct train with a
  * few extra stops therefore beats a two-change shortcut, matching how riders
  * actually choose.
+ *
+ * Route preference (mirrors the official apps' Shortest Route / Min.
+ * Interchange choice): "fastest" (default) uses the aversion above.
+ * "fewest-changes" raises the optimisation aversion per change to 120 min, so
+ * a change is only taken when it saves a great deal of riding time. Displayed
+ * minutes always use the real 5 min per change under either preference.
  */
 
 export const MIN_PER_HOP = 2.2;
@@ -28,10 +38,19 @@ export const INTERCHANGE_PENALTY_MIN = 5;
 /** Extra optimisation-only aversion per change (walking + waiting + hassle).
  * A change must save real time before the planner recommends one. */
 export const TRANSFER_AVERSION_MIN = 15;
+/** Optimisation-only aversion per change under the fewest-changes preference.
+ * Large enough that a change is effectively only taken when no route with
+ * fewer changes exists, or the saving is very large. */
+export const FEWEST_CHANGES_AVERSION_MIN = 120;
 
-/** Realistic per-hop minutes by line (Airport Express hops are long). */
+export type RoutePreference = "fastest" | "fewest-changes";
+
+/** Realistic per-hop minutes by line (express corridors have long hops). */
 export function lineHopMinutes(lineId: string): number {
-  return lineId === "airport-express" ? 4.7 : MIN_PER_HOP;
+  if (lineId === "airport-express") return 4.7;
+  if (lineId === "namo-bharat") return 3.9;
+  if (lineId === "meerut-metro") return 2.7;
+  return MIN_PER_HOP;
 }
 
 interface Edge { to: string; cost: number; kind: "travel" | "transfer" | "skywalk"; lineId: string }
@@ -63,8 +82,17 @@ export function buildGraph(): Map<string, Edge[]> {
       }
     }
     for (const partner of skywalkPartners(st.id)) {
-      for (const l of st.lines) add(key(st.id, l), { to: key(partner, l), cost: INTERCHANGE_PENALTY_MIN + TRANSFER_AVERSION_MIN, kind: "skywalk", lineId: l });
-      for (const l of stationById.get(partner)?.lines ?? []) add(key(partner, l), { to: key(st.id, l), cost: INTERCHANGE_PENALTY_MIN + TRANSFER_AVERSION_MIN, kind: "skywalk", lineId: l });
+      // Walk links join two station records, so connect every line node of
+      // this station to every line node of the partner station. (Connecting
+      // only same-line pairs left dead-end phantom nodes: the pre-expansion
+      // Dhaula Kuan skywalk was never actually routable.)
+      const pst = stationById.get(partner);
+      if (!pst) continue;
+      for (const l1 of st.lines) {
+        for (const l2 of pst.lines) {
+          add(key(st.id, l1), { to: key(partner, l2), cost: INTERCHANGE_PENALTY_MIN + TRANSFER_AVERSION_MIN, kind: "skywalk", lineId: l2 });
+        }
+      }
     }
   }
   graph = adj;
@@ -82,13 +110,13 @@ function segmentHopKm(segId: string): number {
   return kmPerHop;
 }
 
-export interface RouteOptions { dayType?: DayType; smartCard?: boolean }
+export interface RouteOptions { dayType?: DayType; smartCard?: boolean; preference?: RoutePreference }
 
 const routeCache = new Map<string, RouteResultData | null>();
 
 export function findRoute(fromId: string, toId: string, options: RouteOptions = {}): RouteResultData | null {
   const dayType: DayType = options.dayType ?? "weekday";
-  const cacheKey = fromId + ">" + toId + ">" + dayType + ">" + (options.smartCard ? "sc" : "tk");
+  const cacheKey = fromId + ">" + toId + ">" + dayType + ">" + (options.smartCard ? "sc" : "tk") + ">" + (options.preference ?? "fastest");
   if (routeCache.has(cacheKey)) return routeCache.get(cacheKey) ?? null;
 
   const result = computeRoute(fromId, toId, options);
@@ -102,6 +130,9 @@ function computeRoute(fromId: string, toId: string, options: RouteOptions): Rout
   if (!from || !to || fromId === toId) return null;
 
   const adj = buildGraph();
+  // Transfer and walk-link edges carry the real 5 min in the stored graph;
+  // the optimisation weight adds the aversion for the active preference.
+  const transferCost = INTERCHANGE_PENALTY_MIN + (options.preference === "fewest-changes" ? FEWEST_CHANGES_AVERSION_MIN : TRANSFER_AVERSION_MIN);
   const dist = new Map<string, number>();
   const prev = new Map<string, { from: string; kind: Edge["kind"]; lineId: string }>();
   const visited = new Set<string>();
@@ -122,7 +153,7 @@ function computeRoute(fromId: string, toId: string, options: RouteOptions): Rout
     visited.add(node);
     if (destinationKeys.has(node)) { endKey = node; break; }
     for (const e of adj.get(node) ?? []) {
-      const nc = cost + e.cost;
+      const nc = cost + (e.kind === "travel" ? e.cost : transferCost);
       if (nc < (dist.get(e.to) ?? Infinity)) {
         dist.set(e.to, nc);
         prev.set(e.to, { from: node, kind: e.kind, lineId: e.lineId });
@@ -163,16 +194,30 @@ function computeRoute(fromId: string, toId: string, options: RouteOptions): Rout
   const flushLeg = () => {
     if (legStations.length < 2) return;
     const line = lineById.get(legLine);
-    // direction = terminus of the segment in the direction of travel
+    // A leg can span two segments of one line (e.g. Blue main + branch via
+    // Yamuna Bank), so direction comes from the final hop's own segment and
+    // distance is summed hop by hop. Direction = that segment's terminus in
+    // the direction of travel.
     let directionName = "";
+    const last = legStations[legStations.length - 1];
+    const beforeLast = legStations[legStations.length - 2];
     for (const seg of Object.values(segments)) {
       if (seg.line !== legLine) continue;
-      const idx = seg.stations.indexOf(legStations[0]);
-      const idx2 = seg.stations.indexOf(legStations[legStations.length - 1]);
-      if (idx >= 0 && idx2 >= 0 && idx !== idx2) {
-        directionName = stationById.get(seg.stations[idx2 > idx ? seg.stations.length - 1 : 0])?.name ?? "";
-        distanceKm += Math.abs(idx2 - idx) * segmentHopKm(Object.keys(segments).find((k) => segments[k] === seg) ?? "");
+      const iLast = seg.stations.indexOf(last);
+      const iPrev = seg.stations.indexOf(beforeLast);
+      if (iLast >= 0 && iPrev >= 0 && iLast !== iPrev) {
+        directionName = stationById.get(seg.stations[iLast > iPrev ? seg.stations.length - 1 : 0])?.name ?? "";
         break;
+      }
+    }
+    const segIdByValue = new Map(Object.entries(segments));
+    for (let i = 0; i + 1 < legStations.length; i++) {
+      for (const [segId, seg] of segIdByValue) {
+        if (seg.line !== legLine) continue;
+        if (seg.stations.includes(legStations[i]) && seg.stations.includes(legStations[i + 1])) {
+          distanceKm += segmentHopKm(segId);
+          break;
+        }
       }
     }
     legs.push({
@@ -210,6 +255,12 @@ function computeRoute(fromId: string, toId: string, options: RouteOptions): Rout
   legs.forEach((leg, i) => {
     leg.stations.forEach((s, j) => { if (i === 0 || j > 0) path.push(s); });
   });
+  // Walk links at the very start or end of a journey produce legs with fewer
+  // than two stations, which flushLeg drops. Keep both real stations in the
+  // displayed path so the walk (and the destination) is never lost.
+  if (path.length && path[0] !== chain[0].stationId) path.unshift(chain[0].stationId);
+  const lastChainStation = chain[chain.length - 1].stationId;
+  if (path.length && path[path.length - 1] !== lastChainStation) path.push(lastChainStation);
   // Path may include the skywalk partner station as an extra node — that is a
   // real walk between two records, so it stays in the displayed path.
 
@@ -225,6 +276,7 @@ function computeRoute(fromId: string, toId: string, options: RouteOptions): Rout
     usesAirportExpress,
     dayType: options.dayType ?? "weekday",
     smartCard: options.smartCard,
+    lineIds: legs.map((l) => l.lineId),
   });
 
   return {

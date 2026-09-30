@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Delhi Metro Journey Planner",
     short_name: "Delhi Metro",
-    description: "Plan Delhi Metro journeys: best route, interchanges, estimated time and approx. fare across all 9 lines and 243 stations.",
+    description: "Plan metro journeys across Delhi NCR: Delhi Metro, Noida Aqua Line, Namo Bharat, Meerut Metro and Rapid Metro. Routes, changes, estimated times and fares where published.",
     start_url: "/",
     scope: "/",
     display: "standalone",

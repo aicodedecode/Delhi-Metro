@@ -29,6 +29,10 @@
   --line-pink: #ed6ba7;
   --line-magenta: #a00d71;
   --line-grey: #808080;
+  --line-aqua: #79d3dc;
+  --line-namo-bharat: #f47216;
+  --line-meerut-metro: #00adef;
+  --line-rapid-metro: #211c1c;
 
   --focus: #0a2a5e;
 }
@@ -61,6 +65,9 @@ body {
   color: var(--ink-soft);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* The page never rubber-bands: map pinches and panel scrolls stay inside
+     the surface that owns them. */
+  overscroll-behavior: none;
 }
 
 /* Browser surfaces: carry the design */
@@ -103,7 +110,14 @@ a {
 }
 
 .dm-fade {
-  animation: dm-fade 150ms ease-out both;
+  animation: dm-fade 180ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Gesture surfaces own their gestures: no browser pinch-zoom, no
+   pull-to-refresh, no scroll chaining out of the viewer. */
+.dm-gesture-surface {
+  touch-action: none;
+  overscroll-behavior: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

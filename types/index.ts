@@ -9,9 +9,9 @@ export interface Station {
   aliases: string[];
 }
 export interface LineInfo {
-  id: string; name: string; number: string; color: string; colorName: string;
+  id: string; name: string; number: string | null; color: string; colorName: string;
   terminals: string[]; lengthKm: number; stationCount: number; stationCountNote?: string;
-  segments: string[]; operatingHours: string;
+  segments: string[]; operatingHours: string; operator: "DMRC" | "NMRC" | "NCRTC" | "Rapid Metro";
 }
 export interface Segment { line: string; stations: string[] }
 export interface Interchange { stationId: string; stationName: string; lines: string[]; type: string; note?: string; connectedStations?: string[] }

@@ -7,8 +7,10 @@
 
 A modern Indian transit-authority identity rendered with Swiss transit-design discipline. The
 surface is quiet so the network can speak: warm paper white, deep DMRC navy, one saffron
-accent. The nine real corridor colors are the chromatic system — they identify lines
+accent. The thirteen real line colors are the chromatic system: they identify lines
 everywhere (badges, rails, roundels), always paired with the line name in text, never alone.
+The network is run by four operators (DMRC, NMRC, NCRTC, Rapid Metro); the planner speaks
+for all of them with one voice and never applies one operator's rules to another's lines.
 
 The physical scene that picks light: commuters on one hand, in bright platform daylight,
 glancing for one fact — which line, how long, how much. So: high contrast, big targets,
@@ -40,10 +42,21 @@ in `@theme inline` as `paper/surface/ink/ink-deep/ink-soft/ink-mute/line/accent/
 Line colors come from `data/lines.json` (never hand-typed from memory), exposed as
 `--line-red #ED1C24`, `--line-yellow #FDB913`, `--line-blue #0051AD`,
 `--line-green #00A650`, `--line-violet #764B9E`, `--line-airport-express #F68920`,
-`--line-pink #ED6BA7`, `--line-magenta #A00D71`, `--line-grey #808080`.
+`--line-pink #ED6BA7`, `--line-magenta #A00D71`, `--line-grey #808080`,
+`--line-aqua #79D3DC`, `--line-namo-bharat #F47216`, `--line-meerut-metro #00ADEF`,
+`--line-rapid-metro #211C1C`.
 
-Text over a line color: navy ink when the color is light (yellow/pink/green), white when
-dark — see `lineInk(hex)` in `components/LineBadge.tsx`.
+Text over a line color: `lineInk(hex)` in `components/LineBadge.tsx` computes WCAG
+relative luminance and picks whichever of navy `#0A2A5E` or white gives the better
+contrast against that color. Ten of the thirteen colors reach ≥4.5:1 that way; Red,
+Green and Grey top out between 3.9:1 and 4.4:1 with either ink. So text sits on a
+line color only at 20px extrabold or larger (line numbers in roundels, station
+numbers in the route rail), where the WCAG large-text floor of 3:1 holds for every
+color, and small text never sits on a line color: chips carry the color as a
+swatch with the name in ink beside it. (An earlier brightness heuristic put white
+text on Aqua and Meerut blue at under 3:1; the luminance rule replaced it. On pale
+colors such as Aqua, body text next to the color must be navy, never the color
+itself.)
 
 ## Typography
 
@@ -73,7 +86,7 @@ Icons are used at fixed sizes (16/20/24) with stroke width 1.75, round caps, in
 `components/icons.tsx` as named wrappers (`IconSwap`, `IconSearch`, `IconPin`,
 `IconWaypoints`, `IconRepeat`, `IconChevronRight`, `IconChevronLeft`, `IconClose`,
 `IconAlert`, `IconSpinner`, `IconArrowRight`, `IconHouse`, `IconBriefcase`,
-`IconGraduationCap`, `IconHeart`, `IconRoute`, `IconNode`). **No emoji or unicode glyphs as icons anywhere in the UI.**
+`IconGraduationCap`, `IconHeart`, `IconRoute`, `IconNode`, `IconWalk`, `IconClock`). **No emoji or unicode glyphs as icons anywhere in the UI.**
 Route-diagram station nodes are geometry (dots/rings), not icons.
 
 ## Copy
@@ -94,25 +107,41 @@ their own punctuation (e.g. numeric ranges in fares.json).
   Error = `role=alert` strip.
 - **Station search:** combobox with line badges and interchange chips per suggestion;
   clear button; keyboard navigable; dropdown is the one shadowed layer.
-- **Ticket strip:** the route summary — one horizontal strip, 4 cells separated by
-  hairlines: Fare · Minutes · Stations · Changes. Tabular numerals. Fare cell shows
-  "Unavailable" text, never a fabricated number.
-- **Route rail diagram:** vertical line; each leg renders its line's real color as the
-  rail; stations are nodes (dots); origin gets a navy pin marker, destination a navy
-  diamond; interchange stations get an Interchange chip beside the name, and a saffron
-  "Change at {station}" banner naming the next line and direction. Direction/terminus labels ride with each leg.
+- **Summary stat tiles:** the route header (origin arrow destination) above four
+  stat tiles (Minutes · Line changes · Stations · Fare) and a slim estimate banner
+  ("Times shown are estimates…"). Tabular numerals. The Fare tile shows a number only
+  when a verified fare exists, otherwise "Not available", never a fabricated figure.
+- **Route rail diagram:** a vertical rail read top-down in journey order. Each leg
+  runs in its line's real color with numbered square station badges; every station
+  carries its cumulative estimated time ("~N min") right-aligned. The origin block
+  shows the line chip and "Towards {terminus}". Same-station changes and cross-operator
+  walks are distinct blocks: a swap-icon "Change at {station}" or a walk-icon "Walk to
+  {station} and change to the {line}, towards {terminus}", each telling the rider to
+  allow the change allowance once. Interchange stations get an "Interchange" chip;
+  the destination closes with "You arrive at {station}". No platform or gate numbers
+  are ever shown. That data is not verified.
 - **LineBadge:** colored dot + line name text (never color alone). Interchange chips are
   saffron-tint pills with the interchange icon.
 - **Info notes:** hairline card, ink-mute text, `info` icon. Unverified data states are
-  styled honestly ("verify with DMRC") — calm, not apologetic.
+  styled honestly ("Fare information could not be retrieved.", "verify with the
+  operator"). Calm, not apologetic.
 - **Bottom nav (mobile) / header nav (desktop):** four destinations with SVG icons;
   active route gets saffron icon + ink label.
 
 ## Motion
 
-One authored moment: a quiet 150ms fade on new route results (`dm-fade`). Toggles and
-swap use 120ms state transitions. No entrance animations on scroll sections.
-`prefers-reduced-motion` disables everything.
+One authored moment: a quiet 180ms fade (`cubic-bezier(0.22, 1, 0.36, 1)`) on new
+route results (`dm-fade`). Interactive state changes (hover, press, toggle, swap)
+transition at 160 to 220ms ease-out; nothing animates on scroll, and nothing moves
+without a user action behind it.
+
+The map viewer owns its gestures: `touch-action: none` and
+`overscroll-behavior: none` on the gesture surface, `overscroll-behavior: none` on
+the body, pointer capture during drag/pinch, and gesture updates throttled to one
+`requestAnimationFrame` per frame. Pinch, wheel, double-tap, buttons and arrow keys
+all drive the same transform; a 180ms ease-out transform transition applies only
+while the user is *not* actively gesturing, so drags feel 1:1 and settles feel
+smooth. `prefers-reduced-motion` disables all of it.
 
 ## Browser surfaces
 

@@ -6,7 +6,7 @@
 import {
   ArrowLeftRight, Search, MapPin, Waypoints, Repeat, ChevronRight, ChevronLeft,
   X, TriangleAlert, LoaderCircle, ArrowRight, House, Briefcase,
-  GraduationCap, Heart, Route, CircleDot, Map as LucideMap,
+  GraduationCap, Heart, Route, CircleDot, Map as LucideMap, Footprints, Clock3, Ticket,
 } from "lucide-react";
 
 type P = { size?: number; className?: string; "aria-hidden"?: boolean | "true" | "false" };
@@ -35,3 +35,6 @@ export const IconHeart = make(Heart);
 export const IconRoute = make(Route);
 export const IconNode = make(CircleDot);
 export const IconMap = make(LucideMap);
+export const IconWalk = make(Footprints);
+export const IconClock = make(Clock3);
+export const IconTicket = make(Ticket);

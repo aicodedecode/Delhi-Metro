@@ -2,8 +2,8 @@
   "meta": {
     "asOf": "2026-10-01",
     "network": "Delhi Metro operational network",
-    "lineCorridors": 9,
-    "note": "Blue counted as one corridor with Line 3 (main) + Line 4 (branch). Magenta has two disconnected operational segments.",
+    "lineCorridors": 13,
+    "note": "Blue counted as one corridor with Line 3 (main) + Line 4 (branch). Magenta has two disconnected operational segments. Network covers four operators: DMRC (9 corridors), NMRC Aqua Line, NCRTC Namo Bharat and Meerut Metro, and Rapid Metro Gurugram (HMRTC).",
     "verifiedAgainst": "Official DMRC network map \"METRO NETWORK IN DELHI-NCR\" (As on August 2026), user-provided PDF; line lengths and station counts per official operational network table. Blue Line = Line 3 (Dwarka Sec 21–Noida Electronic City) + Line 4 (Yamuna Bank–Vaishali). stationCount = unique stations per corridor."
   },
   "lines": [
@@ -22,7 +22,8 @@
       "segments": [
         "red"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
     },
     {
       "id": "yellow",
@@ -39,7 +40,8 @@
       "segments": [
         "yellow"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
     },
     {
       "id": "blue",
@@ -60,7 +62,8 @@
         "blueMain",
         "blueBranch"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
     },
     {
       "id": "green",
@@ -81,7 +84,8 @@
         "greenMain",
         "greenBranch"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
     },
     {
       "id": "violet",
@@ -98,7 +102,8 @@
       "segments": [
         "violet"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
     },
     {
       "id": "airport-express",
@@ -115,7 +120,8 @@
       "segments": [
         "airportExpress"
       ],
-      "operatingHours": "Airport Express runs earlier/later than regular lines; sources differ (first train approx. 04:45-05:00, last up to 23:40 from New Delhi) - verify with DMRC"
+      "operatingHours": "Airport Express runs earlier/later than regular lines; sources differ (first train approx. 04:45-05:00, last up to 23:40 from New Delhi) - verify with DMRC",
+      "operator": "DMRC"
     },
     {
       "id": "pink",
@@ -134,7 +140,8 @@
         "pinkCircular",
         "pinkBranch"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
     },
     {
       "id": "magenta",
@@ -155,7 +162,8 @@
         "magentaNorth"
       ],
       "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
-      "note": "Two DISCONNECTED operational segments as of Oct 2026: Krishna Park Extension-Botanical Garden and Deepali Chowk-Majlis Park. The connecting Krishna Park Extension-Deepali Chowk section is under construction; do NOT route through the gap."
+      "note": "Two DISCONNECTED operational segments as of Oct 2026: Krishna Park Extension-Botanical Garden and Deepali Chowk-Majlis Park. The connecting Krishna Park Extension-Deepali Chowk section is under construction; do NOT route through the gap.",
+      "operator": "DMRC"
     },
     {
       "id": "grey",
@@ -172,7 +180,84 @@
       "segments": [
         "grey"
       ],
-      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)"
+      "operatingHours": "Approx. 05:30-23:30 (general network hours; per-station first/last UNVERIFIED - verify with DMRC)",
+      "operator": "DMRC"
+    },
+    {
+      "id": "aqua",
+      "name": "Aqua Line",
+      "number": null,
+      "color": "#79D3DC",
+      "colorName": "Aqua",
+      "terminals": [
+        "Sector 51",
+        "Depot"
+      ],
+      "lengthKm": 29.7,
+      "stationCount": 21,
+      "stationCountNote": "29.7 km per NMRC/Wikipedia; official DMRC map table (Aug 2026) lists 29.168 km",
+      "segments": [
+        "aqua"
+      ],
+      "operator": "NMRC",
+      "operatingHours": "Approx. 06:00-22:00 (reported line hours; per-station first/last UNVERIFIED - verify with NMRC)"
+    },
+    {
+      "id": "namo-bharat",
+      "name": "Namo Bharat",
+      "number": null,
+      "color": "#F47216",
+      "colorName": "Orange",
+      "terminals": [
+        "Sarai Kale Khan",
+        "Modipuram"
+      ],
+      "lengthKm": 82,
+      "stationCount": 15,
+      "stationCountNote": "82 km Delhi-Meerut corridor, fully opened 22 Feb 2026; Jangpura under construction and excluded",
+      "segments": [
+        "namoBharat"
+      ],
+      "operator": "NCRTC",
+      "operatingHours": "Approx. 06:00-22:00 (reported corridor hours; per-station first/last UNVERIFIED - verify with NCRTC)"
+    },
+    {
+      "id": "meerut-metro",
+      "name": "Meerut Metro",
+      "number": null,
+      "color": "#00ADEF",
+      "colorName": "Sky Blue",
+      "terminals": [
+        "Meerut South",
+        "Modipuram"
+      ],
+      "lengthKm": 21,
+      "stationCount": 12,
+      "stationCountNote": "21 km per official DMRC map table; Wikipedia lists 23.6 km including Modipuram Depot (depot not a passenger stop, excluded). 4 stations shared with Namo Bharat",
+      "segments": [
+        "meerutMetro"
+      ],
+      "operator": "NCRTC",
+      "operatingHours": "First/last train times UNVERIFIED - verify with NCRTC"
+    },
+    {
+      "id": "rapid-metro",
+      "name": "Rapid Metro",
+      "number": null,
+      "color": "#211C1C",
+      "colorName": "Charcoal",
+      "terminals": [
+        "Sector 55-56",
+        "Phase 3"
+      ],
+      "lengthKm": 12.874,
+      "stationCount": 11,
+      "stationCountNote": "12.874 km per official DMRC map table (Aug 2026); Wikipedia lists 12.85 km. Northern section is a single-track loop; services run Sector 55-56 to Phase 3 in the order listed. Owned by HMRTC; operations moved from DMRC to GMRL in 2024",
+      "segments": [
+        "rapidMetro"
+      ],
+      "operator": "Rapid Metro",
+      "operatingHours": "Approx. 06:05-22:00 (reported line hours; per-station first/last UNVERIFIED - verify with the operator)"
     }
   ]
 }
