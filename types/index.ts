@@ -38,6 +38,48 @@ export interface FirstLastTrain {
   first: string;
   last: string;
 }
+export interface StationGate {
+  name: string;
+  location: string | null;
+  stepFree: boolean;
+}
+export interface StationPlatform {
+  name: string;
+  towards: string | null;
+}
+export interface StationFacilityItem {
+  name: string;
+  location: string | null;
+}
+export interface StationFacilityGroup {
+  kind: string;
+  items: StationFacilityItem[];
+}
+export interface StationParking {
+  car: number | null;
+  motorcycle: number | null;
+  cycle: number | null;
+  location: string | null;
+  provider: string | null;
+}
+export interface StationLift {
+  type: string;
+  name: string;
+  location: string | null;
+}
+export interface StationFeederRoute {
+  route: string;
+  from: string;
+  to: string;
+  areas: string | null;
+}
+export interface StationNearby {
+  category: string;
+  kind: string;
+  name: string;
+  distanceKm: number | null;
+  nearestGate: string | null;
+}
 export interface StationFact {
   lat?: number;
   lng?: number;
@@ -47,6 +89,17 @@ export interface StationFact {
   structure?: string;
   structureSource?: string;
   firstLast?: FirstLastTrain[];
+  dmrcCode?: string;
+  gates?: StationGate[];
+  platforms?: StationPlatform[];
+  facilities?: StationFacilityGroup[];
+  parking?: StationParking[];
+  lifts?: StationLift[];
+  feederRoutes?: StationFeederRoute[];
+  nearby?: StationNearby[];
+  opensAt?: string;
+  closesAt?: string;
+  detailsSource?: string;
 }
 export interface RouteLeg {
   lineId: string; lineName: string; lineColor: string;

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getStation, getLine, getStationFacts, stations, segments, stationById, skywalkPartners, interchanges } from "@/lib/data";
 import { ogBase, siteUrl } from "@/lib/seo";
 import { LineBadge, InterchangeChip } from "@/components/LineBadge";
+import StationDetails from "@/components/StationDetails";
 import { IconChevronLeft, IconChevronRight } from "@/components/icons";
 
 export function generateStaticParams() {
@@ -178,6 +179,17 @@ export default async function StationPage({ params }: { params: Promise<{ statio
                   </dd>
                 </div>
               ) : null}
+              {facts.opensAt || facts.closesAt ? (
+                <div>
+                  <dt className="font-medium text-ink">Station hours</dt>
+                  <dd>
+                    {facts.opensAt ? `Opens ${facts.opensAt}` : null}
+                    {facts.opensAt && facts.closesAt ? ", " : null}
+                    {facts.closesAt ? `closes ${facts.closesAt}` : null}
+                    {facts.detailsSource ? <span className="block text-[13px] text-ink-mute">Source: {facts.detailsSource}</span> : null}
+                  </dd>
+                </div>
+              ) : null}
             </dl>
           ) : (
             <p className="mt-1 max-w-prose text-[15px] leading-relaxed text-ink-soft">
@@ -232,12 +244,14 @@ export default async function StationPage({ params }: { params: Promise<{ statio
           </div>
         </div>
 
-        <div className="py-3.5">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Facilities, parking, feeder buses, accessibility</h2>
-          <p className="mt-1 max-w-prose text-[15px] leading-relaxed text-ink-soft">
-            Not verified here. Check at the station rather than relying on a guess.
-          </p>
-        </div>
+        {facts ? <StationDetails facts={facts} /> : (
+          <div className="py-3.5">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Facilities, parking, feeder buses, accessibility</h2>
+            <p className="mt-1 max-w-prose text-[15px] leading-relaxed text-ink-soft">
+              Not verified here. Check at the station rather than relying on a guess.
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="mt-5 flex flex-wrap gap-2.5">

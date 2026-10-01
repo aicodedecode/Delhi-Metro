@@ -1,9 +1,12 @@
 /**
  * Sanity checks for data/stationFacts.json (built by
- * scripts/build-station-facts.py). Every fact must carry its source,
- * coordinates must sit inside the NCR, first trains must leave before
- * last trains (allowing a just-after-midnight wrap), and lines with no
- * GTFS service (Namo Bharat, Meerut Metro) must not gain first/last rows.
+ * scripts/build-station-facts.py and scripts/build-station-details.py).
+ * Every fact must carry its source, coordinates must sit inside the NCR,
+ * first trains must leave before last trains (allowing a just-after-midnight
+ * wrap), and lines with no GTFS service (Namo Bharat, Meerut Metro) must not
+ * gain first/last rows. Official detail fields (gates, platforms, parking,
+ * lifts, facilities, feeder routes, nearby, station hours) must be
+ * non-empty where present and carry the DMRC source label.
  */
 import stationsJson from "../data/stations.json";
 import stationFactsJson from "../data/stationFacts.json";
@@ -13,7 +16,8 @@ const stations = (stationsJson as unknown as { stations: Station[] }).stations;
 const facts = (stationFactsJson as unknown as { stations: Record<string, StationFact> }).stations;
 const byId = new Map(stations.map((s) => [s.id, s]));
 
-const COORD_SOURCES = new Set(["DMRC static feed (OTD)", "OpenStreetMap"]);
+const COORD_SOURCES = new Set(["DMRC static feed (OTD)", "OpenStreetMap", "Delhi Metro official website"]);
+const DETAIL_SOURCE = "Delhi Metro (official website)";
 const STRUCTURES = new Set(["Elevated", "Underground", "At grade"]);
 const NO_SERVICE_LINES = new Set(["namo-bharat", "meerut-metro"]);
 const TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
@@ -69,6 +73,52 @@ for (const [id, f] of Object.entries(facts)) {
     }
     if (!row.towards) fail(`${id}: firstLast row without a towards station`);
   }
+
+  const hasDetails =
+    f.gates?.length || f.platforms?.length || f.facilities?.length ||
+    f.parking?.length || f.lifts?.length || f.feederRoutes?.length ||
+    f.nearby?.length || f.opensAt || f.closesAt;
+  if (hasDetails) {
+    if (f.detailsSource !== DETAIL_SOURCE) fail(`${id}: official details without detailsSource`);
+    if (!f.dmrcCode) fail(`${id}: official details without dmrcCode`);
+  } else if (f.detailsSource || f.dmrcCode) {
+    fail(`${id}: detailsSource/dmrcCode without any official details`);
+  }
+
+  for (const g of f.gates ?? []) {
+    if (!g.name) fail(`${id}: gate without a name`);
+    if (typeof g.stepFree !== "boolean") fail(`${id}: gate ${g.name} stepFree is not boolean`);
+  }
+  for (const p of f.platforms ?? []) {
+    if (!p.name) fail(`${id}: platform without a name`);
+    if (!p.towards) fail(`${id}: platform ${p.name} without a towards station`);
+  }
+  for (const fg of f.facilities ?? []) {
+    if (!fg.kind) fail(`${id}: facility group without a kind`);
+    if (!fg.items?.length) fail(`${id}: facility group ${fg.kind} with no items`);
+    for (const it of fg.items ?? []) if (!it.name) fail(`${id}: facility item without a name`);
+  }
+  for (const pk of f.parking ?? []) {
+    for (const k of ["car", "motorcycle", "cycle"] as const) {
+      const v = pk[k];
+      if (v !== null && v !== undefined && (!Number.isInteger(v) || v < 0))
+        fail(`${id}: parking ${k} capacity ${v} is not a non-negative integer`);
+    }
+  }
+  for (const l of f.lifts ?? []) {
+    if (!l.name) fail(`${id}: lift/escalator without a name`);
+    if (!l.type) fail(`${id}: lift/escalator ${l.name} without a type`);
+  }
+  for (const fr of f.feederRoutes ?? []) {
+    if (!fr.route) fail(`${id}: feeder route without a route number`);
+  }
+  for (const n of f.nearby ?? []) {
+    if (!n.name) fail(`${id}: nearby place without a name`);
+    if (n.distanceKm !== null && n.distanceKm !== undefined && !(n.distanceKm >= 0))
+      fail(`${id}: nearby ${n.name} has a bad distance`);
+  }
+  if (f.opensAt !== undefined && !TIME.test(f.opensAt)) fail(`${id}: bad opensAt ${f.opensAt}`);
+  if (f.closesAt !== undefined && !TIME.test(f.closesAt)) fail(`${id}: bad closesAt ${f.closesAt}`);
 }
 
 const withFacts = Object.keys(facts).length;
@@ -77,7 +127,8 @@ console.log(
     `${Object.values(facts).filter((f) => f.lat !== undefined).length} with coordinates, ` +
     `${Object.values(facts).filter((f) => f.opened).length} with opening dates, ` +
     `${Object.values(facts).filter((f) => f.structure).length} with structure, ` +
-    `${Object.values(facts).filter((f) => f.firstLast?.length).length} with first/last trains`,
+    `${Object.values(facts).filter((f) => f.firstLast?.length).length} with first/last trains, ` +
+    `${Object.values(facts).filter((f) => f.detailsSource).length} with official DMRC details`,
 );
 if (errors > 0) {
   console.error(`${errors} station fact check(s) failed`);
