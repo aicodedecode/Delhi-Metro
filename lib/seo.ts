@@ -11,5 +11,7 @@ export const ogBase: NonNullable<Metadata["openGraph"]> = {
   images: [{ url: "/og.png", width: 1200, height: 630, alt: "Delhi Metro journey planner" }],
 };
 
-/** Canonical site origin, used wherever an absolute URL is required (JSON-LD, sitemap). */
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://delhimetrorail.example.com";
+/** Canonical site origin, used wherever an absolute URL is required (JSON-LD, sitemap).
+ * Defaults to the live Vercel deployment; NEXT_PUBLIC_SITE_URL overrides it
+ * (e.g. if a custom domain is attached later). */
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://delhi-metro-map-gamma.vercel.app";

@@ -5,6 +5,7 @@ import "./globals.css";
 import { DesktopNav, MobileNav } from "@/components/SiteNav";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import { lines, stations } from "@/lib/data";
+import { siteUrl } from "@/lib/seo";
 
 const ui = Instrument_Sans({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ const display = Instrument_Serif({
   variable: "--font-display",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://delhimetrorail.example.com";
+const baseUrl = siteUrl;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

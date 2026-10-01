@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { stations, lines } from "@/lib/data";
+import { siteUrl } from "@/lib/seo";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://delhimetrorail.example.com";
+const base = siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
