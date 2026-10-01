@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { DesktopNav, MobileNav } from "@/components/SiteNav";
+import PageFade from "@/components/PageFade";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import { lines, stations } from "@/lib/data";
 import { siteUrl } from "@/lib/seo";
@@ -55,7 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-surface focus:px-3 focus:py-2 focus:font-semibold focus:text-ink">Skip to main content</a>
         <DesktopNav />
         <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 pb-28 pt-5 md:pb-12">
-          {children}
+          <PageFade>
+            {children}
+          </PageFade>
           <footer className="mt-12 border-t border-line-soft pt-5 text-[13px] leading-relaxed text-ink-mute">
             <p>Network data: {stations.length} stations across {lines.length} lines run by DMRC, NMRC, NCRTC and Rapid Metro, compiled from verified public sources (October 2026). DMRC fares use the official distance slabs effective 25 August 2025. Journey times and distances are estimates.</p>
             <p className="mt-2">This is an independent planner, not the official DMRC website. For live status, official timings and announcements, visit <a className="font-medium text-accent underline" href="https://delhimetrorail.com" target="_blank" rel="noreferrer">delhimetrorail.com</a>. Tickets, QR codes and smart card recharge are only in the official channels: the DMRC Travel app and station counters. This planner does not sell tickets or recharge cards.</p>

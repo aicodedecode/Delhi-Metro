@@ -5,7 +5,7 @@ import { IconPin, IconSwap, IconWalk, IconClock } from "@/components/icons";
 
 function StatTile({ label, value, muted }: { label: string; value: string; muted?: boolean }) {
   return (
-    <div className="min-w-0 px-4 py-3">
+    <div className="min-w-0 bg-surface px-4 py-3">
       <div className="text-[11px] font-semibold uppercase tracking-wider text-ink-mute">{label}</div>
       <div className={`mt-0.5 truncate text-lg font-semibold tabular-nums ${muted ? "text-base text-ink-mute" : "text-ink"}`}>{value}</div>
     </div>
@@ -81,7 +81,7 @@ export default function RouteResult({ route, dayType, smartCard }: { route: Rout
       <p className="text-[15px] font-semibold text-ink">
         {route.fromName} <span aria-hidden="true" className="text-ink-mute">→</span> {route.toName}
       </p>
-      <div className="mt-2 grid grid-cols-2 divide-x divide-line-soft rounded-2xl border border-line-soft bg-surface sm:grid-cols-4">
+      <div className="mt-2 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line-soft bg-line-soft sm:grid-cols-4">
         <StatTile label="Minutes" value={`${route.estimatedMinutes} min`} />
         <StatTile label="Line changes" value={`${route.interchanges}`} />
         <StatTile label="Stations" value={`${route.totalStations}`} />

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Station, RouteResultData } from "@/types";
 import { getStation, lines, stations } from "@/lib/data";
@@ -23,7 +23,7 @@ const FAV_ICONS: Record<string, typeof IconHouse> = {
 function Section({ label, children, className = "" }: { label: string; children: React.ReactNode; className?: string }) {
   const id = useId();
   return (
-    <section aria-labelledby={id} className={`mt-9 ${className}`}>
+    <section aria-labelledby={id} className={`mt-8 ${className}`}>
       <h2 id={id} className="mb-2.5 text-[17px] font-semibold text-ink">{label}</h2>
       {children}
     </section>
@@ -55,12 +55,33 @@ export default function JourneyPlanner({ initialFromId, initialToId, initialPref
   const [favQuery, setFavQuery] = useState("");
   const [nearbyNote, setNearbyNote] = useState<string | null>(null);
   const [manualQuery, setManualQuery] = useState("");
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  /** Bring the result into view after planning. The sticky planner header
+   *  covers the top of the screen on phones, so leave a generous scroll
+   *  margin there; on desktop a small one. Motion follows the OS setting. */
+  function scrollToResult(instant: boolean) {
+    if (typeof window === "undefined") return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    requestAnimationFrame(() => {
+      resultRef.current?.scrollIntoView({ behavior: reduce || instant ? "auto" : "smooth", block: "start" });
+    });
+  }
 
   useEffect(() => {
     setRecents(loadRecents());
     setFavorites(loadFavorites());
-    if (initialFromId) setFrom(getStation(initialFromId) ?? null);
-    if (initialToId) setTo(getStation(initialToId) ?? null);
+    const f = initialFromId ? getStation(initialFromId) ?? null : null;
+    const t = initialToId ? getStation(initialToId) ?? null : null;
+    if (f) setFrom(f);
+    if (t) setTo(t);
+    // Deep links (station pages, shared routes) arrive with a pair: plan it
+    // straight away so the visitor sees the journey, not an empty form.
+    if (f && t && f.id !== t.id) {
+      plan(f, t, false);
+      scrollToResult(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialFromId, initialToId]);
 
   /** Compute both route options for a pair; null when no route exists. */
@@ -114,6 +135,7 @@ export default function JourneyPlanner({ initialFromId, initialToId, initialPref
       setRecents(loadRecents());
     }
     syncUrl(f.id, t.id, preference);
+    scrollToResult(false);
   }
 
   function swap() { const f = from, t = to; setFrom(t); setTo(f); if (f && t) plan(t, f); }
@@ -245,7 +267,11 @@ export default function JourneyPlanner({ initialFromId, initialToId, initialPref
         </div>
       ) : null}
 
-      {shown ? <RouteResult route={shown} dayType={dayType} smartCard={smartCard} /> : null}
+      {shown ? (
+        <div ref={resultRef} className="scroll-mt-[460px] md:scroll-mt-8">
+          <RouteResult route={shown} dayType={dayType} smartCard={smartCard} />
+        </div>
+      ) : null}
 
       <Section label="Metro status">
         <p className="inline-flex items-center gap-2 rounded-full bg-paper px-3 py-1.5 text-sm font-semibold text-ink-mute ring-1 ring-line-soft">

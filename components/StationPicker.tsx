@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import type { Station } from "@/types";
 import { searchStations } from "@/lib/search";
 import { LineBadge, InterchangeChip } from "./LineBadge";
@@ -18,6 +18,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
   const [open, setOpen] = useState(false);
   const [debounced, setDebounced] = useState("");
   const [highlight, setHighlight] = useState(0);
+  const inputId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const listId = useRef("list-" + Math.random().toString(36).slice(2, 8)).current;
 
@@ -30,7 +31,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
 
   return (
     <div className="relative">
-      <label htmlFor={label} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-mute">{label}</label>
+      <label htmlFor={inputId} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-mute">{label}</label>
       <div
         className="flex items-center gap-2.5 rounded-xl border bg-surface px-3 transition-colors focus-within:border-ink"
         style={{ borderWidth: value ? 2 : 1, borderColor: value ? accentColor : undefined }}
@@ -42,7 +43,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
         />
         <input
           ref={inputRef}
-          id={label}
+          id={inputId}
           type="text"
           role="combobox"
           aria-expanded={open}
@@ -77,7 +78,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
         </p>
       ) : null}
       {open && results.length > 0 ? (
-        <ul id={listId} role="listbox" aria-label={`${label} suggestions`} className="absolute left-0 right-0 top-full z-30 mt-1 max-h-72 overflow-auto rounded-xl border border-line-soft bg-surface shadow-[0_8px_30px_rgb(10_42_94/0.12)]">
+        <ul id={listId} role="listbox" aria-label={`${label} suggestions`} className="dm-fade absolute left-0 right-0 top-full z-30 mt-1 max-h-72 overflow-auto rounded-xl border border-line-soft bg-surface shadow-[0_8px_30px_rgb(10_42_94/0.12)]">
           {results.map((st, i) => (
             <li
               key={st.id}
@@ -97,7 +98,7 @@ export default function StationPicker({ label, value, onChange, placeholder, acc
         </ul>
       ) : null}
       {open && debounced.trim().length >= 2 && results.length === 0 ? (
-        <p className="absolute left-0 right-0 top-full z-30 mt-1 rounded-xl border border-line-soft bg-surface px-3 py-2 text-sm text-ink-mute shadow-[0_8px_30px_rgb(10_42_94/0.12)]">No station found. Check the spelling or try a shorter name.</p>
+        <p className="dm-fade absolute left-0 right-0 top-full z-30 mt-1 rounded-xl border border-line-soft bg-surface px-3 py-2 text-sm text-ink-mute shadow-[0_8px_30px_rgb(10_42_94/0.12)]">No station found. Check the spelling or try a shorter name.</p>
       ) : null}
     </div>
   );

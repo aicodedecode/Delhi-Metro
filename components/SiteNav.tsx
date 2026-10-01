@@ -59,10 +59,10 @@ export function MobileNav() {
                 href={href}
                 aria-current={active ? "page" : undefined}
                 className={`flex min-h-[60px] flex-col items-center justify-center gap-1 text-[11px] font-semibold transition-colors ${
-                  active ? "text-accent" : "text-ink-mute"
+                  active ? "text-ink" : "text-ink-mute"
                 }`}
               >
-                <Icon size={22} />
+                <Icon size={22} className={active ? "text-accent" : undefined} />
                 {label}
               </Link>
             </li>
