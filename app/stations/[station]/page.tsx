@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getStation, getLine, stations, segments, stationById, skywalkPartners, interchanges } from "@/lib/data";
+import { getStation, getLine, getStationFacts, stations, segments, stationById, skywalkPartners, interchanges } from "@/lib/data";
 import { ogBase, siteUrl } from "@/lib/seo";
 import { LineBadge, InterchangeChip } from "@/components/LineBadge";
 import { IconChevronLeft, IconChevronRight } from "@/components/icons";
@@ -32,6 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ station: 
   };
 }
 
+function formatOpened(iso: string): string {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const parts = iso.split("-");
+  if (parts.length === 3) return `${Number(parts[2])} ${months[Number(parts[1]) - 1]} ${parts[0]}`;
+  if (parts.length === 2) return `${months[Number(parts[1]) - 1]} ${parts[0]}`;
+  return parts[0];
+}
+
 function neighbours(stationId: string, lineId: string): { prev: string | null; next: string | null } {
   for (const seg of Object.values(segments)) {
     if (seg.line !== lineId) continue;
@@ -54,6 +62,7 @@ export default async function StationPage({ params }: { params: Promise<{ statio
   const { station } = await params;
   const st = getStation(station);
   if (!st) notFound();
+  const facts = getStationFacts(st.id);
   const partners = skywalkPartners(st.id);
   const operators = [...new Set(st.lines.map((l) => getLine(l)?.operator).filter(Boolean))] as string[];
   const isNamoOnly = st.lines.length > 0 && st.lines.every((l) => l === "namo-bharat");
@@ -131,6 +140,53 @@ export default async function StationPage({ params }: { params: Promise<{ statio
         </div>
 
         <div className="py-3.5">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Station details</h2>
+          {facts ? (
+            <dl className="mt-2 space-y-2.5 text-[15px] leading-relaxed text-ink-soft">
+              {facts.lat !== undefined && facts.lng !== undefined ? (
+                <div>
+                  <dt className="font-medium text-ink">Coordinates</dt>
+                  <dd>
+                    {facts.lat.toFixed(6)}, {facts.lng.toFixed(6)}{" "}
+                    <a
+                      className="inline-flex min-h-[44px] items-center text-accent underline underline-offset-2"
+                      href={`https://www.openstreetmap.org/?mlat=${facts.lat}&mlon=${facts.lng}#map=17/${facts.lat}/${facts.lng}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View on map
+                    </a>
+                    {facts.coordSource ? <span className="block text-[13px] text-ink-mute">Source: {facts.coordSource}</span> : null}
+                  </dd>
+                </div>
+              ) : null}
+              {facts.opened ? (
+                <div>
+                  <dt className="font-medium text-ink">Opened</dt>
+                  <dd>
+                    {formatOpened(facts.opened)}
+                    {facts.openedSource ? <span className="block text-[13px] text-ink-mute">Source: {facts.openedSource}</span> : null}
+                  </dd>
+                </div>
+              ) : null}
+              {facts.structure ? (
+                <div>
+                  <dt className="font-medium text-ink">Station type</dt>
+                  <dd>
+                    {facts.structure}
+                    {facts.structureSource ? <span className="block text-[13px] text-ink-mute">Source: {facts.structureSource}</span> : null}
+                  </dd>
+                </div>
+              ) : null}
+            </dl>
+          ) : (
+            <p className="mt-1 max-w-prose text-[15px] leading-relaxed text-ink-soft">
+              Coordinates, opening date and station type are not shown here yet because they could not be verified from the sources used.
+            </p>
+          )}
+        </div>
+
+        <div className="py-3.5">
           <h2 className="text-xs font-semibold uppercase tracking-wider text-ink-mute">Train timings</h2>
           <div className="mt-1 space-y-1.5 text-[15px] leading-relaxed text-ink-soft">
             {st.lines.map((l) => {
@@ -138,7 +194,41 @@ export default async function StationPage({ params }: { params: Promise<{ statio
               if (!line) return null;
               return <p key={l}><span className="font-medium text-ink">{line.name}:</span> {line.operatingHours}</p>;
             })}
-            <p className="max-w-prose">Per-station first and last train times are not published here because they could not be verified.</p>
+            {facts?.firstLast && facts.firstLast.length > 0 ? (
+              <div className="pt-1">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[430px] border-collapse text-left text-[14px]">
+                    <caption className="pb-2 text-left text-[13px] font-medium text-ink">
+                      Weekday first and last trains from this station
+                    </caption>
+                    <thead>
+                      <tr className="border-b border-line-soft text-[12px] uppercase tracking-wide text-ink-mute">
+                        <th scope="col" className="py-1.5 pr-3 font-semibold">Line</th>
+                        <th scope="col" className="py-1.5 pr-3 font-semibold">Towards</th>
+                        <th scope="col" className="py-1.5 pr-3 font-semibold">First</th>
+                        <th scope="col" className="py-1.5 font-semibold">Last</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {facts.firstLast.map((row) => (
+                        <tr key={`${row.lineId}-${row.towards}`} className="border-b border-line-soft/60">
+                          <td className="py-1.5 pr-3"><LineBadge lineId={row.lineId} /></td>
+                          <td className="py-1.5 pr-3">{row.towards}</td>
+                          <td className="py-1.5 pr-3 tabular-nums">{row.first}</td>
+                          <td className="py-1.5 tabular-nums">{row.last}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="max-w-prose pt-2 text-[13px] leading-relaxed text-ink-mute">
+                  Source: DMRC official static timetable feed (OTD Delhi), 2023 snapshot. First trains in the feed leave termini
+                  around 06:00, so early morning times here can differ from today. Check current timings with DMRC before you travel.
+                </p>
+              </div>
+            ) : (
+              <p className="max-w-prose">Per-station first and last train times are not published here because they could not be verified.</p>
+            )}
           </div>
         </div>
 

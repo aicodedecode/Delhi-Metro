@@ -32,6 +32,22 @@ export interface FareResult {
   smartCardApplied: boolean;
   smartCardAmount: number | null;
 }
+export interface FirstLastTrain {
+  lineId: string;
+  towards: string;
+  first: string;
+  last: string;
+}
+export interface StationFact {
+  lat?: number;
+  lng?: number;
+  coordSource?: string;
+  opened?: string;
+  openedSource?: string;
+  structure?: string;
+  structureSource?: string;
+  firstLast?: FirstLastTrain[];
+}
 export interface RouteLeg {
   lineId: string; lineName: string; lineColor: string;
   fromId: string; fromName: string; toId: string; toName: string;

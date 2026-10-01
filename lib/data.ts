@@ -4,7 +4,8 @@ import lineStationsJson from "@/data/lineStations.json";
 import interchangesJson from "@/data/interchanges.json";
 import faresJson from "@/data/fares.json";
 import timingsJson from "@/data/timings.json";
-import type { Station, LineInfo, Segment, Interchange, FareData } from "@/types";
+import stationFactsJson from "@/data/stationFacts.json";
+import type { Station, LineInfo, Segment, Interchange, FareData, StationFact } from "@/types";
 
 export const stations = (stationsJson as unknown as { stations: Station[] }).stations;
 export const lines = (linesJson as unknown as { lines: LineInfo[] }).lines;
@@ -21,6 +22,17 @@ export const timingsData = timingsJson as unknown as {
 
 export const stationById = new Map<string, Station>(stations.map((s) => [s.id, s]));
 export const lineById = new Map<string, LineInfo>(lines.map((l) => [l.id, l]));
+
+export const stationFactsData = stationFactsJson as unknown as {
+  meta: { coordinateSources: string[]; timingSource: string; openingStructureSource: string };
+  stations: Record<string, StationFact>;
+};
+export const stationFactsById = new Map<string, StationFact>(
+  Object.entries(stationFactsData.stations),
+);
+export function getStationFacts(id: string): StationFact | undefined {
+  return stationFactsById.get(id);
+}
 
 export function getStation(id: string): Station | undefined { return stationById.get(id); }
 export function getLine(id: string): LineInfo | undefined { return lineById.get(id); }

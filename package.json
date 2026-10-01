@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test:routes": "npx --yes tsx scripts/smoke-test.ts"
+    "test:facts": "npx --yes tsx scripts/check-station-facts.ts",
+    "test:routes": "npx --yes tsx scripts/check-station-facts.ts && npx --yes tsx scripts/smoke-test.ts"
   },
   "dependencies": {
     "lucide-react": "^1.49.0",

@@ -1,0 +1,6401 @@
+{
+ "meta": {
+  "generatedBy": "scripts/build-station-facts.py",
+  "coordinateSources": [
+   "DMRC static feed (OTD)",
+   "OpenStreetMap"
+  ],
+  "timingSource": "DMRC official static timetable feed (OTD Delhi), 2023 snapshot",
+  "openingStructureSource": "Wikipedia line articles (station tables), retrieved 2026-10-01"
+ },
+ "stations": {
+  "aiims": {
+   "lat": 28.568199,
+   "lng": 77.207947,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:34",
+     "last": "00:09"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:35",
+     "last": "00:19"
+    }
+   ]
+  },
+  "adarsh-nagar": {
+   "lat": 28.696377,
+   "lng": 77.208809,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-02-04",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:01",
+     "last": "23:26"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:49",
+     "last": "01:02"
+    }
+   ]
+  },
+  "akshardham": {
+   "lat": 28.618364,
+   "lng": 77.279816,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:20",
+     "last": "23:48"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:22",
+     "last": "00:08"
+    }
+   ]
+  },
+  "anand-vihar": {
+   "lat": 28.647005,
+   "lng": 77.316185,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-01-06",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:05",
+     "last": "23:20"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:31",
+     "last": "00:34"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:26",
+     "last": "23:41"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:25",
+     "last": "00:40"
+    }
+   ]
+  },
+  "arjan-garh": {
+   "lat": 28.48082,
+   "lng": 77.12587,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:01",
+     "last": "00:36"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:05",
+     "last": "23:59"
+    }
+   ]
+  },
+  "arthala": {
+   "lat": 28.6772,
+   "lng": 77.391876,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:29",
+     "last": "00:07"
+    }
+   ]
+  },
+  "ashok-park-main": {
+   "lat": 28.671572,
+   "lng": 77.155159,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:03",
+     "last": "23:02"
+    },
+    {
+     "lineId": "green",
+     "towards": "Inderlok",
+     "first": "06:47",
+     "last": "23:24"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:47",
+     "last": "23:34"
+    }
+   ]
+  },
+  "ashram": {
+   "lat": 28.576065,
+   "lng": 77.25753,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:52",
+     "last": "00:06"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:00",
+     "last": "00:14"
+    }
+   ]
+  },
+  "azadpur": {
+   "lat": 28.707287,
+   "lng": 77.179863,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-02-04",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:47",
+     "last": "01:02"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:04",
+     "last": "23:18"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:03",
+     "last": "23:29"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:47",
+     "last": "01:00"
+    }
+   ]
+  },
+  "badarpur-border": {
+   "lat": 28.4932,
+   "lng": 77.30085,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-01-14",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:00",
+     "last": "23:26"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:59",
+     "last": "00:20"
+    }
+   ]
+  },
+  "badkhal-mor": {
+   "lat": 28.422707,
+   "lng": 77.310234,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:59",
+     "last": "23:13"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:13",
+     "last": "00:33"
+    }
+   ]
+  },
+  "bahadurgarh-city": {
+   "lat": 28.690784,
+   "lng": 76.935265,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:46",
+     "last": "23:46"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:03",
+     "last": "22:50"
+    }
+   ]
+  },
+  "barakhamba-road": {
+   "lat": 28.629662,
+   "lng": 77.224876,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:27",
+     "last": "00:01"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:08",
+     "last": "00:12"
+    }
+   ]
+  },
+  "bata-chowk": {
+   "lat": 28.386362,
+   "lng": 77.298782,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:51",
+     "last": "23:05"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:20",
+     "last": "00:41"
+    }
+   ]
+  },
+  "bhajanpura": {
+   "lat": 28.703599,
+   "lng": 77.262647,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "bhalaswa": {
+   "lat": 28.736957,
+   "lng": 77.168087,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)"
+  },
+  "bhikaji-cama-place": {
+   "lat": 28.570208,
+   "lng": 77.187866,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-08-06",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:09",
+     "last": "00:24"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:42",
+     "last": "23:57"
+    }
+   ]
+  },
+  "botanical-garden": {
+   "lat": 28.564198,
+   "lng": 77.334656,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:04",
+     "last": "23:31"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:38",
+     "last": "00:24"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:00",
+     "last": "23:06"
+    }
+   ]
+  },
+  "brigadier-hoshiyar-singh": {
+   "lat": 28.697428,
+   "lng": 76.919128,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:00",
+     "last": "22:47"
+    }
+   ]
+  },
+  "burari": {
+   "lat": 28.729829,
+   "lng": 77.19957,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "central-secretariat": {
+   "lat": 28.614973,
+   "lng": 77.212029,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-07-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:42",
+     "last": "00:08"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:17",
+     "last": "23:38"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:22",
+     "last": "23:58"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:47",
+     "last": "00:30"
+    }
+   ]
+  },
+  "chandni-chowk": {
+   "lat": 28.656443,
+   "lng": 77.229218,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-07-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:10",
+     "last": "23:46"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:59",
+     "last": "00:42"
+    }
+   ]
+  },
+  "chawri-bazar": {
+   "lat": 28.649635,
+   "lng": 77.22628,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-07-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:12",
+     "last": "23:48"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:57",
+     "last": "00:40"
+    }
+   ]
+  },
+  "chhatarpur": {
+   "lat": 28.506584,
+   "lng": 77.174866,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-08-26",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:52",
+     "last": "00:27"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:14",
+     "last": "00:08"
+    }
+   ]
+  },
+  "chirag-delhi": {
+   "lat": 28.541229,
+   "lng": 77.229385,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:17",
+     "last": "23:43"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:31",
+     "last": "23:36"
+    }
+   ]
+  },
+  "civil-lines": {
+   "lat": 28.676945,
+   "lng": 77.224953,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-12-20",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:05",
+     "last": "23:41"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:04",
+     "last": "00:47"
+    }
+   ]
+  },
+  "dabri-mor-janankpuri-south": {
+   "lat": 28.615904,
+   "lng": 77.085258,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:43",
+     "last": "23:09"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "07:05",
+     "last": "00:10"
+    }
+   ]
+  },
+  "dashrathpuri": {
+   "lat": 28.602333,
+   "lng": 77.08255,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:46",
+     "last": "23:12"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "07:02",
+     "last": "00:07"
+    }
+   ]
+  },
+  "deepali-chowk": {
+   "lat": 28.6981,
+   "lng": 77.118279,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)"
+  },
+  "delhi-aerocity": {
+   "lat": 28.548792,
+   "lng": 77.120743,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-08-15",
+   "openedSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "airport-express",
+     "towards": "Dwarka Sector 21",
+     "first": "05:02",
+     "last": "23:52"
+    },
+    {
+     "lineId": "airport-express",
+     "towards": "New Delhi",
+     "first": "04:56",
+     "last": "23:26"
+    }
+   ]
+  },
+  "delhi-cantonment": {
+   "lat": 28.608641,
+   "lng": 77.140373,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:20",
+     "last": "00:35"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:31",
+     "last": "23:46"
+    }
+   ]
+  },
+  "delhi-gate": {
+   "lat": 28.640488,
+   "lng": 77.240303,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-05-28",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:52",
+     "last": "00:18"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:08",
+     "last": "23:28"
+    }
+   ]
+  },
+  "dhansa-bus-stand": {
+   "lat": 28.611858,
+   "lng": 76.975426,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2021-09-18",
+   "openedSource": "Wikipedia: Grey Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Grey Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "grey",
+     "towards": "Dwarka-Kakrola",
+     "first": "05:55",
+     "last": "22:55"
+    }
+   ]
+  },
+  "dhaula-kuan": {
+   "lat": 28.591776,
+   "lng": 77.161545,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-08-15",
+   "openedSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "airport-express",
+     "towards": "Dwarka Sector 21",
+     "first": "04:55",
+     "last": "23:45"
+    },
+    {
+     "lineId": "airport-express",
+     "towards": "New Delhi",
+     "first": "05:03",
+     "last": "23:33"
+    }
+   ]
+  },
+  "dilli-haat-ina": {
+   "lat": 28.575195,
+   "lng": 77.209473,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:04",
+     "last": "00:19"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:47",
+     "last": "00:02"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:31",
+     "last": "00:07"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:38",
+     "last": "00:21"
+    }
+   ]
+  },
+  "dilshad-garden": {
+   "lat": 28.675991,
+   "lng": 77.321495,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2008-06-04",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:30",
+     "last": "23:07"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:15",
+     "last": "23:53"
+    }
+   ]
+  },
+  "durgabai-deshmukh-south-campus": {
+   "lat": 28.589376,
+   "lng": 77.169518,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:14",
+     "last": "00:29"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:37",
+     "last": "23:51"
+    }
+   ]
+  },
+  "dwarka-mor": {
+   "lat": 28.619366,
+   "lng": 77.033188,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:13",
+     "last": "00:47"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:22",
+     "last": "23:26"
+    }
+   ]
+  },
+  "dwarka-sector-10": {
+   "lat": 28.581108,
+   "lng": 77.05719,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-04-01",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:28",
+     "last": "01:02"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:08",
+     "last": "23:11"
+    }
+   ]
+  },
+  "dwarka-sector-11": {
+   "lat": 28.58642,
+   "lng": 77.049255,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-04-01",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:26",
+     "last": "00:59"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:10",
+     "last": "23:14"
+    }
+   ]
+  },
+  "dwarka-sector-12": {
+   "lat": 28.592234,
+   "lng": 77.040558,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-04-01",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:23",
+     "last": "00:57"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:12",
+     "last": "23:16"
+    }
+   ]
+  },
+  "dwarka-sector-13": {
+   "lat": 28.59705,
+   "lng": 77.033043,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-04-01",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:21",
+     "last": "00:55"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:14",
+     "last": "23:18"
+    }
+   ]
+  },
+  "dwarka-sector-14": {
+   "lat": 28.602232,
+   "lng": 77.02594,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-04-01",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:19",
+     "last": "00:53"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:16",
+     "last": "23:20"
+    }
+   ]
+  },
+  "dwarka-sector-21": {
+   "lat": 28.552322,
+   "lng": 77.056198,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-30",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "airport-express",
+     "towards": "New Delhi",
+     "first": "04:45",
+     "last": "23:15"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:00",
+     "last": "23:04"
+    }
+   ]
+  },
+  "dwarka-sector-8": {
+   "lat": 28.565706,
+   "lng": 77.064896,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-30",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:32",
+     "last": "01:06"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:03",
+     "last": "23:07"
+    }
+   ]
+  },
+  "dwarka-sector-9": {
+   "lat": 28.574284,
+   "lng": 77.065086,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-04-01",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:30",
+     "last": "01:04"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:05",
+     "last": "23:09"
+    }
+   ]
+  },
+  "dwarka-kakrola": {
+   "lat": 28.614899,
+   "lng": 77.022629,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:17",
+     "last": "00:50"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:19",
+     "last": "23:23"
+    },
+    {
+     "lineId": "grey",
+     "towards": "Dhansa Bus Stand",
+     "first": "06:00",
+     "last": "22:48"
+    }
+   ]
+  },
+  "esi-basaidarapur": {
+   "lat": 28.658159,
+   "lng": 77.127319,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:32",
+     "last": "00:47"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:19",
+     "last": "23:34"
+    }
+   ]
+  },
+  "east-azad-nagar": {
+   "lat": 28.665043,
+   "lng": 77.284599,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:17",
+     "last": "23:31"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:35",
+     "last": "00:49"
+    }
+   ]
+  },
+  "east-vinod-nagar-mayur-vihar-ii": {
+   "lat": 28.620052,
+   "lng": 77.305588,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:36",
+     "last": "23:51"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:15",
+     "last": "00:30"
+    }
+   ]
+  },
+  "escorts-mujesar": {
+   "lat": 28.370199,
+   "lng": 77.315002,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:49",
+     "last": "23:03"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:23",
+     "last": "00:44"
+    }
+   ]
+  },
+  "ghevra": {
+   "lat": 28.685289,
+   "lng": 76.993584,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:35",
+     "last": "23:34"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:14",
+     "last": "23:01"
+    }
+   ]
+  },
+  "ghitorni": {
+   "lat": 28.49383,
+   "lng": 77.149071,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:58",
+     "last": "00:32"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:09",
+     "last": "00:03"
+    }
+   ]
+  },
+  "gokulpuri": {
+   "lat": 28.703009,
+   "lng": 77.286301,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-10-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:05",
+     "last": "23:19"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:46",
+     "last": "01:01"
+    }
+   ]
+  },
+  "golf-course": {
+   "lat": 28.566917,
+   "lng": 77.345726,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:02",
+     "last": "23:29"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:41",
+     "last": "00:27"
+    }
+   ]
+  },
+  "govindpuri": {
+   "lat": 28.544413,
+   "lng": 77.264259,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:17",
+     "last": "23:44"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:42",
+     "last": "00:03"
+    }
+   ]
+  },
+  "greater-kailash": {
+   "lat": 28.541836,
+   "lng": 77.238243,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:19",
+     "last": "23:45"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:29",
+     "last": "23:34"
+    }
+   ]
+  },
+  "green-park": {
+   "lat": 28.559853,
+   "lng": 77.206902,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:36",
+     "last": "00:12"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:33",
+     "last": "00:16"
+    }
+   ]
+  },
+  "guru-dronacharya": {
+   "lat": 28.482075,
+   "lng": 77.102219,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:05",
+     "last": "00:40"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:02",
+     "last": "23:55"
+    }
+   ]
+  },
+  "guru-tegh-bahadur-nagar": {
+   "lat": 28.698195,
+   "lng": 77.206985,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-02-04",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:08",
+     "last": "23:33"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:42",
+     "last": "00:55"
+    }
+   ]
+  },
+  "haiderpur-badli-mor": {
+   "lat": 28.718657,
+   "lng": 77.149956,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-11-10",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:56",
+     "last": "23:21"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:54",
+     "last": "01:07"
+    }
+   ]
+  },
+  "haiderpur-village": {
+   "lat": 28.724899,
+   "lng": 77.142467,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)"
+  },
+  "harkesh-nagar-okhla": {
+   "lat": 28.543194,
+   "lng": 77.275955,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:14",
+     "last": "23:41"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:45",
+     "last": "00:06"
+    }
+   ]
+  },
+  "hauz-khas": {
+   "lat": 28.543346,
+   "lng": 77.206673,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:12",
+     "last": "23:38"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:36",
+     "last": "23:41"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:39",
+     "last": "00:15"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:30",
+     "last": "00:13"
+    }
+   ]
+  },
+  "hindon-river": {
+   "lat": 28.673508,
+   "lng": 77.40654,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:32",
+     "last": "00:10"
+    }
+   ]
+  },
+  "iffco-chowk": {
+   "lat": 28.472137,
+   "lng": 77.072502,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:12",
+     "last": "00:47"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:55",
+     "last": "23:48"
+    }
+   ]
+  },
+  "igi-airport": {
+   "lat": 28.554869,
+   "lng": 77.087921,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-02-23",
+   "openedSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "airport-express",
+     "towards": "Dwarka Sector 21",
+     "first": "05:08",
+     "last": "23:58"
+    },
+    {
+     "lineId": "airport-express",
+     "towards": "New Delhi",
+     "first": "04:49",
+     "last": "23:19"
+    }
+   ]
+  },
+  "iit": {
+   "lat": 28.547194,
+   "lng": 77.193832,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:10",
+     "last": "23:36"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:38",
+     "last": "23:44"
+    }
+   ]
+  },
+  "ip-extension": {
+   "lat": 28.631599,
+   "lng": 77.310898,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:31",
+     "last": "23:45"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:21",
+     "last": "00:35"
+    }
+   ]
+  },
+  "ito": {
+   "lat": 28.627205,
+   "lng": 77.240952,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-06-08",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:49",
+     "last": "00:16"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:10",
+     "last": "23:31"
+    }
+   ]
+  },
+  "inderlok": {
+   "lat": 28.673452,
+   "lng": 77.170235,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2003-10-03",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:00",
+     "last": "22:57"
+    },
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "06:01",
+     "last": "23:38"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:44",
+     "last": "23:22"
+    }
+   ]
+  },
+  "indraprastha": {
+   "lat": 28.620272,
+   "lng": 77.250076,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-11-11",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:20",
+     "last": "23:54"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:15",
+     "last": "00:19"
+    }
+   ]
+  },
+  "jaffrabad": {
+   "lat": 28.682943,
+   "lng": 77.27507,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:10",
+     "last": "23:25"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:41",
+     "last": "00:56"
+    }
+   ]
+  },
+  "jagatpur-wazirabad": {
+   "lat": 28.721116,
+   "lng": 77.223995,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "jahangirpuri": {
+   "lat": 28.72818,
+   "lng": 77.16124,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-02-04",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:58",
+     "last": "23:23"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:52",
+     "last": "01:05"
+    }
+   ]
+  },
+  "jama-masjid": {
+   "lat": 28.650393,
+   "lng": 77.237556,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-05-28",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:54",
+     "last": "00:21"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:05",
+     "last": "23:26"
+    }
+   ]
+  },
+  "jamia-millia-islamia": {
+   "lat": 28.562944,
+   "lng": 77.286209,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:31",
+     "last": "23:57"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:16",
+     "last": "23:22"
+    }
+   ]
+  },
+  "janakpuri-east": {
+   "lat": 28.633121,
+   "lng": 77.086578,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:02",
+     "last": "00:36"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:34",
+     "last": "23:37"
+    }
+   ]
+  },
+  "janakpuri-west": {
+   "lat": 28.629637,
+   "lng": 77.077866,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:04",
+     "last": "00:38"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:31",
+     "last": "23:35"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:40",
+     "last": "23:06"
+    }
+   ]
+  },
+  "jangpura": {
+   "lat": 28.583231,
+   "lng": 77.239662,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:33",
+     "last": "23:59"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:27",
+     "last": "23:47"
+    }
+   ]
+  },
+  "janpath": {
+   "lat": 28.627817,
+   "lng": 77.218956,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2014-06-26",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:44",
+     "last": "00:10"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:16",
+     "last": "23:36"
+    }
+   ]
+  },
+  "jasola-apollo": {
+   "lat": 28.538084,
+   "lng": 77.285538,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:11",
+     "last": "23:38"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:48",
+     "last": "00:09"
+    }
+   ]
+  },
+  "jasola-vihar-shaheen-bagh": {
+   "lat": 28.546005,
+   "lng": 77.296715,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:37",
+     "last": "00:03"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:10",
+     "last": "23:16"
+    }
+   ]
+  },
+  "jawaharlal-nehru-stadium": {
+   "lat": 28.590475,
+   "lng": 77.23307,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:35",
+     "last": "00:02"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:24",
+     "last": "23:45"
+    }
+   ]
+  },
+  "jhandewalan": {
+   "lat": 28.644312,
+   "lng": 77.199791,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:35",
+     "last": "00:09"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:01",
+     "last": "00:04"
+    }
+   ]
+  },
+  "jharoda-majra": {
+   "lat": 28.724965,
+   "lng": 77.213712,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "jhilmil": {
+   "lat": 28.675648,
+   "lng": 77.312393,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2008-06-04",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:32",
+     "last": "23:09"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:13",
+     "last": "23:51"
+    }
+   ]
+  },
+  "johri-enclave": {
+   "lat": 28.713297,
+   "lng": 77.290154,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-10-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:02",
+     "last": "23:17"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:49",
+     "last": "01:04"
+    }
+   ]
+  },
+  "jor-bagh": {
+   "lat": 28.587234,
+   "lng": 77.212662,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:29",
+     "last": "00:05"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:40",
+     "last": "00:23"
+    }
+   ]
+  },
+  "kailash-colony": {
+   "lat": 28.554617,
+   "lng": 77.239738,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:25",
+     "last": "23:51"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:35",
+     "last": "23:55"
+    }
+   ]
+  },
+  "kalindi-kunj": {
+   "lat": 28.542835,
+   "lng": 77.310173,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:41",
+     "last": "00:07"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:07",
+     "last": "23:12"
+    }
+   ]
+  },
+  "kalkaji-mandir": {
+   "lat": 28.549532,
+   "lng": 77.258789,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:23",
+     "last": "23:49"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:24",
+     "last": "23:30"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:20",
+     "last": "23:46"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:39",
+     "last": "00:00"
+    }
+   ]
+  },
+  "kanhaiya-nagar": {
+   "lat": 28.682386,
+   "lng": 77.162552,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "06:03",
+     "last": "23:40"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:42",
+     "last": "23:20"
+    }
+   ]
+  },
+  "karkarduma": {
+   "lat": 28.648653,
+   "lng": 77.304581,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-01-06",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:07",
+     "last": "23:23"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:28",
+     "last": "00:32"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:24",
+     "last": "23:39"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:27",
+     "last": "00:42"
+    }
+   ]
+  },
+  "karkarduma-court": {
+   "lat": 28.649473,
+   "lng": 77.295341,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:21",
+     "last": "23:36"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:30",
+     "last": "00:45"
+    }
+   ]
+  },
+  "karol-bagh": {
+   "lat": 28.643925,
+   "lng": 77.188416,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:37",
+     "last": "00:11"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:58",
+     "last": "00:02"
+    }
+   ]
+  },
+  "kashmere-gate": {
+   "lat": 28.667879,
+   "lng": 77.228012,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2002-12-25",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:48",
+     "last": "23:25"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:57",
+     "last": "23:34"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:00",
+     "last": "23:21"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:07",
+     "last": "23:43"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:02",
+     "last": "00:45"
+    }
+   ]
+  },
+  "kaushambi": {
+   "lat": 28.645428,
+   "lng": 77.322273,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-07-14",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:03",
+     "last": "23:18"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:33",
+     "last": "00:37"
+    }
+   ]
+  },
+  "keshav-puram": {
+   "lat": 28.688944,
+   "lng": 77.161774,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "06:05",
+     "last": "23:42"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:40",
+     "last": "23:18"
+    }
+   ]
+  },
+  "khajuri-khas": {
+   "lat": 28.705261,
+   "lng": 77.254499,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "khan-market": {
+   "lat": 28.602682,
+   "lng": 77.228096,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:38",
+     "last": "00:04"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:21",
+     "last": "23:42"
+    }
+   ]
+  },
+  "kirti-nagar": {
+   "lat": 28.655773,
+   "lng": 77.148499,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:47",
+     "last": "00:20"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:49",
+     "last": "23:53"
+    },
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:00",
+     "last": "22:57"
+    }
+   ]
+  },
+  "kohat-enclave": {
+   "lat": 28.697943,
+   "lng": 77.140465,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "06:10",
+     "last": "23:47"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:35",
+     "last": "23:13"
+    }
+   ]
+  },
+  "krishna-nagar": {
+   "lat": 28.65782,
+   "lng": 77.290306,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:19",
+     "last": "23:33"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:33",
+     "last": "00:47"
+    }
+   ]
+  },
+  "krishna-park-extension": {
+   "lat": 28.647792,
+   "lng": 77.084343,
+   "coordSource": "OpenStreetMap",
+   "opened": "2025-01-05",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)"
+  },
+  "lajpat-nagar": {
+   "lat": 28.570705,
+   "lng": 77.233124,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:58",
+     "last": "00:13"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:53",
+     "last": "00:08"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:30",
+     "last": "23:56"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:29",
+     "last": "23:50"
+    }
+   ]
+  },
+  "lal-qila": {
+   "lat": 28.657576,
+   "lng": 77.236595,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-05-28",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:56",
+     "last": "00:23"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:03",
+     "last": "23:24"
+    }
+   ]
+  },
+  "laxmi-nagar": {
+   "lat": 28.629843,
+   "lng": 77.276428,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-01-06",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:14",
+     "last": "23:30"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:21",
+     "last": "00:25"
+    }
+   ]
+  },
+  "lok-kalyan-marg": {
+   "lat": 28.597519,
+   "lng": 77.209122,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:26",
+     "last": "00:02"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:43",
+     "last": "00:26"
+    }
+   ]
+  },
+  "mg-road": {
+   "lat": 28.47967,
+   "lng": 77.080444,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:09",
+     "last": "00:44"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:57",
+     "last": "23:51"
+    }
+   ]
+  },
+  "madhuban-chowk": {
+   "lat": 28.70318,
+   "lng": 77.132355,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "06:13",
+     "last": "23:50"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:32",
+     "last": "23:10"
+    }
+   ]
+  },
+  "madipur": {
+   "lat": 28.676418,
+   "lng": 77.117294,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:10",
+     "last": "23:10"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:39",
+     "last": "23:26"
+    }
+   ]
+  },
+  "maharaja-surajmal-stadium": {
+   "lat": 28.681833,
+   "lng": 77.073891,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:20",
+     "last": "23:20"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:29",
+     "last": "23:16"
+    }
+   ]
+  },
+  "majlis-park": {
+   "lat": 28.724157,
+   "lng": 77.182068,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:00",
+     "last": "23:14"
+    }
+   ]
+  },
+  "major-mohit-sharma-rajendra-nagar": {
+   "lat": 28.678095,
+   "lng": 77.359528,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:22",
+     "last": "00:00"
+    }
+   ]
+  },
+  "malviya-nagar": {
+   "lat": 28.52817,
+   "lng": 77.205612,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:42",
+     "last": "00:18"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:27",
+     "last": "00:10"
+    }
+   ]
+  },
+  "mandawali-west-vinod-nagar": {
+   "lat": 28.624861,
+   "lng": 77.304146,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:34",
+     "last": "23:48"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:18",
+     "last": "00:32"
+    }
+   ]
+  },
+  "mandi-house": {
+   "lat": 28.625816,
+   "lng": 77.234726,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-11-11",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:25",
+     "last": "23:59"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:11",
+     "last": "00:14"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:47",
+     "last": "00:14"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:12",
+     "last": "23:33"
+    }
+   ]
+  },
+  "mansarovar-park": {
+   "lat": 28.675352,
+   "lng": 77.301178,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2008-06-04",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:34",
+     "last": "23:11"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:11",
+     "last": "23:48"
+    }
+   ]
+  },
+  "maujpur-babarpur": {
+   "lat": 28.692057,
+   "lng": 77.280922,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-10-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:07",
+     "last": "23:22"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:44",
+     "last": "00:59"
+    }
+   ]
+  },
+  "mayapuri": {
+   "lat": 28.637098,
+   "lng": 77.129738,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:27",
+     "last": "00:41"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:25",
+     "last": "23:39"
+    }
+   ]
+  },
+  "mayur-vihar-extension": {
+   "lat": 28.594124,
+   "lng": 77.294495,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:15",
+     "last": "23:42"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:27",
+     "last": "00:13"
+    }
+   ]
+  },
+  "mayur-vihar-i": {
+   "lat": 28.604425,
+   "lng": 77.289421,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:17",
+     "last": "23:45"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:25",
+     "last": "00:11"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:43",
+     "last": "23:58"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:08",
+     "last": "00:23"
+    }
+   ]
+  },
+  "mewla-maharajpur": {
+   "lat": 28.4485,
+   "lng": 77.308098,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:04",
+     "last": "23:18"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:08",
+     "last": "00:29"
+    }
+   ]
+  },
+  "millennium-city-centre-gurugram": {
+   "lat": 28.459118,
+   "lng": 77.072586,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:52",
+     "last": "23:46"
+    }
+   ]
+  },
+  "model-town": {
+   "lat": 28.702833,
+   "lng": 77.193764,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-02-04",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:06",
+     "last": "23:31"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:44",
+     "last": "00:57"
+    }
+   ]
+  },
+  "mohan-estate": {
+   "lat": 28.51959,
+   "lng": 77.294518,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-01-14",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:06",
+     "last": "23:33"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:53",
+     "last": "00:14"
+    }
+   ]
+  },
+  "mohan-nagar": {
+   "lat": 28.67856,
+   "lng": 77.384209,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:27",
+     "last": "00:05"
+    }
+   ]
+  },
+  "moolchand": {
+   "lat": 28.564629,
+   "lng": 77.234222,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:27",
+     "last": "23:54"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:32",
+     "last": "23:53"
+    }
+   ]
+  },
+  "moti-nagar": {
+   "lat": 28.657803,
+   "lng": 77.140488,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:49",
+     "last": "00:23"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:46",
+     "last": "23:50"
+    }
+   ]
+  },
+  "mundka": {
+   "lat": 28.682411,
+   "lng": 77.028282,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:29",
+     "last": "23:29"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:20",
+     "last": "23:07"
+    }
+   ]
+  },
+  "mundka-industrial-area": {
+   "lat": 28.68396,
+   "lng": 76.989822,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:32",
+     "last": "23:31"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:17",
+     "last": "23:04"
+    }
+   ]
+  },
+  "munirka": {
+   "lat": 28.557821,
+   "lng": 77.174026,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:05",
+     "last": "23:31"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:43",
+     "last": "23:48"
+    }
+   ]
+  },
+  "nhpc-chowk": {
+   "lat": 28.462435,
+   "lng": 77.305252,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:06",
+     "last": "23:20"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:06",
+     "last": "00:26"
+    }
+   ]
+  },
+  "najafgarh": {
+   "lat": 28.613316,
+   "lng": 76.986259,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-10-04",
+   "openedSource": "Wikipedia: Grey Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Grey Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "grey",
+     "towards": "Dhansa Bus Stand",
+     "first": "06:07",
+     "last": "22:55"
+    },
+    {
+     "lineId": "grey",
+     "towards": "Dwarka-Kakrola",
+     "first": "05:57",
+     "last": "22:57"
+    }
+   ]
+  },
+  "nanaksar-sonia-vihar": {
+   "lat": 28.708718,
+   "lng": 77.242509,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "nangli": {
+   "lat": 28.61722,
+   "lng": 77.010345,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-10-04",
+   "openedSource": "Wikipedia: Grey Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Grey Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "grey",
+     "towards": "Dhansa Bus Stand",
+     "first": "06:02",
+     "last": "22:50"
+    },
+    {
+     "lineId": "grey",
+     "towards": "Dwarka-Kakrola",
+     "first": "06:02",
+     "last": "23:02"
+    }
+   ]
+  },
+  "nangloi": {
+   "lat": 28.682356,
+   "lng": 77.064728,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:22",
+     "last": "23:22"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:27",
+     "last": "23:14"
+    }
+   ]
+  },
+  "nangloi-railway-station": {
+   "lat": 28.682091,
+   "lng": 77.05619,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:25",
+     "last": "23:24"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:25",
+     "last": "23:12"
+    }
+   ]
+  },
+  "naraina-vihar": {
+   "lat": 28.624121,
+   "lng": 77.136482,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:23",
+     "last": "00:38"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:28",
+     "last": "23:43"
+    }
+   ]
+  },
+  "nawada": {
+   "lat": 28.620222,
+   "lng": 77.044991,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:11",
+     "last": "00:45"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:24",
+     "last": "23:28"
+    }
+   ]
+  },
+  "neelam-chowk-ajronda": {
+   "lat": 28.400707,
+   "lng": 77.309105,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:54",
+     "last": "23:08"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:18",
+     "last": "00:38"
+    }
+   ]
+  },
+  "nehru-enclave": {
+   "lat": 28.545856,
+   "lng": 77.25116,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:22",
+     "last": "23:47"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:26",
+     "last": "23:32"
+    }
+   ]
+  },
+  "nehru-place": {
+   "lat": 28.551134,
+   "lng": 77.251511,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:22",
+     "last": "23:48"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:37",
+     "last": "23:58"
+    }
+   ]
+  },
+  "netaji-subhash-place": {
+   "lat": 28.695637,
+   "lng": 77.152428,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:42",
+     "last": "00:56"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:10",
+     "last": "23:24"
+    },
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "06:08",
+     "last": "23:45"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:37",
+     "last": "23:15"
+    }
+   ]
+  },
+  "new-ashok-nagar": {
+   "lat": 28.58847,
+   "lng": 77.30146,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:13",
+     "last": "23:40"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:29",
+     "last": "00:15"
+    }
+   ]
+  },
+  "new-delhi": {
+   "lat": 28.642944,
+   "lng": 77.222351,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-07-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "airport-express",
+     "towards": "Dwarka Sector 21",
+     "first": "04:45",
+     "last": "23:35"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:14",
+     "last": "23:50"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:54",
+     "last": "00:38"
+    }
+   ]
+  },
+  "nirman-vihar": {
+   "lat": 28.637049,
+   "lng": 77.287872,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-01-06",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:12",
+     "last": "23:27"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:24",
+     "last": "00:28"
+    }
+   ]
+  },
+  "noida-city-centre": {
+   "lat": 28.574593,
+   "lng": 77.356117,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:59",
+     "last": "23:26"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:43",
+     "last": "00:29"
+    }
+   ]
+  },
+  "noida-electronic-city": {
+   "lat": 28.628685,
+   "lng": 77.375229,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-09",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:45",
+     "last": "23:12"
+    }
+   ]
+  },
+  "noida-sector-15": {
+   "lat": 28.585018,
+   "lng": 77.311584,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:11",
+     "last": "23:38"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:31",
+     "last": "00:18"
+    }
+   ]
+  },
+  "noida-sector-16": {
+   "lat": 28.577921,
+   "lng": 77.318115,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:09",
+     "last": "23:36"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:34",
+     "last": "00:20"
+    }
+   ]
+  },
+  "noida-sector-18": {
+   "lat": 28.570843,
+   "lng": 77.326088,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-11-12",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:06",
+     "last": "23:33"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:36",
+     "last": "00:22"
+    }
+   ]
+  },
+  "noida-sector-34": {
+   "lat": 28.580229,
+   "lng": 77.363518,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-09",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:57",
+     "last": "23:24"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:45",
+     "last": "00:31"
+    }
+   ]
+  },
+  "noida-sector-52": {
+   "lat": 28.586849,
+   "lng": 77.372749,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-09",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:55",
+     "last": "23:22"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:48",
+     "last": "00:34"
+    }
+   ]
+  },
+  "noida-sector-59": {
+   "lat": 28.609089,
+   "lng": 77.372955,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-09",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:50",
+     "last": "23:17"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:52",
+     "last": "00:38"
+    }
+   ]
+  },
+  "noida-sector-61": {
+   "lat": 28.597677,
+   "lng": 77.372368,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-09",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:52",
+     "last": "23:19"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:50",
+     "last": "00:36"
+    }
+   ]
+  },
+  "noida-sector-62": {
+   "lat": 28.616991,
+   "lng": 77.373611,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-09",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "05:47",
+     "last": "23:15"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:55",
+     "last": "00:41"
+    }
+   ]
+  },
+  "okhla-bird-sanctuary": {
+   "lat": 28.552816,
+   "lng": 77.321564,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:44",
+     "last": "00:10"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:04",
+     "last": "23:09"
+    }
+   ]
+  },
+  "okhla-nsic": {
+   "lat": 28.554575,
+   "lng": 77.26487,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:26",
+     "last": "23:52"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:22",
+     "last": "23:27"
+    }
+   ]
+  },
+  "okhla-vihar": {
+   "lat": 28.561255,
+   "lng": 77.291916,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:34",
+     "last": "00:00"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:14",
+     "last": "23:19"
+    }
+   ]
+  },
+  "old-faridabad": {
+   "lat": 28.412172,
+   "lng": 77.311272,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:56",
+     "last": "23:10"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:15",
+     "last": "00:36"
+    }
+   ]
+  },
+  "palam": {
+   "lat": 28.589067,
+   "lng": 77.082954,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:48",
+     "last": "23:14"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:59",
+     "last": "00:05"
+    }
+   ]
+  },
+  "panchsheel-park": {
+   "lat": 28.542339,
+   "lng": 77.220512,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:15",
+     "last": "23:41"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:33",
+     "last": "23:38"
+    }
+   ]
+  },
+  "pandit-shree-ram-sharma": {
+   "lat": 28.689213,
+   "lng": 76.951088,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:43",
+     "last": "23:43"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:06",
+     "last": "22:53"
+    }
+   ]
+  },
+  "paschim-vihar-east": {
+   "lat": 28.677305,
+   "lng": 77.112251,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:12",
+     "last": "23:12"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:37",
+     "last": "23:24"
+    }
+   ]
+  },
+  "paschim-vihar-west": {
+   "lat": 28.678539,
+   "lng": 77.102119,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:14",
+     "last": "23:14"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:35",
+     "last": "23:22"
+    }
+   ]
+  },
+  "patel-chowk": {
+   "lat": 28.622967,
+   "lng": 77.212288,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-07-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:20",
+     "last": "23:56"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:49",
+     "last": "00:32"
+    }
+   ]
+  },
+  "patel-nagar": {
+   "lat": 28.645037,
+   "lng": 77.167046,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:42",
+     "last": "00:15"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:54",
+     "last": "23:58"
+    }
+   ]
+  },
+  "peeragarhi": {
+   "lat": 28.67972,
+   "lng": 77.092491,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:16",
+     "last": "23:16"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:33",
+     "last": "23:20"
+    }
+   ]
+  },
+  "pratap-nagar": {
+   "lat": 28.666632,
+   "lng": 77.196869,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2003-10-03",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:55",
+     "last": "23:32"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:50",
+     "last": "23:28"
+    }
+   ]
+  },
+  "preet-vihar": {
+   "lat": 28.641352,
+   "lng": 77.295158,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-01-06",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:10",
+     "last": "23:25"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:26",
+     "last": "00:30"
+    }
+   ]
+  },
+  "pulbangash": {
+   "lat": 28.66571,
+   "lng": 77.206329,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2003-10-03",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:53",
+     "last": "23:30"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:52",
+     "last": "23:30"
+    }
+   ]
+  },
+  "punjabi-bagh": {
+   "lat": 28.672943,
+   "lng": 77.146011,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:05",
+     "last": "23:05"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:44",
+     "last": "23:31"
+    }
+   ]
+  },
+  "punjabi-bagh-west": {
+   "lat": 28.672747,
+   "lng": 77.139183,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:35",
+     "last": "00:50"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:16",
+     "last": "23:31"
+    }
+   ]
+  },
+  "qutab-minar": {
+   "lat": 28.512714,
+   "lng": 77.185791,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:50",
+     "last": "00:25"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:20",
+     "last": "00:04"
+    }
+   ]
+  },
+  "r-k-puram": {
+   "lat": 28.550486,
+   "lng": 77.184952,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:08",
+     "last": "23:33"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:40",
+     "last": "23:46"
+    }
+   ]
+  },
+  "raj-bagh": {
+   "lat": 28.677122,
+   "lng": 77.346466,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:20",
+     "last": "23:58"
+    }
+   ]
+  },
+  "raja-nahar-singh": {
+   "lat": 28.339899,
+   "lng": 77.331657,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-11-19",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:40",
+     "last": "22:54"
+    }
+   ]
+  },
+  "rajdhani-park": {
+   "lat": 28.682217,
+   "lng": 77.043869,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:27",
+     "last": "23:27"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:22",
+     "last": "23:09"
+    }
+   ]
+  },
+  "rajendra-place": {
+   "lat": 28.64241,
+   "lng": 77.191833,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:39",
+     "last": "00:13"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:56",
+     "last": "00:00"
+    }
+   ]
+  },
+  "rajiv-chowk": {
+   "lat": 28.632896,
+   "lng": 77.219574,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-07-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:30",
+     "last": "00:04"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:05",
+     "last": "00:09"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:17",
+     "last": "23:53"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:52",
+     "last": "00:35"
+    }
+   ]
+  },
+  "rajouri-garden": {
+   "lat": 28.649157,
+   "lng": 77.122749,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:53",
+     "last": "00:27"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:42",
+     "last": "23:46"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:30",
+     "last": "00:44"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:22",
+     "last": "23:36"
+    }
+   ]
+  },
+  "ramakrishna-ashram-marg": {
+   "lat": 28.639217,
+   "lng": 77.206291,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:33",
+     "last": "00:06"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:03",
+     "last": "00:07"
+    }
+   ]
+  },
+  "ramesh-nagar": {
+   "lat": 28.652809,
+   "lng": 77.131462,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:51",
+     "last": "00:25"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:44",
+     "last": "23:48"
+    }
+   ]
+  },
+  "rithala": {
+   "lat": 28.720821,
+   "lng": 77.105042,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:25",
+     "last": "23:03"
+    }
+   ]
+  },
+  "rohini": {
+   "opened": "2004-03-31",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)"
+  },
+  "rohini-sector-18-19": {
+   "lat": 28.740192,
+   "lng": 77.135574,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-11-10",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:52",
+     "last": "23:18"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:58",
+     "last": "01:10"
+    }
+   ]
+  },
+  "sadar-bazar-cantonment": {
+   "lat": 28.577108,
+   "lng": 77.111305,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:52",
+     "last": "23:18"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:55",
+     "last": "00:01"
+    }
+   ]
+  },
+  "saket": {
+   "lat": 28.520638,
+   "lng": 77.199379,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:45",
+     "last": "00:21"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:23",
+     "last": "00:07"
+    }
+   ]
+  },
+  "samaypur-badli": {
+   "lat": 28.742872,
+   "lng": 77.146545,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-11-10",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:50",
+     "last": "23:15"
+    }
+   ]
+  },
+  "sant-surdas-sihi": {
+   "lat": 28.354666,
+   "lng": 77.316261,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-11-19",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "05:46",
+     "last": "23:00"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:25",
+     "last": "00:46"
+    }
+   ]
+  },
+  "sarai": {
+   "lat": 28.47794,
+   "lng": 77.304932,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:09",
+     "last": "23:23"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:02",
+     "last": "00:23"
+    }
+   ]
+  },
+  "sarai-kale-khan-nizamuddin": {
+   "lat": 28.5889,
+   "lng": 77.253189,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:48",
+     "last": "00:03"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:03",
+     "last": "00:18"
+    }
+   ]
+  },
+  "sarita-vihar": {
+   "lat": 28.528622,
+   "lng": 77.288345,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-10-03",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:09",
+     "last": "23:35"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:50",
+     "last": "00:11"
+    }
+   ]
+  },
+  "sarojini-nagar": {
+   "lat": 28.570208,
+   "lng": 77.187866,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-08-06",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:06",
+     "last": "00:21"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:45",
+     "last": "00:00"
+    }
+   ]
+  },
+  "satguru-ram-singh-marg": {
+   "lat": 28.662188,
+   "lng": 77.157829,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-08-27",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:02",
+     "last": "22:59"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:50",
+     "last": "23:37"
+    }
+   ]
+  },
+  "sector-28": {
+   "lat": 28.440586,
+   "lng": 77.305992,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2015-09-06",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:02",
+     "last": "23:16"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "07:10",
+     "last": "00:31"
+    }
+   ]
+  },
+  "seelampur": {
+   "lat": 28.670324,
+   "lng": 77.267311,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2002-12-25",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "At grade",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:42",
+     "last": "23:19"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:03",
+     "last": "23:41"
+    }
+   ]
+  },
+  "seva-teerth": {
+   "lat": 28.611525,
+   "lng": 77.210052,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-09-03",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:24",
+     "last": "00:00"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "05:45",
+     "last": "00:28"
+    }
+   ]
+  },
+  "shadipur": {
+   "lat": 28.65143,
+   "lng": 77.156021,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:44",
+     "last": "00:18"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:51",
+     "last": "23:55"
+    }
+   ]
+  },
+  "shahdara": {
+   "lat": 28.673531,
+   "lng": 77.28727,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2002-12-25",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "At grade",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:37",
+     "last": "23:14"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:08",
+     "last": "23:46"
+    }
+   ]
+  },
+  "shaheed-nagar": {
+   "lat": 28.676615,
+   "lng": 77.333809,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:17",
+     "last": "23:55"
+    }
+   ]
+  },
+  "shaheed-sthal-new-bus-adda": {
+   "lat": 28.670177,
+   "lng": 77.416031,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)"
+  },
+  "shakurpur": {
+   "lat": 28.685781,
+   "lng": 77.149651,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:39",
+     "last": "00:54"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:12",
+     "last": "23:27"
+    }
+   ]
+  },
+  "shalimar-bagh": {
+   "lat": 28.70182,
+   "lng": 77.165184,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-03-14",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:44",
+     "last": "00:59"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:07",
+     "last": "23:21"
+    }
+   ]
+  },
+  "shankar-vihar": {
+   "lat": 28.560787,
+   "lng": 77.140442,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:59",
+     "last": "23:25"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:49",
+     "last": "23:54"
+    }
+   ]
+  },
+  "shastri-nagar": {
+   "lat": 28.670135,
+   "lng": 77.181679,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2003-10-03",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:58",
+     "last": "23:35"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:47",
+     "last": "23:25"
+    }
+   ]
+  },
+  "shastri-park": {
+   "lat": 28.668451,
+   "lng": 77.250404,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2002-12-25",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "At grade",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:45",
+     "last": "23:22"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:00",
+     "last": "23:38"
+    }
+   ]
+  },
+  "shiv-vihar": {
+   "lat": 28.721863,
+   "lng": 77.289635,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-10-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:00",
+     "last": "23:14"
+    }
+   ]
+  },
+  "shivaji-park": {
+   "lat": 28.674965,
+   "lng": 77.128258,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:08",
+     "last": "23:07"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:42",
+     "last": "23:29"
+    }
+   ]
+  },
+  "shivaji-stadium": {
+   "lat": 28.629007,
+   "lng": 77.209213,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-02-23",
+   "openedSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "airport-express",
+     "towards": "Dwarka Sector 21",
+     "first": "04:48",
+     "last": "23:38"
+    },
+    {
+     "lineId": "airport-express",
+     "towards": "New Delhi",
+     "first": "05:09",
+     "last": "23:39"
+    }
+   ]
+  },
+  "shree-ram-mandir-mayur-vihar": {
+   "lat": 28.606598,
+   "lng": 77.296326,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:41",
+     "last": "23:56"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:10",
+     "last": "00:25"
+    }
+   ]
+  },
+  "shyam-park": {
+   "lat": 28.678217,
+   "lng": 77.370911,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-03-08",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:25",
+     "last": "00:03"
+    }
+   ]
+  },
+  "sikanderpur": {
+   "lat": 28.481352,
+   "lng": 77.092995,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:07",
+     "last": "00:42"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:00",
+     "last": "23:53"
+    }
+   ]
+  },
+  "sir-m-vishweshwaraiah-moti-bagh": {
+   "lat": 28.578529,
+   "lng": 77.175713,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-08-06",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:12",
+     "last": "00:26"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:39",
+     "last": "23:54"
+    }
+   ]
+  },
+  "south-extension": {
+   "lat": 28.5686,
+   "lng": 77.219818,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-08-06",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "07:01",
+     "last": "00:16"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:50",
+     "last": "00:05"
+    }
+   ]
+  },
+  "subhash-nagar": {
+   "lat": 28.640381,
+   "lng": 77.10273,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:58",
+     "last": "00:31"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:38",
+     "last": "23:42"
+    }
+   ]
+  },
+  "sukhdev-vihar": {
+   "lat": 28.559887,
+   "lng": 77.275116,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-12-25",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:28",
+     "last": "23:54"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:19",
+     "last": "23:25"
+    }
+   ]
+  },
+  "sultanpur": {
+   "lat": 28.499214,
+   "lng": 77.161362,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-06-21",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "05:55",
+     "last": "00:30"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:11",
+     "last": "00:05"
+    }
+   ]
+  },
+  "supreme-court": {
+   "lat": 28.623438,
+   "lng": 77.2425,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2006-11-11",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:23",
+     "last": "23:56"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:13",
+     "last": "00:17"
+    }
+   ]
+  },
+  "tagore-garden": {
+   "lat": 28.643795,
+   "lng": 77.112747,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:56",
+     "last": "00:29"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:40",
+     "last": "23:44"
+    }
+   ]
+  },
+  "terminal-1-igi-airport": {
+   "lat": 28.565275,
+   "lng": 77.122391,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "05:55",
+     "last": "23:21"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:52",
+     "last": "23:58"
+    }
+   ]
+  },
+  "tikri-border": {
+   "lat": 28.687876,
+   "lng": 76.963783,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:41",
+     "last": "23:40"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:09",
+     "last": "22:56"
+    }
+   ]
+  },
+  "tikri-kalan": {
+   "lat": 28.686899,
+   "lng": 76.977249,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-06-24",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:38",
+     "last": "23:38"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:11",
+     "last": "22:58"
+    }
+   ]
+  },
+  "tilak-nagar": {
+   "lat": 28.636568,
+   "lng": 77.096336,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:00",
+     "last": "00:33"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:36",
+     "last": "23:40"
+    }
+   ]
+  },
+  "tis-hazari": {
+   "lat": 28.667137,
+   "lng": 77.216721,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2002-12-25",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:51",
+     "last": "23:28"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "05:54",
+     "last": "23:32"
+    }
+   ]
+  },
+  "trilokpuri-sanjay-lake": {
+   "lat": 28.613506,
+   "lng": 77.308678,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:39",
+     "last": "23:53"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:13",
+     "last": "00:27"
+    }
+   ]
+  },
+  "tughlakabad-station": {
+   "lat": 28.502232,
+   "lng": 77.29866,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-01-14",
+   "openedSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Violet Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "violet",
+     "towards": "Kashmere Gate",
+     "first": "06:03",
+     "last": "23:29"
+    },
+    {
+     "lineId": "violet",
+     "towards": "Raja Nahar Singh",
+     "first": "06:57",
+     "last": "00:17"
+    }
+   ]
+  },
+  "udyog-nagar": {
+   "lat": 28.681047,
+   "lng": 77.078674,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2010-04-03",
+   "openedSource": "Wikipedia: Green Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Green Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "green",
+     "towards": "Brigadier Hoshiyar Singh",
+     "first": "06:18",
+     "last": "23:18"
+    },
+    {
+     "lineId": "green",
+     "towards": "Kirti Nagar",
+     "first": "06:31",
+     "last": "23:18"
+    }
+   ]
+  },
+  "uttam-nagar-east": {
+   "lat": 28.624643,
+   "lng": 77.063126,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:07",
+     "last": "00:40"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:29",
+     "last": "23:33"
+    }
+   ]
+  },
+  "uttam-nagar-west": {
+   "lat": 28.621672,
+   "lng": 77.055664,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2005-12-31",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "07:09",
+     "last": "00:42"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "06:27",
+     "last": "23:31"
+    }
+   ]
+  },
+  "uttari-pitampura-prashant-vihar": {
+   "lat": 28.713074,
+   "lng": 77.138731,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)"
+  },
+  "vaishali": {
+   "lat": 28.650059,
+   "lng": 77.337608,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2011-07-14",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:00",
+     "last": "23:15"
+    }
+   ]
+  },
+  "vasant-vihar": {
+   "lat": 28.558378,
+   "lng": 77.160774,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-05-29",
+   "openedSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Magenta Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "magenta",
+     "towards": "Botanical Garden",
+     "first": "06:02",
+     "last": "23:28"
+    },
+    {
+     "lineId": "magenta",
+     "towards": "Janakpuri West",
+     "first": "06:46",
+     "last": "23:51"
+    }
+   ]
+  },
+  "vidhan-sabha": {
+   "lat": 28.687845,
+   "lng": 77.221626,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-12-20",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:02",
+     "last": "23:38"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "06:07",
+     "last": "00:50"
+    }
+   ]
+  },
+  "vinobapuri": {
+   "lat": 28.566179,
+   "lng": 77.249367,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2018-12-31",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:55",
+     "last": "00:10"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "06:56",
+     "last": "00:11"
+    }
+   ]
+  },
+  "vishwavidyalaya": {
+   "lat": 28.694765,
+   "lng": 77.212418,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2004-12-20",
+   "openedSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Yellow Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "yellow",
+     "towards": "Millennium City Centre Gurugram",
+     "first": "06:00",
+     "last": "23:36"
+    },
+    {
+     "lineId": "yellow",
+     "towards": "Samaypur Badli",
+     "first": "19:40",
+     "last": "00:52"
+    }
+   ]
+  },
+  "welcome": {
+   "lat": 28.671986,
+   "lng": 77.277931,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2002-12-25",
+   "openedSource": "Wikipedia: Red Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "pink",
+     "towards": "Majlis Park",
+     "first": "06:14",
+     "last": "23:28"
+    },
+    {
+     "lineId": "pink",
+     "towards": "Shiv Vihar",
+     "first": "07:38",
+     "last": "00:52"
+    },
+    {
+     "lineId": "red",
+     "towards": "Rithala",
+     "first": "05:39",
+     "last": "23:16"
+    },
+    {
+     "lineId": "red",
+     "towards": "Shaheed Sthal (New Bus Adda)",
+     "first": "06:06",
+     "last": "23:43"
+    }
+   ]
+  },
+  "yamuna-bank": {
+   "lat": 28.623178,
+   "lng": 77.267937,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2009-05-10",
+   "openedSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "structure": "At grade",
+   "structureSource": "Wikipedia: Blue Line (Delhi Metro)",
+   "firstLast": [
+    {
+     "lineId": "blue",
+     "towards": "Dwarka Sector 21",
+     "first": "06:17",
+     "last": "23:51"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Noida Electronic City",
+     "first": "07:18",
+     "last": "00:04"
+    },
+    {
+     "lineId": "blue",
+     "towards": "Vaishali",
+     "first": "07:18",
+     "last": "00:22"
+    }
+   ]
+  },
+  "yamuna-vihar": {
+   "lat": 28.702376,
+   "lng": 77.277311,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-03-08",
+   "openedSource": "Wikipedia: Pink Line (Delhi Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Pink Line (Delhi Metro)"
+  },
+  "yashobhoomi-dwarka-sector-25": {
+   "lat": 28.550832,
+   "lng": 77.045307,
+   "coordSource": "OpenStreetMap",
+   "opened": "2023-09-17",
+   "openedSource": "Wikipedia: Airport Express Line (Delhi Metro)",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Airport Express Line (Delhi Metro)"
+  },
+  "noida-sector-51": {
+   "lat": 28.585548,
+   "lng": 77.375374,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:00",
+     "last": "21:52"
+    }
+   ]
+  },
+  "noida-sector-50": {
+   "lat": 28.574547,
+   "lng": 77.378357,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:02",
+     "last": "21:55"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:16",
+     "last": "22:09"
+    }
+   ]
+  },
+  "noida-sector-76": {
+   "lat": 28.565445,
+   "lng": 77.37973,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:05",
+     "last": "21:57"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:14",
+     "last": "22:06"
+    }
+   ]
+  },
+  "noida-sector-101": {
+   "lat": 28.556065,
+   "lng": 77.385056,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:07",
+     "last": "21:59"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:12",
+     "last": "22:04"
+    }
+   ]
+  },
+  "noida-sector-81": {
+   "lat": 28.549259,
+   "lng": 77.390099,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:09",
+     "last": "22:02"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:09",
+     "last": "22:02"
+    }
+   ]
+  },
+  "nsez": {
+   "lat": 28.532248,
+   "lng": 77.394951,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:12",
+     "last": "22:04"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:07",
+     "last": "21:59"
+    }
+   ]
+  },
+  "noida-sector-83": {
+   "lat": 28.522284,
+   "lng": 77.396477,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:14",
+     "last": "22:06"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:05",
+     "last": "21:57"
+    }
+   ]
+  },
+  "noida-sector-137": {
+   "lat": 28.510817,
+   "lng": 77.403625,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:16",
+     "last": "22:09"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:02",
+     "last": "21:55"
+    }
+   ]
+  },
+  "noida-sector-142": {
+   "lat": 28.498999,
+   "lng": 77.412567,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:00",
+     "last": "21:56"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 51",
+     "first": "06:00",
+     "last": "21:52"
+    }
+   ]
+  },
+  "noida-sector-143": {
+   "lat": 28.494246,
+   "lng": 77.422318,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:02",
+     "last": "21:58"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:26",
+     "last": "22:22"
+    }
+   ]
+  },
+  "noida-sector-144": {
+   "lat": 28.486376,
+   "lng": 77.432968,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:05",
+     "last": "22:01"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:23",
+     "last": "22:19"
+    }
+   ]
+  },
+  "noida-sector-145": {
+   "lat": 28.47913,
+   "lng": 77.442307,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:07",
+     "last": "22:03"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:21",
+     "last": "22:17"
+    }
+   ]
+  },
+  "noida-sector-146": {
+   "lat": 28.468822,
+   "lng": 77.455101,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:09",
+     "last": "22:05"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:19",
+     "last": "22:15"
+    }
+   ]
+  },
+  "noida-sector-147": {
+   "lat": 28.4594,
+   "lng": 77.465965,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:12",
+     "last": "22:08"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:16",
+     "last": "22:12"
+    }
+   ]
+  },
+  "noida-sector-148": {
+   "lat": 28.448021,
+   "lng": 77.476692,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:14",
+     "last": "22:10"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:14",
+     "last": "22:10"
+    }
+   ]
+  },
+  "knowledge-park-ii": {
+   "lat": 28.456865,
+   "lng": 77.500298,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:16",
+     "last": "22:12"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:12",
+     "last": "22:08"
+    }
+   ]
+  },
+  "pari-chowk": {
+   "lat": 28.463331,
+   "lng": 77.508308,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:19",
+     "last": "22:15"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:09",
+     "last": "22:05"
+    }
+   ]
+  },
+  "alpha-1": {
+   "lat": 28.470879,
+   "lng": 77.512718,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:21",
+     "last": "22:17"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:07",
+     "last": "22:03"
+    }
+   ]
+  },
+  "delta-1": {
+   "lat": 28.478374,
+   "lng": 77.525581,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:23",
+     "last": "22:19"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:05",
+     "last": "22:01"
+    }
+   ]
+  },
+  "gnida-office": {
+   "lat": 28.484531,
+   "lng": 77.536621,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Depot",
+     "first": "06:26",
+     "last": "22:22"
+    },
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:02",
+     "last": "21:58"
+    }
+   ]
+  },
+  "depot": {
+   "lat": 28.488651,
+   "lng": 77.544075,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2019-01-25",
+   "openedSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Aqua Line (Noida Metro)",
+   "firstLast": [
+    {
+     "lineId": "aqua",
+     "towards": "Sector 142",
+     "first": "06:00",
+     "last": "21:56"
+    }
+   ]
+  },
+  "sarai-kale-khan-rrts": {
+   "lat": 28.589189,
+   "lng": 77.258065,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "new-ashok-nagar-rrts": {
+   "lat": 28.591321,
+   "lng": 77.30252,
+   "coordSource": "OpenStreetMap",
+   "opened": "2025-01-05",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "anand-vihar-rrts": {
+   "lat": 28.647471,
+   "lng": 77.316799,
+   "coordSource": "OpenStreetMap",
+   "opened": "2025-01-05",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "sahibabad": {
+   "lat": 28.667639,
+   "lng": 77.368132,
+   "coordSource": "OpenStreetMap",
+   "opened": "2023-10-20",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "ghaziabad-rrts": {
+   "lat": 28.672555,
+   "lng": 77.413731,
+   "coordSource": "OpenStreetMap",
+   "opened": "2023-10-20",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "guldhar": {
+   "lat": 28.699543,
+   "lng": 77.44575,
+   "coordSource": "OpenStreetMap",
+   "opened": "2023-10-20",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "duhai": {
+   "lat": 28.727017,
+   "lng": 77.471407,
+   "coordSource": "OpenStreetMap",
+   "opened": "2023-10-20",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "duhai-depot": {
+   "lat": 28.742282,
+   "lng": 77.467641,
+   "coordSource": "OpenStreetMap",
+   "opened": "2023-10-20",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "At grade",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "muradnagar": {
+   "lat": 28.770382,
+   "lng": 77.510704,
+   "coordSource": "OpenStreetMap",
+   "opened": "2024-03-06",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "modinagar-south": {
+   "lat": 28.817729,
+   "lng": 77.556741,
+   "coordSource": "OpenStreetMap",
+   "opened": "2024-03-06",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "modinagar-north": {
+   "lat": 28.843488,
+   "lng": 77.583196,
+   "coordSource": "OpenStreetMap",
+   "opened": "2024-03-06",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "partapur": {
+   "lat": 28.922018,
+   "lng": 77.650585,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "rithani": {
+   "lat": 28.932037,
+   "lng": 77.660548,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "brahmpuri": {
+   "lat": 28.960296,
+   "lng": 77.684812,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "meerut-central": {
+   "lat": 28.972872,
+   "lng": 77.690603,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "bhaisali": {
+   "lat": 28.988092,
+   "lng": 77.700317,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "mes-colony": {
+   "lat": 29.015964,
+   "lng": 77.704621,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "daurli": {
+   "lat": 29.040706,
+   "lng": 77.706856,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "meerut-north": {
+   "lat": 29.053349,
+   "lng": 77.708017,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Meerut Metro",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Meerut Metro"
+  },
+  "meerut-south": {
+   "lat": 28.904729,
+   "lng": 77.632839,
+   "coordSource": "OpenStreetMap",
+   "opened": "2024-08-18",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "shatabdi-nagar": {
+   "lat": 28.947748,
+   "lng": 77.673876,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "begumpul": {
+   "lat": 28.996738,
+   "lng": 77.705602,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Underground",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "modipuram": {
+   "lat": 29.072329,
+   "lng": 77.708884,
+   "coordSource": "OpenStreetMap",
+   "opened": "2026-02-22",
+   "openedSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Delhi–Meerut Regional Rapid Transit System"
+  },
+  "sector-55-56": {
+   "lat": 28.424587,
+   "lng": 77.105042,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-03-31",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:19",
+     "last": "23:54"
+    }
+   ]
+  },
+  "sector-54-chowk": {
+   "lat": 28.434212,
+   "lng": 77.104782,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-03-31",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:23",
+     "last": "23:57"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:34",
+     "last": "22:33"
+    }
+   ]
+  },
+  "sector-53-54": {
+   "lat": 28.447533,
+   "lng": 77.100487,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-04-25",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:26",
+     "last": "00:01"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:31",
+     "last": "22:29"
+    }
+   ]
+  },
+  "sector-42-43": {
+   "lat": 28.458475,
+   "lng": 77.09684,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-04-25",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:29",
+     "last": "00:04"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:28",
+     "last": "22:26"
+    }
+   ]
+  },
+  "phase-1": {
+   "lat": 28.471981,
+   "lng": 77.094009,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2017-03-31",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:33",
+     "last": "00:07"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:24",
+     "last": "22:23"
+    }
+   ]
+  },
+  "sikanderpur-rapid": {
+   "lat": 28.480833,
+   "lng": 77.094246,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2013-11-14",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:37",
+     "last": "00:12"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:20",
+     "last": "22:18"
+    }
+   ]
+  },
+  "phase-2": {
+   "lat": 28.488371,
+   "lng": 77.092865,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2013-11-14",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:44",
+     "last": "00:18"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:13",
+     "last": "22:12"
+    }
+   ]
+  },
+  "belvedere-towers": {
+   "lat": 28.492065,
+   "lng": 77.088142,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2013-11-14",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "06:56",
+     "last": "00:31"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:10",
+     "last": "22:08"
+    }
+   ]
+  },
+  "cyber-city": {
+   "lat": 28.498478,
+   "lng": 77.089088,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2014-05-07",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "07:02",
+     "last": "00:37"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:07",
+     "last": "22:05"
+    }
+   ]
+  },
+  "moulsari-avenue": {
+   "lat": 28.501572,
+   "lng": 77.094536,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2013-11-14",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Phase 3",
+     "first": "07:15",
+     "last": "00:49"
+    },
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:03",
+     "last": "22:02"
+    }
+   ]
+  },
+  "phase-3": {
+   "lat": 28.494329,
+   "lng": 77.093552,
+   "coordSource": "DMRC static feed (OTD)",
+   "opened": "2013-11-14",
+   "openedSource": "Wikipedia: Rapid Metro Gurgaon",
+   "structure": "Elevated",
+   "structureSource": "Wikipedia: Rapid Metro Gurgaon",
+   "firstLast": [
+    {
+     "lineId": "rapid-metro",
+     "towards": "Sector 55-56",
+     "first": "06:00",
+     "last": "21:58"
+    }
+   ]
+  }
+ }
+}
